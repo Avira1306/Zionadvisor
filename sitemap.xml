@@ -1,1 +1,18 @@
-<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://zionadvisor.com/</loc></url>
+  <url><loc>https://zionadvisor.com/services.html</loc></url>
+  <url><loc>https://zionadvisor.com/insights.html</loc></url>
+  <url><loc>https://zionadvisor.com/insight1.html</loc></url>
+  <url><loc>https://zionadvisor.com/insight2.html</loc></url>
+  <url><loc>https://zionadvisor.com/insight3.html</loc></url>
+  <url><loc>https://zionadvisor.com/case-studies.html</loc></url>
+  <url><loc>https://zionadvisor.com/case1.html</loc></url>
+  <url><loc>https://zionadvisor.com/case2.html</loc></url>
+  <url><loc>https://zionadvisor.com/case3.html</loc></url>
+  <url><loc>https://zionadvisor.com/templates.html</loc></url>
+  <url><loc>https://zionadvisor.com/about.html</loc></url>
+  <url><loc>https://zionadvisor.com/contact.html</loc></url>
+  <url><loc>https://zionadvisor.com/privacy.html</loc></url>
+  <url><loc>https://zionadvisor.com/thank-you.html</loc></url>
+</urlset>

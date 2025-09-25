@@ -1,1 +1,9 @@
-Upload this ZIP to Netlify → connect zionadvisor.com → enable HTTPS → set form notifications.
+Zion Advisor — Deployment Guide (Netlify)
+
+1) Go to https://app.netlify.com → Add new site → Deploy manually.
+2) Drag & drop this ZIP to deploy. A *.netlify.app URL will be created.
+3) Domain: Site Settings → Domain management → Add custom domain → zionadvisor.com → follow DNS prompts.
+4) SSL: In Domain settings, enable HTTPS (Let's Encrypt) and Force HTTPS.
+5) Forms: After first deploy, Netlify → Forms → find `lead-capture` and `contact` → Notifications → Add Email → support@zionadvisor.com
+6) Test the flow: /insights.html and /templates.html → submit signup form → redirect to /thank-you.html → confirm downloads.
+7) Submit https://zionadvisor.com/sitemap.xml in Google Search Console (optional).
