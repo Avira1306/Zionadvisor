@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Where AI Automation Delivers 40–70% Time Savings — Zion Advisor</title>
+  <meta name="description" content="Real workflows that work: lead capture to CRM to outreach, document parsing and reconciliation, and RAG copilots for diligence.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <style>body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}</style>
+</head>
+<body>
+<header class="nav-dark">
+  <div class="header-inner">
+    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
+    <div class="nav-wrap">
+      <nav>
+        <ul class="nav-links" id="siteNav">
+          <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+          <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
+          <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
+          <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
+          <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
+        </ul>
+      </nav>
+      <a class="icon-btn" href="/insights.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<img src="/assets/insight2-banner.jpg" class="banner" alt="AI automation insight banner">
+
+<div class="container section">
+  <h1>Where AI Automation Delivers 40–70% Time Savings</h1>
+  <p class="small">Published 2025 • 5 min read</p>
+
+  <h2>1) Lead Capture → CRM → Outreach</h2>
+  <p>Automate web/LinkedIn lead capture into your CRM, enrich profiles, and trigger WhatsApp/email sequences with calendar booking. Measure reply rates and time-to-meeting.</p>
+
+  <h2>2) Document Parsing &amp; Reconciliation</h2>
+  <p>Extract tables from PDFs (TB, invoices, contracts) and reconcile to ERP/GL. Auto-flag mismatches, duplicate invoices, and missing documents.</p>
+
+  <h2>3) Diligence Copilots (RAG)</h2>
+  <p>Ask natural-language questions across contracts, policies, and customer data. Cite sources and export answers to diligence notes.</p>
+
+  <h2>4) Dashboards &amp; Alerts</h2>
+  <p>Pipeline operational data to BI; schedule daily/weekly jobs and anomaly alerts. Move teams from reactive to proactive.</p>
+
+  <div class="card" style="margin-top:20px">
+    <h3>Pilot playbook (2–4 weeks)</h3>
+    <ol style="margin:0;padding-left:18px">
+      <li>Scope &amp; baseline manual time / ROI.</li>
+      <li>Build workflow with a small dataset; validate with users.</li>
+      <li>Harden, add alerts, write SOPs/runbook.</li>
+      <li>Go-live + 14-day hypercare.</li>
+    </ol>
+    <div class="meta" style="margin-top:10px">
+      <span><i class="fa-solid fa-gauge"></i> 40–70% time saved</span>
+      <span><i class="fa-regular fa-clock"></i> 2–4 weeks</span>
+    </div>
+    <a class="btn secondary" href="/service-automation.html">See our approach →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+    <span class="small">© Zion Advisor</span><a class="small" href="/privacy.html">Privacy</a>
+  </div>
+</footer>
+
+<script>
+  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
+  btn?.addEventListener('click',()=>nav.classList.toggle('show'));
+  const path=location.pathname.replace(/\/index\.html$/,'/');
+  document.querySelectorAll('.nav-links a').forEach(a=>{ if(a.getAttribute('href')===path) a.setAttribute('aria-current','page'); });
+</script>
+</body>
+</html>

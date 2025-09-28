@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>From Trial Balance to Investment-Grade Databook in 7 Steps — Zion Advisor</title>
+  <meta name="description" content="A field guide to building clean investment-grade databooks: mapping GL to reporting, flux checks, NWC logic, net-debt proof, and executive note.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <style>body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}</style>
+</head>
+<body>
+<header class="nav-dark">
+  <div class="header-inner">
+    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
+    <div class="nav-wrap">
+      <nav>
+        <ul class="nav-links" id="siteNav">
+          <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+          <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
+          <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
+          <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
+          <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
+        </ul>
+      </nav>
+      <a class="icon-btn" href="/insights.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<img src="/assets/insight1-banner.jpg" class="banner" alt="Databook insight banner">
+
+<div class="container section">
+  <h1>From Trial Balance to Investment-Grade Databook in 7 Steps</h1>
+  <p class="small">Published 2025 • 6 min read</p>
+
+  <p>Investors rarely read 100-page packs. What they want is a databook that reconciles cleanly, highlights KPIs, and can be trusted to drive valuation. Here’s our field-tested 7-step playbook.</p>
+
+  <h2>1) Map the Trial Balance to Reporting Lines</h2>
+  <p>Map TB accounts into standardized P&amp;L and BS headings. Align with IFRS/IND-AS, strip non-recurring items, and keep a COA mapping table for repeatability.</p>
+
+  <h2>2) Flux Checks (MoM &amp; YoY)</h2>
+  <p>Run % and absolute variance checks on revenue, COGS, OPEX, and balance captions to catch anomalies before investors do.</p>
+
+  <h2>3) Working Capital Logic</h2>
+  <p>Build AR/AP/Inventory roll-forwards that reconcile to closing balances. Derive DSO, DPO, DIO, and cash conversion cycle.</p>
+
+  <h2>4) Net Debt Proof</h2>
+  <p>Summarize facilities, reconcile to ledgers, adjust for leases, and present cash vs OD with a clear net-debt bridge.</p>
+
+  <h2>5) Cohort &amp; Margin Diagnostics</h2>
+  <p>For SaaS/consumer, retention and margin evolution matter. Show LTV:CAC, churn, payback, and GM progression by cohort.</p>
+
+  <h2>6) Sensitivities &amp; Scenarios</h2>
+  <p>Stress-test with 2–3 scenarios (e.g., churn +10%, delayed collections) and show impact on cash and covenants.</p>
+
+  <h2>7) Executive Note</h2>
+  <p>Close with a 2–3 page note summarizing red flags, adjustments, and upside levers—the section partners actually read.</p>
+
+  <div class="card" style="margin-top:20px">
+    <h3>Download sample</h3>
+    <p class="small">See our databook template with linked schedules.</p>
+    <a class="btn secondary" href="/templates.html">See Templates →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+    <span class="small">© Zion Advisor</span><a class="small" href="/privacy.html">Privacy</a>
+  </div>
+</footer>
+
+<script>
+  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
+  btn?.addEventListener('click',()=>nav.classList.toggle('show'));
+  const path=location.pathname.replace(/\/index\.html$/,'/');
+  document.querySelectorAll('.nav-links a').forEach(a=>{ if(a.getAttribute('href')===path) a.setAttribute('aria-current','page'); });
+</script>
+</body>
+</html>

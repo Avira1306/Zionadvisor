@@ -1,66 +1,144 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Insights — Zion Advisor</title>
-<meta name="description" content="Zion Advisor — M&A, AI automations, and skill development advisory.">
-<meta property="og:title" content="Insights — Zion Advisor"><meta property="og:image" content="/assets/og-image.png">
-<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/styles.css">
-</head><body>
-<header>
-  <div class="container header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor logo"><span>Zion Advisor</span></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Insights — Zion Advisor</title>
+  <meta name="description" content="Insights from Zion Advisor on databooks, AI automation, and skill development execution." />
 
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .insight-card .thumb{
+      width:100%; aspect-ratio:16/9; border-radius:10px; background:#0b66c2; 
+      background-image: linear-gradient(135deg,#0b66c2,#14233b);
+    }
+    .insight-card h3{ margin:10px 0 6px; }
+    .meta-line{ font-size:12.5px; color:#697788; display:flex; gap:12px; margin:6px 0 10px;}
+    .tag{ background:#eef4fb; border:1px solid #d9e5f4; color:#425066; border-radius:999px; padding:4px 8px; font-size:12px; }
+    .card .excerpt{ color:#2a3440; }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="nav-dark">
+  <div class="header-inner">
+    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
     <div class="nav-wrap">
       <nav>
         <ul class="nav-links" id="siteNav">
-          <li><a href="/services.html">Services</a></li>
-          <li><a href="/insights.html">Insights</a></li>
-          <li><a href="/case-studies.html">Case Studies</a></li>
-          <li><a href="/templates.html">Templates</a></li>
-          <li><a href="/about.html">About</a></li>
+          <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+          <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
+          <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
+          <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
+          <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
         </ul>
       </nav>
-      <a class="btn-cta" href="/contact.html">Contact</a>
-      <button class="burger" id="burgerBtn" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <a class="icon-btn" href="/insights.html" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
+<!-- Banner -->
+<img src="/assets/banner-insights.jpg" class="banner" alt="Insights banner">
 
-<img src="/assets/banner-insights.jpg" class="banner" alt="">
 <div class="container section">
-  <h1>Insights & Perspectives</h1>
+  <h1>Insights</h1>
+  <p class="small" style="max-width:780px">
+    Practical notes from live work: how we build investment-grade databooks, where AI automation really
+    saves time, and what it takes to make skilling programs audit-ready. No fluff—just the playbooks.
+  </p>
+
   <div class="grid3" style="margin-top:16px">
-    <div class="card"><h3>5 Mistakes Startups Make in M&A Diligence</h3><p class="small">Avoid dealbreakers and protect valuation.</p><a class="btn secondary" href="/insight1.html">Read</a></div>
-    <div class="card"><h3>How AI Can Cut Financial Analysis Time by 70%</h3><p class="small">Automate parsing, reconciliation, and dashboards.</p><a class="btn secondary" href="/insight2.html">Read</a></div>
-    <div class="card"><h3>India’s Skill Gap: Where the Next Opportunities Lie</h3><p class="small">Sectors primed for skilling-led growth.</p><a class="btn secondary" href="/insight3.html">Read</a></div>
+
+    <!-- Insight 1 -->
+    <article class="card insight-card">
+      <div class="thumb" style="background-image:linear-gradient(135deg,#0b66c2,#14233b),url('/assets/insight1.jpg'); background-blend-mode:overlay; background-size:cover;"></div>
+      <h3>From Trial Balance to Investment-Grade Databook in 7 Steps</h3>
+      <div class="meta-line">
+        <span><i class="fa-regular fa-calendar"></i> 2025</span>
+        <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+        <span class="tag">M&A</span>
+      </div>
+      <p class="excerpt">
+        A field guide to building a clean databook: mapping GL to reporting, flux checks, NWC logic,
+        net-debt proof, and the executive note investors actually read.
+      </p>
+      <a class="btn secondary" href="/insight-databook-7-steps.html">Read full insight →</a>
+    </article>
+
+    <!-- Insight 2 -->
+    <article class="card insight-card">
+      <div class="thumb" style="background-image:linear-gradient(135deg,#18a06a,#143b2a),url('/assets/insight2.jpg'); background-blend-mode:overlay; background-size:cover;"></div>
+      <h3>Where AI Automation Delivers 40–70% Time Savings</h3>
+      <div class="meta-line">
+        <span><i class="fa-regular fa-calendar"></i> 2025</span>
+        <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+        <span class="tag">Automation</span>
+      </div>
+      <p class="excerpt">
+        Real workflows that work: lead capture → CRM → WhatsApp/email, document parsing & reconciliation,
+        and RAG copilots for faster diligence prep.
+      </p>
+      <a class="btn secondary" href="/insight-ai-saves-time.html">Read full insight →</a>
+    </article>
+
+    <!-- Insight 3 -->
+    <article class="card insight-card">
+      <div class="thumb" style="background-image:linear-gradient(135deg,#6a5acd,#1a1535),url('/assets/insight3.jpg'); background-blend-mode:overlay; background-size:cover;"></div>
+      <h3>Making Skilling Programs Audit-Ready (Without Slowing Delivery)</h3>
+      <div class="meta-line">
+        <span><i class="fa-regular fa-calendar"></i> 2025</span>
+        <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+        <span class="tag">Skill Dev</span>
+      </div>
+      <p class="excerpt">
+        Templates that pass scrutiny: evidence packs, geo-tag rules, vendor documentation, and a simple
+        MIS cadence that keeps centres compliant.
+      </p>
+      <a class="btn secondary" href="/insight-audit-ready-skills.html">Read full insight →</a>
+    </article>
+
   </div>
-  <div class="card" style="margin-top:22px">
-    <h3>Get the Brief + Templates</h3>
-    <form name="lead-capture" method="POST" data-netlify="true" action="/thank-you.html">
-      <input type="hidden" name="form-name" value="lead-capture">
-      <input type="text" name="name" placeholder="Your name" required style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;margin-bottom:10px">
-      <input type="email" name="email" placeholder="Your email" required style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;margin-bottom:10px">
-      <button type="submit" class="btn primary">Access Downloads</button>
+
+  <!-- Email capture CTA (optional) -->
+  <div class="card" style="margin-top:20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <div>
+      <h3 style="margin:0 0 6px">Get new insights in your inbox</h3>
+      <p class="small" style="margin:0; color:#44505e">1–2 emails per month. No spam, unsubscribe anytime.</p>
+    </div>
+    <form action="/thank-you.html" method="POST" data-netlify="true" name="insights-signup" style="display:flex; gap:10px; flex-wrap:wrap;">
+      <input type="hidden" name="form-name" value="insights-signup">
+      <input type="email" name="email" required placeholder="you@company.com" class="input">
+      <button class="btn">Subscribe</button>
     </form>
   </div>
 </div>
 
+<!-- Footer -->
 <footer>
   <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
     <span class="small">© Zion Advisor</span>
     <a class="small" href="/privacy.html">Privacy</a>
   </div>
 </footer>
+
+<!-- JS -->
 <script>
-  const btn = document.getElementById('burgerBtn');
-  const nav = document.getElementById('siteNav');
-  btn?.addEventListener('click', () => nav.classList.toggle('show'));
-  // Highlight active page
-  const path = location.pathname.replace(/\/index\.html$/,'/'); 
+  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
+  btn?.addEventListener('click',()=>nav.classList.toggle('show'));
+  const path=location.pathname.replace(/\/index\.html$/,'/');
   document.querySelectorAll('.nav-links a').forEach(a=>{
     if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
   });
 </script>
-</body></html>
+</body>
+</html>
