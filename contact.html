@@ -1,63 +1,116 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact — Zion Advisor</title>
-<meta name="description" content="Zion Advisor — M&A, AI automations, and skill development advisory.">
-<meta property="og:title" content="Contact — Zion Advisor"><meta property="og:image" content="/assets/og-image.png">
-<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head><body>
-<header>
-  <div class="container header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor logo"><span>Zion Advisor</span></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Zion Advisor</title>
+  <meta name="description" content="Contact Zion Advisor — reach out for consulting in M&A, AI automation, or skill development." />
 
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .contact-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;margin-top:20px}
+    .contact-card{padding:20px}
+    .contact-form{display:grid;gap:12px}
+    .input,textarea{width:100%;padding:10px 12px;border:1px solid #d9e5f4;border-radius:8px;font-size:15px}
+    textarea{min-height:120px}
+    @media(max-width:960px){.contact-wrap{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="nav-dark">
+  <div class="header-inner">
+    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
     <div class="nav-wrap">
       <nav>
         <ul class="nav-links" id="siteNav">
-          <li><a href="/services.html">Services</a></li>
-          <li><a href="/insights.html">Insights</a></li>
-          <li><a href="/case-studies.html">Case Studies</a></li>
-          <li><a href="/templates.html">Templates</a></li>
-          <li><a href="/about.html">About</a></li>
+          <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+          <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
+          <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
+          <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
+          <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
         </ul>
       </nav>
-      <a class="btn-cta" href="/contact.html">Contact</a>
-      <button class="burger" id="burgerBtn" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <a class="icon-btn" href="/insights.html" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
+<!-- Banner -->
+<img src="/assets/banner-contact.jpg" class="banner" alt="Contact banner">
 
-<img src="/assets/banner-contact.jpg" class="banner" alt="">
 <div class="container section">
   <h1>Contact</h1>
-  <p class="small">Tell us about your project. We’ll reply within 24 hours.</p>
-  <form name="contact" method="POST" data-netlify="true" class="card">
-    <input type="hidden" name="form-name" value="contact">
-    <input type="text" name="name" placeholder="Your name" required style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;margin-bottom:10px">
-    <input type="email" name="email" placeholder="Your email" required style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;margin-bottom:10px">
-    <input type="text" name="company" placeholder="Company (optional)" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;margin-bottom:10px">
-    <textarea name="message" rows="6" placeholder="What do you need help with?" required style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;margin-bottom:10px"></textarea>
-    <button type="submit" class="btn primary">Send message</button>
-  </form>
-  <p class="small" style="margin-top:10px"><strong>Email:</strong> support@zionadvisor.com</p>
+  <p class="small" style="max-width:760px">
+    Interested in working with Zion Advisor? Drop us a message and we’ll get back within 1 business day.
+  </p>
+
+  <div class="contact-wrap">
+    <!-- Left: Contact Form -->
+    <div class="card contact-card">
+      <h2>Send us a message</h2>
+      <form name="contact-form"
+            method="POST"
+            action="https://script.google.com/macros/s/AKfycbylq21b_339gynhLUeGVe8eMDW36otKYxMHwYE01rbTr3F_IhszNdKniQO1TMaxPD1V/exec"
+            class="contact-form">
+
+        <input type="text" name="name" class="input" placeholder="Your name" required>
+        <input type="email" name="email" class="input" placeholder="Your email" required>
+        <textarea name="message" placeholder="Your message..." required></textarea>
+
+        <!-- Honeypot spam trap -->
+        <input type="text" name="hp" style="position:absolute;left:-9999px;opacity:0" tabindex="-1" autocomplete="off">
+
+        <button type="submit" class="btn">Send message</button>
+      </form>
+    </div>
+
+    <!-- Right: Other Info -->
+    <div class="card contact-card">
+      <h2>Other ways to connect</h2>
+      <p>
+        <i class="fa-solid fa-location-dot"></i> Gurgaon, India<br>
+        <i class="fa-solid fa-envelope"></i> <a href="mailto:contact@zionadvisor.com">contact@zionadvisor.com</a>
+      </p>
+      <div class="social" style="margin-top:14px">
+        <a href="https://www.linkedin.com/in/abhishek-bhandari-6b048979/"
+           target="_blank" rel="noopener"
+           class="btn secondary">
+          <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+        </a>
+      </div>
+      <p class="small" style="margin-top:16px;color:#5b6572">
+        We typically respond within 24 hours. For urgent project discussions, please use LinkedIn messaging.
+      </p>
+    </div>
+  </div>
 </div>
 
+<!-- Footer -->
 <footer>
   <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
     <span class="small">© Zion Advisor</span>
     <a class="small" href="/privacy.html">Privacy</a>
   </div>
 </footer>
+
+<!-- JS -->
 <script>
-  const btn = document.getElementById('burgerBtn');
-  const nav = document.getElementById('siteNav');
-  btn?.addEventListener('click', () => nav.classList.toggle('show'));
-  // Highlight active page
-  const path = location.pathname.replace(/\/index\.html$/,'/'); 
+  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
+  btn?.addEventListener('click',()=>nav.classList.toggle('show'));
+  const path=location.pathname.replace(/\/index\.html$/,'/');
   document.querySelectorAll('.nav-links a').forEach(a=>{
     if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
   });
 </script>
-</body></html>
+</body>
+</html>

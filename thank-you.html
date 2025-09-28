@@ -1,45 +1,59 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thank You — Zion Advisor</title>
-<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head><body>
-<header>
-  <div class="container header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor logo" style="height:32px;"><span>Zion Advisor</span></a>
-    <nav class="nav">
-      <a href="/services.html">Services</a>
-      <a href="/insights.html">Insights</a>
-      <a href="/case-studies.html">Case Studies</a>
-      <a href="/templates.html">Templates</a>
-      <a href="/about.html">About</a>
-      <a class="btn secondary" href="/contact.html">Contact</a>
-    </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You — Zion Advisor</title>
+  <meta name="description" content="Thank you for contacting Zion Advisor. We will respond within 1 business day." />
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;text-align:center}
+    .thank-box{max-width:600px;margin:60px auto;padding:30px;border-radius:12px;background:#f6f9fc;border:1px solid #e6edf4}
+    .thank-box h1{font-size:32px;margin-bottom:16px;color:#0b0f14}
+    .thank-box p{color:#44505e;font-size:16px;margin-bottom:24px}
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="nav-dark">
+  <div class="header-inner">
+    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
+    <div class="nav-wrap">
+      <nav>
+        <ul class="nav-links" id="siteNav">
+          <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+          <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
+          <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
+          <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
+          <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
+        </ul>
+      </nav>
+      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
+<!-- Content -->
 <div class="container section">
-  <h1>Thank you — your downloads are ready</h1>
-
-  <div class="grid3" style="margin-top:12px">
-    <div class="card">
-      <h3>M&amp;A Databook (Pro) — Excel</h3>
-      <a class="btn primary" href="/assets/downloads/ZionAdvisor_Databook_Pro.xlsx" download>Download</a>
-    </div>
-    <div class="card">
-      <h3>Due Diligence Checklist — PDF</h3>
-      <a class="btn primary" href="/assets/downloads/Template_DueDiligence_Checklist.pdf" download>Download</a>
-    </div>
-    <div class="card">
-      <h3>Insight Brief 2025 — PDF</h3>
-      <a class="btn primary" href="/assets/downloads/ZionAdvisor_InsightBrief_2025.pdf" download>Download</a>
+  <div class="thank-box">
+    <h1>Thank You!</h1>
+    <p>We’ve received your message. Our team typically replies within 1 business day.</p>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+      <a class="btn" href="/">← Back to Home</a>
+      <a class="btn secondary" href="/services.html">See Our Services</a>
     </div>
   </div>
-
-  <p class="small" style="margin-top:12px">If a download doesn’t start, click the buttons above or right-click → “Save link as…”.</p>
-  <p style="margin-top:8px"><a class="btn secondary" href="/">← Back to home</a></p>
 </div>
 
+<!-- Footer -->
 <footer>
   <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
     <span class="small">© Zion Advisor</span>
@@ -47,13 +61,14 @@
   </div>
 </footer>
 
-<!-- Optional: auto-start the main Excel download -->
+<!-- JS -->
 <script>
-  setTimeout(() => {
-    const a = document.createElement('a');
-    a.href = '/assets/downloads/ZionAdvisor_Databook_Pro.xlsx';
-    a.download = 'ZionAdvisor_Databook_Pro.xlsx';
-    document.body.appendChild(a); a.click(); a.remove();
-  }, 800);
+  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
+  btn?.addEventListener('click',()=>nav.classList.toggle('show'));
+  const path=location.pathname.replace(/\/index\.html$/,'/');
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
+  });
 </script>
-</body></html>
+</body>
+</html>
