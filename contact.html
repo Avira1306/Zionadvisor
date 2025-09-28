@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Zion Advisor</title>
-  <meta name="description" content="Contact Zion Advisor — reach out for consulting in M&A, AI automation, or skill development." />
+  <meta name="description" content="Contact Zion Advisor for consulting, M&A databooks, AI automations, and skill development advisory.">
 
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -13,13 +13,14 @@
   <!-- Site CSS -->
   <link rel="stylesheet" href="/styles.css" />
   <style>
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    .contact-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;margin-top:20px}
-    .contact-card{padding:20px}
-    .contact-form{display:grid;gap:12px}
-    .input,textarea{width:100%;padding:10px 12px;border:1px solid #d9e5f4;border-radius:8px;font-size:15px}
-    textarea{min-height:120px}
-    @media(max-width:960px){.contact-wrap{grid-template-columns:1fr}}
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .contact-section { max-width: 700px; margin: 80px auto; padding: 20px; }
+    h1 { font-size: 32px; margin-bottom: 10px; }
+    p { color: #555; margin-bottom: 30px; }
+    .input, textarea { width: 100%; padding: 12px; margin-bottom: 16px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; }
+    textarea { min-height: 140px; }
+    .btn { background: #0d6efd; color: #fff; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+    .btn:hover { background: #0b5ed7; }
   </style>
 </head>
 <body>
@@ -27,7 +28,7 @@
 <!-- Header -->
 <header class="nav-dark">
   <div class="header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
+    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor" style="height:28px;vertical-align:middle;"> <span>Zion Advisor</span></a>
     <div class="nav-wrap">
       <nav>
         <ul class="nav-links" id="siteNav">
@@ -38,62 +39,28 @@
           <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
         </ul>
       </nav>
-      <a class="icon-btn" href="/insights.html" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
       <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
       <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<!-- Banner -->
-<img src="/assets/banner-contact.jpg" class="banner" alt="Contact banner">
+<!-- Contact Form -->
+<section class="contact-section">
+  <h1>Contact Us</h1>
+  <p>We’d love to hear from you. Fill out the form below and our team will get back to you within 1 business day.</p>
 
-<div class="container section">
-  <h1>Contact</h1>
-  <p class="small" style="max-width:760px">
-    Interested in working with Zion Advisor? Drop us a message and we’ll get back within 1 business day.
-  </p>
+  <form id="contactForm" class="contact-form">
+    <input type="text" name="name" class="input" placeholder="Your name" required>
+    <input type="email" name="email" class="input" placeholder="Your email" required>
+    <textarea name="message" class="input" placeholder="Your message..." required></textarea>
 
-  <div class="contact-wrap">
-    <!-- Left: Contact Form -->
-    <div class="card contact-card">
-      <h2>Send us a message</h2>
-      <form name="contact-form"
-            method="POST"
-            action="https://script.google.com/macros/s/AKfycbylq21b_339gynhLUeGVe8eMDW36otKYxMHwYE01rbTr3F_IhszNdKniQO1TMaxPD1V/exec"
-            class="contact-form">
+    <!-- honeypot -->
+    <input type="text" name="hp" style="position:absolute;left:-9999px;opacity:0" tabindex="-1" autocomplete="off">
 
-        <input type="text" name="name" class="input" placeholder="Your name" required>
-        <input type="email" name="email" class="input" placeholder="Your email" required>
-        <textarea name="message" placeholder="Your message..." required></textarea>
-
-        <!-- Honeypot spam trap -->
-        <input type="text" name="hp" style="position:absolute;left:-9999px;opacity:0" tabindex="-1" autocomplete="off">
-
-        <button type="submit" class="btn">Send message</button>
-      </form>
-    </div>
-
-    <!-- Right: Other Info -->
-    <div class="card contact-card">
-      <h2>Other ways to connect</h2>
-      <p>
-        <i class="fa-solid fa-location-dot"></i> Gurgaon, India<br>
-        <i class="fa-solid fa-envelope"></i> <a href="mailto:contact@zionadvisor.com">contact@zionadvisor.com</a>
-      </p>
-      <div class="social" style="margin-top:14px">
-        <a href="https://www.linkedin.com/in/abhishek-bhandari-6b048979/"
-           target="_blank" rel="noopener"
-           class="btn secondary">
-          <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
-        </a>
-      </div>
-      <p class="small" style="margin-top:16px;color:#5b6572">
-        We typically respond within 24 hours. For urgent project discussions, please use LinkedIn messaging.
-      </p>
-    </div>
-  </div>
-</div>
+    <button type="submit" class="btn">Send message</button>
+  </form>
+</section>
 
 <!-- Footer -->
 <footer>
@@ -103,14 +70,28 @@
   </div>
 </footer>
 
-<!-- JS -->
+<!-- JavaScript -->
 <script>
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbylq21b_339gnhLUeGVe8eMDW36otKYxMHwYE01rbTr3F_IhszNdKniQO1TMaxPD1V/exec",
+        { method: "POST", body: formData, mode: "no-cors" }
+      );
+      window.location.href = "/thank-you.html";
+    } catch (err) {
+      alert("Sorry, something went wrong. Please try again.");
+      console.error(err);
+    }
+  });
+
+  // Mobile nav toggle
   const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
   btn?.addEventListener('click',()=>nav.classList.toggle('show'));
-  const path=location.pathname.replace(/\/index\.html$/,'/');
-  document.querySelectorAll('.nav-links a').forEach(a=>{
-    if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
-  });
 </script>
+
 </body>
 </html>
