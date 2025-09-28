@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Use — Zion Advisor</title>
+  <meta name="description" content="Terms of Use for Zion Advisor: conditions for using our website and services." />
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .doc {max-width: 860px; margin: 40px auto; padding: 0 20px 50px}
+    .doc h1{font-size:32px;margin:6px 0 10px}
+    .doc h2{font-size:20px;margin:22px 0 8px}
+    .doc p{color:#2c3642;line-height:1.6;margin:8px 0}
+    .doc ul{line-height:1.6;margin:6px 0 12px 20px}
+    .badge{display:inline-block;background:#343a40;color:#fff;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:800}
+    .muted{color:#5b6572}
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="nav-dark">
+  <div class="header-inner">
+    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor" style="height:28px"><span>Zion Advisor</span></a>
+    <div class="nav-wrap">
+      <nav>
+        <ul class="nav-links" id="siteNav">
+          <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+          <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
+          <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
+          <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
+          <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
+        </ul>
+      </nav>
+      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Document -->
+<div class="doc">
+  <span class="badge">Terms of Use</span>
+  <h1>Agreement for using our website</h1>
+  <p class="muted">Effective date: 28 Sep 2025 • Last updated: 28 Sep 2025</p>
+
+  <h2>1) Acceptance of terms</h2>
+  <p>
+    By accessing and using <strong>zionadvisor.com</strong> (the “Website”), you agree to comply with these Terms of Use. 
+    If you do not agree, please do not use the Website.
+  </p>
+
+  <h2>2) Services</h2>
+  <p>
+    Zion Advisor provides consulting insights, resources, and downloadable templates. 
+    Content is for informational purposes only and does not constitute professional advice unless a formal engagement is agreed upon.
+  </p>
+
+  <h2>3) Intellectual property</h2>
+  <p>
+    All content, logos, branding, templates, and materials available on this Website are the property of Zion Advisor 
+    unless otherwise stated. You may not copy, reproduce, or distribute materials without written consent.
+  </p>
+
+  <h2>4) User obligations</h2>
+  <ul>
+    <li>Do not misuse the Website, upload malicious code, or attempt unauthorized access.</li>
+    <li>You may download free templates for personal or business use but may not resell or redistribute them.</li>
+    <li>You agree to provide accurate details when submitting forms on the Website.</li>
+  </ul>
+
+  <h2>5) Disclaimers</h2>
+  <p>
+    While we strive to keep information accurate and up to date, Zion Advisor provides the Website “as is” 
+    without warranties of any kind. We do not guarantee uninterrupted or error-free availability.
+  </p>
+
+  <h2>6) Limitation of liability</h2>
+  <p>
+    Zion Advisor is not liable for any damages arising from the use or inability to use this Website or its content, 
+    to the fullest extent permitted by law.
+  </p>
+
+  <h2>7) External links</h2>
+  <p>
+    The Website may contain links to third-party sites. We are not responsible for the content or practices of external websites.
+  </p>
+
+  <h2>8) Privacy</h2>
+  <p>
+    Use of this Website is also governed by our <a href="/privacy.html">Privacy Policy</a>.
+  </p>
+
+  <h2>9) Governing law</h2>
+  <p>
+    These Terms are governed by and construed in accordance with the laws of India. 
+    Any disputes shall be subject to the exclusive jurisdiction of the courts in New Delhi, India.
+  </p>
+
+  <h2>10) Updates to terms</h2>
+  <p>
+    We may revise these Terms occasionally. Updated versions will be posted with a new “Last updated” date.
+  </p>
+
+  <h2>11) Contact</h2>
+  <p>
+    For questions regarding these Terms, contact us at 
+    <a href="mailto:contact@zionadvisor.com">contact@zionadvisor.com</a>.
+  </p>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+    <span class="small">© Zion Advisor</span>
+    <a class="small" href="/privacy.html">Privacy</a> •
+    <a class="small" href="/terms.html" aria-current="page">Terms</a>
+  </div>
+</footer>
+
+<!-- JS -->
+<script>
+  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
+  btn?.addEventListener('click',()=>nav.classList.toggle('show'));
+  const path=location.pathname.replace(/\/index\.html$/,'/');
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
+  });
+</script>
+</body>
+</html>
