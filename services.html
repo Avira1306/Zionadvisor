@@ -1,64 +1,188 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Services — Zion Advisor</title>
-<meta name="description" content="Zion Advisor — M&A, AI automations, and skill development advisory.">
-<meta property="og:title" content="Services — Zion Advisor"><meta property="og:image" content="/assets/og-image.png">
-<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head><body>
-<header>
-  <div class="container header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor logo"><span>Zion Advisor</span></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services — Zion Advisor</title>
+  <meta name="description" content="Zion Advisor services: M&A & Transaction Advisory, AI & Automation, and Skill Development Advisory." />
 
-    <div class="nav-wrap">
-      <nav>
-        <ul class="nav-links" id="siteNav">
-          <li><a href="/services.html">Services</a></li>
-          <li><a href="/insights.html">Insights</a></li>
-          <li><a href="/case-studies.html">Case Studies</a></li>
-          <li><a href="/templates.html">Templates</a></li>
-          <li><a href="/about.html">About</a></li>
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="/styles.css" />
+  <style> body{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;} </style>
+</head>
+<body>
+
+  <!-- EY-style dark header -->
+  <header class="nav-dark">
+    <div class="header-inner">
+      <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor logo"><span>Zion Advisor</span></a>
+
+      <div class="nav-wrap">
+        <nav>
+          <ul class="nav-links" id="siteNav">
+            <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+            <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
+            <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
+            <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
+            <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
+          </ul>
+        </nav>
+
+        <a class="icon-btn" href="/insights.html" title="Search insights"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a class="icon-btn" href="#" title="Language"><i class="fa-solid fa-globe"></i></a>
+        <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+
+        <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <img src="/assets/banner-services.jpg" class="banner" alt="Consulting services banner">
+
+  <!-- Page content -->
+  <div class="container section">
+    <h1>Services</h1>
+    <p class="small" style="max-width:760px">
+      We combine transaction discipline, AI automation, and workforce strategy to deliver measurable outcomes.
+      Below are our core offerings and the exact deliverables you receive.
+    </p>
+
+    <div class="grid3" style="margin-top:16px">
+
+      <!-- M&A & Transaction Advisory -->
+      <div class="card service-card">
+        <div class="service-head">
+          <i class="fa-solid fa-briefcase"></i>
+          <h3>M&A & Transaction Advisory</h3>
+        </div>
+
+        <div class="pill-row">
+          <span class="pill">Databooks</span>
+          <span class="pill">Light QoE</span>
+          <span class="pill">Model clean-ups</span>
+          <span class="pill">KPI dashboards</span>
+        </div>
+
+        <h4>What we do</h4>
+        <ul class="list-check">
+          <li>Build investor-ready databooks with monthly P&L, BS, CF, NWC & Net Debt schedules.</li>
+          <li>Reconcile bank statements, invoices & ledgers; perform tie-outs and flux analysis.</li>
+          <li>Clean and standardize management accounts; sensitivity & scenario analysis in models.</li>
+          <li>Light QoE for smaller deals: revenue recognition, cost allocations, customer concentration.</li>
         </ul>
-      </nav>
-      <a class="btn-cta" href="/contact.html">Contact</a>
-      <button class="burger" id="burgerBtn" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+
+        <h4>Outputs you receive</h4>
+        <ul class="list-dash">
+          <li>Excel databook (linked schedules & formulas)</li>
+          <li>Source-to-summary reconciliation pack</li>
+          <li>2–3 page executive note with red flags & opportunities</li>
+        </ul>
+
+        <div class="meta">
+          <span><i class="fa-regular fa-clock"></i> 5–10 business days</span>
+          <span><i class="fa-solid fa-shield"></i> NDA-first confidentiality</span>
+        </div>
+        <a class="btn secondary" href="/contact.html">Discuss a deal</a>
+      </div>
+
+      <!-- AI & Automation -->
+      <div class="card service-card">
+        <div class="service-head">
+          <i class="fa-solid fa-robot"></i>
+          <h3>AI & Automation</h3>
+        </div>
+
+        <div class="pill-row">
+          <span class="pill">Lead-gen</span>
+          <span class="pill">Parsing & reco</span>
+          <span class="pill">Agents</span>
+          <span class="pill">Dashboards</span>
+        </div>
+
+        <h4>What we do</h4>
+        <ul class="list-check">
+          <li>Automate outreach: capture → CRM → WhatsApp/Email → calendar booking.</li>
+          <li>AI parsing of PDFs/Excels (TB/BS/P&L) with reconciliation to ERP/ledgers.</li>
+          <li>Research copilots & document Q&A (RAG) for faster diligence prep.</li>
+          <li>Data pipelines to Looker/Power BI with anomaly alerts and scheduled reports.</li>
+        </ul>
+
+        <h4>Outputs you receive</h4>
+        <ul class="list-dash">
+          <li>n8n/Make workflows or lightweight Python services + runbook</li>
+          <li>Live dashboard with KPI alerts</li>
+        </ul>
+
+        <div class="meta">
+          <span><i class="fa-regular fa-clock"></i> 2–4 week pilot</span>
+          <span><i class="fa-solid fa-gauge"></i> 40–70% time saved</span>
+        </div>
+        <a class="btn secondary" href="/contact.html">Automate a workflow</a>
+      </div>
+
+      <!-- Skill Development Advisory -->
+      <div class="card service-card">
+        <div class="service-head">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <h3>Skill Development Advisory</h3>
+        </div>
+
+        <div class="pill-row">
+          <span class="pill">NSDC/SSC</span>
+          <span class="pill">District plans</span>
+          <span class="pill">Budgets</span>
+          <span class="pill">Monitoring</span>
+        </div>
+
+        <h4>What we do</h4>
+        <ul class="list-check">
+          <li>Draft NSDC/SSC proposals & per-trainee budgets; align with funding norms.</li>
+          <li>Job-role mapping & ToT plans for EV, Drones, Healthcare, Apparel.</li>
+          <li>Design labs/equipment lists; optimize utilisation & cost structures.</li>
+          <li>Outcome-based monitoring: MIS, dashboards, and audit-ready documentation.</li>
+        </ul>
+
+        <h4>Outputs you receive</h4>
+        <ul class="list-dash">
+          <li>Proposal deck & budget model</li>
+          <li>Implementation roadmap with milestones</li>
+          <li>Monitoring templates & reporting cadence</li>
+        </ul>
+
+        <div class="meta">
+          <span><i class="fa-regular fa-clock"></i> 3–6 weeks</span>
+          <span><i class="fa-solid fa-handshake"></i> Govt & industry aligned</span>
+        </div>
+        <a class="btn secondary" href="/contact.html">Start a proposal</a>
+      </div>
+
     </div>
   </div>
-</header>
 
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="small">© Zion Advisor</span>
+      <a class="small" href="/privacy.html">Privacy</a>
+    </div>
+  </footer>
 
-<img src="/assets/banner-services.jpg" class="banner" alt="">
-<div class="container section">
-  <h1>Services</h1>
-  <div class="grid3" style="margin-top:12px">
-    <div class="card"><h3>M&A & Transaction Advisory</h3><ul class="clean">
-      <li>Deal databooks & model clean-ups</li><li>KPI builds, cohort & retention analysis</li><li>Light QoE support for small deals</li>
-    </ul></div>
-    <div class="card"><h3>AI & Automation</h3><ul class="clean">
-      <li>Lead-gen & outreach automations</li><li>Document parsing & reconciliation</li><li>Research copilots & dashboards</li>
-    </ul></div>
-    <div class="card"><h3>Skill Development Advisory</h3><ul class="clean">
-      <li>NSDC/SSC proposals & budgeting</li><li>Job-role mapping & ToT plans</li><li>Monitoring, reporting & audits</li>
-    </ul></div>
-  </div>
-</div>
-
-<footer>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-    <span class="small">© Zion Advisor</span>
-    <a class="small" href="/privacy.html">Privacy</a>
-  </div>
-</footer>
-<script>
-  const btn = document.getElementById('burgerBtn');
-  const nav = document.getElementById('siteNav');
-  btn?.addEventListener('click', () => nav.classList.toggle('show'));
-  // Highlight active page
-  const path = location.pathname.replace(/\/index\.html$/,'/'); 
-  document.querySelectorAll('.nav-links a').forEach(a=>{
-    if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
-  });
-</script>
-</body></html>
+  <!-- Small JS: mobile menu + active nav -->
+  <script>
+    const btn = document.getElementById('burgerBtn');
+    const nav = document.getElementById('siteNav');
+    btn?.addEventListener('click', () => nav.classList.toggle('show'));
+    const path = location.pathname.replace(/\/index\.html$/,'/');
+    document.querySelectorAll('.nav-links a').forEach(a=>{
+      if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
+    });
+  </script>
+</body>
+</html>

@@ -73,4 +73,49 @@ header {
   .nav-links.show { display:flex; }
   .burger { display:block; }
 }
+/* --- Service detail styling --- */
+.service-card h4{ margin:12px 0 8px; font-size:16px; color:#0b0f14; }
+.pill-row{ display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 10px; }
+.pill{ background:#f2f6fa; border:1px solid #e6edf4; border-radius:999px; padding:6px 10px; font-size:12.5px; color:#44505e; }
+
+.list-check{ list-style:none; padding-left:0; display:grid; gap:8px; }
+.list-check li::before{ content:"\f00c"; font-family:"Font Awesome 6 Free"; font-weight:900; color:#18a06a; margin-right:8px; }
+.list-check li{ display:flex; align-items:flex-start; gap:6px; color:#2a3440; }
+
+.list-dash{ list-style:none; padding-left:0; display:grid; gap:6px; }
+.list-dash li::before{ content:"—"; color:#97a6b5; margin-right:8px; }
+.list-dash li{ color:#44505e; }
+
+.service-head{ display:flex; align-items:center; gap:10px; margin-bottom:4px; }
+.service-head i{ font-size:18px; color:#0b66c2; }
+.meta{ display:flex; gap:14px; flex-wrap:wrap; margin:10px 0 12px; font-size:12.5px; color:#5b6572; }
+.meta i{ margin-right:6px; color:#98a6b5; }
+
+/* EY-style nav (if not already in styles.css) */
+:root{
+  --nav-dark:#0b0f14; --nav-dark-2:#131a21; --nav-text:#eaeff5; --nav-dim:#9fb0c2; --nav-accent:#ffd24d;
+}
+header.nav-dark{position:sticky;top:0;z-index:60;background:var(--nav-dark);border-bottom:1px solid rgba(255,255,255,.06)}
+.header-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:.2px}
+.logo img{width:28px;height:28px;object-fit:contain;filter:brightness(1.2)}
+.nav-wrap{display:flex;align-items:center;gap:18px}
+.nav-links{list-style:none;display:flex;gap:22px;margin:0;padding:0}
+.nav-links a{color:var(--nav-text);text-decoration:none;font-weight:600;font-size:15.5px;padding:10px 0;position:relative;opacity:.92}
+.nav-links a:hover{opacity:1}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:5px;height:2px;background:transparent;transition:.2s}
+.nav-links a:hover::after{background:var(--nav-accent)}
+.nav-links a[aria-current="page"]::after{background:var(--nav-accent)}
+.nav-links a[aria-current="page"]{color:#fff}
+.icon-btn{color:var(--nav-text);opacity:.85;text-decoration:none;font-weight:700;font-size:15px;margin-left:12px}
+.icon-btn:hover{opacity:1}
+.btn-cta{background:var(--nav-accent);color:#1a1a1a;padding:8px 12px;border-radius:8px;font-weight:800;text-decoration:none}
+.burger{display:none;width:36px;height:36px;border:1px solid rgba(255,255,255,.12);border-radius:8px;background:transparent}
+.burger span{display:block;height:2px;background:var(--nav-text);margin:7px 8px}
+@media (max-width:960px){
+  .nav-links{display:none;position:absolute;left:0;right:0;top:56px;background:var(--nav-dark-2);border-bottom:1px solid rgba(255,255,255,.08);flex-direction:column;gap:2px;padding:8px 16px}
+  .nav-links.show{display:flex}
+  .nav-links li a{display:block;padding:12px 4px}
+  .burger{display:block}
+}
 
