@@ -1,120 +1,79 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zion Advisor — M&A, AI & Skill Development</title>
-<meta name="description" content="Zion Advisor helps founders, funds, and institutions with M&A databooks, AI automations, and skill development advisory.">
-<meta property="og:title" content="Zion Advisor — M&A, AI & Skill Development">
-<meta property="og:image" content="/assets/og-image.png">
-<link rel="icon" href="/assets/favicon.png">
-<link rel="stylesheet" href="/styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head><body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zion Advisor — Deal-Ready. Data-First. AI-Powered.</title>
+  <meta name="description" content="Zion Advisor helps founders, PE/VC funds, and institutions build M&A databooks, run due diligence, and deploy AI automations." />
 
-<!-- Header (unchanged) -->
-<header>
-  <div class="container header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor logo"><span>Zion Advisor</span></a>
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
 
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="/styles.css" />
+  <style>body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="nav-dark">
+  <div class="header-inner">
+    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
     <div class="nav-wrap">
       <nav>
         <ul class="nav-links" id="siteNav">
-          <li><a href="/services.html">Services</a></li>
-          <li><a href="/insights.html">Insights</a></li>
-          <li><a href="/case-studies.html">Case Studies</a></li>
-          <li><a href="/templates.html">Templates</a></li>
-          <li><a href="/about.html">About</a></li>
+          <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+          <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
+          <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
+          <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
+          <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
         </ul>
       </nav>
-      <a class="btn-cta" href="/contact.html">Contact</a>
-      <button class="burger" id="burgerBtn" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <a class="icon-btn" href="/insights.html" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-
-<!-- Clean, short hero -->
-<img src="/assets/banner-hero.jpg" class="banner" alt="">
-<section class="section">
-  <div class="container">
-    <h1 style="margin-bottom:8px;">Deal-Ready. AI-Powered. Skill-Focused.</h1>
-    <p class="small" style="max-width:760px">
-      We help founders, funds, and institutions build M&A databooks, accelerate diligence,
-      deploy AI automations, and design workforce programs with measurable outcomes.
+<!-- Hero Section -->
+<section class="hero" style="position:relative; background:url('/assets/banner-home.jpg') center/cover no-repeat; color:#fff; text-align:center; padding:120px 20px;">
+  <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.55)"></div>
+  <div style="position:relative;z-index:2;max-width:800px;margin:0 auto;">
+    <p style="color:#ffd24d; font-weight:700; letter-spacing:1px; text-transform:uppercase;">Shape the Future with Confidence</p>
+    <h1 style="font-size:40px; line-height:1.2; margin:16px 0;">Deal-Ready. Data-First. <br> AI-Powered.</h1>
+    <p style="font-size:18px; opacity:.9; margin-bottom:24px;">
+      We help founders, PE/VC funds, and institutions build M&A databooks, run financial due diligence, and deploy AI automations that save weeks of manual work.
     </p>
-    <div class="hero-cta">
-      <a class="btn primary" href="/contact.html">Book a consult</a>
-      <a class="btn secondary" href="/services.html">Explore services</a>
+    <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+      <a class="btn primary" href="/contact.html">Book a Free Consult</a>
+      <a class="btn secondary" href="/services.html">See Services</a>
     </div>
   </div>
 </section>
 
-<!-- Three value props -->
-<section class="section gray">
-  <div class="container grid3">
-    <div class="card">
-      <h3>M&A & Transaction Advisory</h3>
-      <p class="small">Databooks, KPI packs, light QoE, cash/AR tie-outs.</p>
-      <a class="btn secondary" href="/services.html">Learn more</a>
-    </div>
-    <div class="card">
-      <h3>AI & Automation</h3>
-      <p class="small">Document parsing, reconciliations, dashboards, research copilots.</p>
-      <a class="btn secondary" href="/services.html">Learn more</a>
-    </div>
-    <div class="card">
-      <h3>Skill Development Advisory</h3>
-      <p class="small">NSDC/SSC proposals, job-role mapping, budgets & monitoring.</p>
-      <a class="btn secondary" href="/services.html">Learn more</a>
-    </div>
-  </div>
-</section>
+<!-- Intro tagline -->
+<div class="container section" style="text-align:center;">
+  <h2>Deal-Ready. AI-Powered. Skill-Focused.</h2>
+</div>
 
-<!-- Small peek sections (no big screenshots) -->
-<section class="section">
-  <div class="container">
-    <div class="grid3">
-      <div class="card">
-        <h3>Latest Insights</h3>
-        <ul class="clean">
-          <li><a href="/insight1.html">5 Mistakes Startups Make in M&A Diligence</a></li>
-          <li><a href="/insight2.html">How AI Can Cut Financial Analysis Time by 70%</a></li>
-          <li><a href="/insight3.html">India’s Skill Gap: Opportunities in 2025</a></li>
-        </ul>
-        <a class="small" href="/insights.html">View all insights →</a>
-      </div>
-      <div class="card">
-        <h3>Case Studies</h3>
-        <ul class="clean">
-          <li><a href="/case1.html">D2C Brand — Transaction Databook</a></li>
-          <li><a href="/case2.html">AI Outreach Automation — 3× demos</a></li>
-          <li><a href="/case3.html">NSDC Proposal — Approved</a></li>
-        </ul>
-        <a class="small" href="/case-studies.html">View all case studies →</a>
-      </div>
-      <div class="card">
-        <h3>Templates & Brief</h3>
-        <p class="small">Unlock our Databook (Excel), Diligence Checklist, and 2025 Insight Brief.</p>
-        <a class="btn secondary" href="/templates.html">Access downloads</a>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- Footer -->
 <footer>
   <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
     <span class="small">© Zion Advisor</span>
     <a class="small" href="/privacy.html">Privacy</a>
   </div>
 </footer>
+
+<!-- JS -->
 <script>
-  const btn = document.getElementById('burgerBtn');
-  const nav = document.getElementById('siteNav');
-  btn?.addEventListener('click', () => nav.classList.toggle('show'));
-  // Highlight active page
-  const path = location.pathname.replace(/\/index\.html$/,'/'); 
+  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
+  btn?.addEventListener('click',()=>nav.classList.toggle('show'));
+  const path=location.pathname.replace(/\/index\.html$/,'/');
   document.querySelectorAll('.nav-links a').forEach(a=>{
     if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
   });
 </script>
-</body></html>
+</body>
+</html>
