@@ -8,16 +8,25 @@
 <header>
   <div class="container header-inner">
     <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor logo"><span>Zion Advisor</span></a>
-    <nav class="nav">
-      <a href="/services.html">Services</a>
-      <a href="/insights.html">Insights</a>
-      <a href="/case-studies.html">Case Studies</a>
-      <a href="/templates.html">Templates</a>
-      <a href="/about.html">About</a>
-      <a class="btn secondary" href="/contact.html">Contact</a>
-    </nav>
+
+    <div class="nav-wrap">
+      <nav>
+        <ul class="nav-links" id="siteNav">
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/insights.html">Insights</a></li>
+          <li><a href="/case-studies.html">Case Studies</a></li>
+          <li><a href="/templates.html">Templates</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </nav>
+      <a class="btn-cta" href="/contact.html">Contact</a>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
+
 
 <img src="/assets/banner-insights.jpg" class="banner" alt="">
 <div class="container section">
@@ -44,4 +53,14 @@
     <a class="small" href="/privacy.html">Privacy</a>
   </div>
 </footer>
+<script>
+  const btn = document.getElementById('burgerBtn');
+  const nav = document.getElementById('siteNav');
+  btn?.addEventListener('click', () => nav.classList.toggle('show'));
+  // Highlight active page
+  const path = location.pathname.replace(/\/index\.html$/,'/'); 
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
+  });
+</script>
 </body></html>
