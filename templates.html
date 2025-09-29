@@ -1,69 +1,108 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Templates — Zion Advisor</title>
-<meta name="description" content="Zion Advisor — M&A, AI automations, and skill development advisory.">
-<meta property="og:title" content="Templates — Zion Advisor"><meta property="og:image" content="/assets/og-image.png">
-<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head><body>
-<header>
-  <div class="container header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor logo"><span>Zion Advisor</span></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Templates — Zion Advisor</title>
+  <meta name="description" content="Download professional templates from Zion Advisor — Databooks, Financial Models, and Skill Development frameworks." />
 
-    <div class="nav-wrap">
-      <nav>
-        <ul class="nav-links" id="siteNav">
-          <li><a href="/services.html">Services</a></li>
-          <li><a href="/insights.html">Insights</a></li>
-          <li><a href="/case-studies.html">Case Studies</a></li>
-          <li><a href="/templates.html">Templates</a></li>
-          <li><a href="/about.html">About</a></li>
-        </ul>
-      </nav>
-      <a class="btn-cta" href="/contact.html">Contact</a>
-      <button class="burger" id="burgerBtn" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
 
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .template-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:20px}
+    .template-card{background:#fff;border:1px solid #e6edf4;border-radius:12px;padding:20px;box-shadow:0 2px 5px rgba(0,0,0,.04)}
+    .template-card h2{margin:0 0 10px;font-size:20px;color:#0a2239}
+    .template-card p{margin:0 0 10px;color:#4a5568;font-size:14px;line-height:1.5}
+    .btn-download{display:inline-flex;align-items:center;gap:8px;background:#0b66c2;color:#fff;
+      padding:8px 14px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:600;transition:.2s}
+    .btn-download:hover{background:#094d94}
+    .banner{display:block;width:100%;max-height:320px;object-fit:cover}
+  </style>
+</head>
+<body>
 
-<img src="/assets/banner-templates.jpg" class="banner" alt="">
+<!-- Header placeholder -->
+<div id="header-placeholder"></div>
+
+<!-- Banner -->
+<img src="/assets/banner-templates.png" class="banner" alt="Templates banner">
+
 <div class="container section">
   <h1>Templates</h1>
-  <p class="small">Professional, consulting-grade tools. One signup unlocks all downloads.</p>
-  <div class="grid3" style="margin-top:16px">
-    <div class="card"><h3>M&A Databook (Pro)</h3><p class="small">Branded Excel with formulas, KPIs & dashboard.</p><a class="btn secondary" href="#signup">Access</a></div>
-    <div class="card"><h3>Due Diligence Checklist</h3><p class="small">Financial, Legal, Commercial, Operational, Tech & ESG.</p><a class="btn secondary" href="#signup">Access</a></div>
-    <div class="card"><h3>Insight Brief 2025</h3><p class="small">India’s skill gap & opportunities.</p><a class="btn secondary" href="#signup">Access</a></div>
-  </div>
-  <div id="signup" class="card" style="margin-top:22px">
-    <h3>Unlock Downloads</h3>
-    <form name="lead-capture" method="POST" data-netlify="true" action="/thank-you.html">
-      <input type="hidden" name="form-name" value="lead-capture">
-      <input type="text" name="name" placeholder="Your name" required style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;margin-bottom:10px">
-      <input type="email" name="email" placeholder="Your email" required style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;margin-bottom:10px">
-      <button type="submit" class="btn primary">Access Downloads</button>
-    </form>
-    <p class="small" style="margin-top:8px">We’ll email you only with occasional insights.</p>
+  <p class="small" style="max-width:800px">
+    Zion Advisor provides professional-grade templates to help founders, analysts, and institutions save time.
+    Download free resources and start working smarter.
+  </p>
+
+  <div class="template-grid">
+    <!-- Template 1 -->
+    <div class="template-card">
+      <h2>M&A Databook Template</h2>
+      <p>Investor-ready databook skeleton with PL, BS, cash flow, and schedules pre-structured for quick customization.</p>
+      <a href="/templates/databook-template.xlsx" class="btn-download" download>
+        <i class="fa-solid fa-file-excel"></i> Download Excel
+      </a>
+    </div>
+
+    <!-- Template 2 -->
+    <div class="template-card">
+      <h2>Financial Model Starter</h2>
+      <p>Pre-built 3-statement model with drivers, scenarios, and sensitivity tabs. Ideal for founders and analysts.</p>
+      <a href="/templates/financial-model.xlsx" class="btn-download" download>
+        <i class="fa-solid fa-file-excel"></i> Download Excel
+      </a>
+    </div>
+
+    <!-- Template 3 -->
+    <div class="template-card">
+      <h2>Skill Development Proposal</h2>
+      <p>Editable NSDC/SSC aligned proposal format with budgeting tables, job-role mapping, and monitoring framework.</p>
+      <a href="/templates/skilling-proposal.docx" class="btn-download" download>
+        <i class="fa-solid fa-file-word"></i> Download Word
+      </a>
+    </div>
   </div>
 </div>
 
-<footer>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-    <span class="small">© Zion Advisor</span>
-    <a class="small" href="/privacy.html">Privacy</a>
-  </div>
-</footer>
+<!-- Footer placeholder -->
+<div id="footer-placeholder"></div>
+
+<!-- JS to load partials -->
 <script>
-  const btn = document.getElementById('burgerBtn');
-  const nav = document.getElementById('siteNav');
-  btn?.addEventListener('click', () => nav.classList.toggle('show'));
-  // Highlight active page
-  const path = location.pathname.replace(/\/index\.html$/,'/'); 
-  document.querySelectorAll('.nav-links a').forEach(a=>{
-    if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
+  async function includeHTML(id, file) {
+    const el = document.getElementById(id);
+    if (el) {
+      const resp = await fetch(file);
+      el.innerHTML = await resp.text();
+    }
+  }
+
+  // Load header
+  includeHTML("header-placeholder", "/partials/header.html").then(()=>{
+    const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
+    btn?.addEventListener('click',()=>nav.classList.toggle('show'));
+    const path=location.pathname.replace(/\/index\.html$/,'/');
+    document.querySelectorAll('.nav-links a').forEach(a=>{
+      if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
+    });
+  });
+
+  // Load footer
+  includeHTML("footer-placeholder", "/partials/footer.html").then(()=>{
+    const path=location.pathname.replace(/\/index\.html$/,'/');
+    document.querySelectorAll('.footer-links a').forEach(a=>{
+      if(a.getAttribute('href')===path){
+        a.setAttribute('aria-current','page');
+        a.style.fontWeight = '600';
+        a.style.textDecoration = 'underline';
+      }
+    });
   });
 </script>
-</body></html>
+</body>
+</html>
