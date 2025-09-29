@@ -72,26 +72,22 @@
 
 <!-- JavaScript -->
 <script>
-  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  const GAS_URL = "https://script.google.com/macros/s/AKfycbw8z9WNjJf_aYOVKgnyr55XNlx6FJk_8qd4ISN7k4N7TBoOg-nnLR2sNRhrQ5IV4RsA/exec";
+  document.getElementById('contactForm').addEventListener('submit', async function (e) {
     e.preventDefault();
-    const formData = new FormData(this);
 
-    try {
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbylq21b_339gnhLUeGVe8eMDW36otKYxMHwYE01rbTr3F_IhszNdKniQO1TMaxPD1V/exec",
-        { method: "POST", body: formData, mode: "no-cors" }
-      );
-      window.location.href = "/thank-you.html";
-    } catch (err) {
-      alert("Sorry, something went wrong. Please try again.");
-      console.error(err);
-    }
+    const data = new URLSearchParams();
+    data.set('name',    this.elements['name'].value.trim());
+    data.set('email',   this.elements['email'].value.trim());
+    data.set('message', this.elements['message'].value.trim());
+    data.set('hp', '');                               // keep honeypot empty
+    data.set('page', window.location.pathname);       // optional
+
+    await fetch(GAS_URL, { method: 'POST', body: data, mode: 'no-cors' });
+    window.location.href = "/thank-you.html";
   });
-
-  // Mobile nav toggle
-  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
-  btn?.addEventListener('click',()=>nav.classList.toggle('show'));
 </script>
+
 
 </body>
 </html>
