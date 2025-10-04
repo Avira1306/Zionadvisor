@@ -239,3 +239,68 @@ header.nav-dark{
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* ===============================
+   Home Hero (scoped safely)
+   =============================== */
+.home-hero {
+  position: relative;
+  padding: 120px 20px 90px;
+  color: #0b0f14;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(245,248,250,0.92) 100%),
+    url('/assets/banner-consulting-bg.jpg') center/cover no-repeat;
+}
+
+.home-hero .eyebrow {
+  display: inline-block;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: .05em;
+  color: #0b66c2;
+  margin-bottom: 10px;
+}
+
+.home-hero h1 {
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.1;
+  margin: 0 0 14px;
+  color: #0b0f14;
+}
+
+.home-hero .hero__sub {
+  margin: 0 auto 28px;
+  max-width: 720px;
+  font-size: 17px;
+  color: #3a4654;
+}
+
+.home-hero .hero__cta {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.home-hero .btn {
+  background: #0b66c2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background .2s ease;
+}
+.home-hero .btn:hover { background: #094d8f; }
+
+.home-hero .btn.secondary {
+  background: transparent;
+  border: 2px solid #0b66c2;
+  color: #0b66c2;
+}
+.home-hero .btn.secondary:hover {
+  background: #0b66c2;
+  color: #fff;
+}
