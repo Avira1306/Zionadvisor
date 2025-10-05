@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Databook & Due Diligence — Zion Advisor</title>
+  <meta name="description" content="Databook & Due Diligence — Zion Advisor" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    /* Scoped detail page */
+    .svc-banner { background: url('/assets/banner-insights.jpg') center/cover no-repeat; height:200px; display:flex; align-items:center; border-bottom:1px solid #e6edf4; }
+    .svc-banner .inner { max-width:1100px; margin:0 auto; padding:20px; color:#fff; text-shadow:0 6px 18px rgba(0,0,0,0.3); }
+    .svc-container { max-width:1100px; margin:32px auto; padding:0 20px 60px; }
+    .svc-card { background:#fff; border:1px solid #e6edf4; border-radius:12px; padding:20px; box-shadow:0 8px 20px rgba(17,24,39,0.06); }
+    .svc-head { display:flex; gap:18px; align-items:flex-start; }
+    .svc-left { flex:1 1 60%; }
+    .svc-right { width:320px; }
+    .svc-list { list-style:none; padding-left:0; display:grid; gap:8px; }
+    .svc-list li::before{ content:"\2022"; color:#0b66c2; margin-right:8px; display:inline-block; width:12px; }
+    .btn-primary { background:#0b66c2; color:#fff; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:700; display:inline-block; }
+    @media(max-width:900px){ .svc-head{flex-direction:column} .svc-right{width:auto} }
+  </style>
+</head>
+<body>
+  <header class="nav-dark">
+    <div class="header-inner">
+      <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
+      <div class="nav-wrap">
+        <nav><ul class="nav-links" id="siteNav"><li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li><li><a href="/services.html" aria-current="page"><i class="fa-solid fa-briefcase"></i> Services</a></li></ul></nav>
+        <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+        <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="svc-banner" role="img" aria-label="Databook banner">
+    <div class="inner">
+      <h1>Databook & Due Diligence</h1>
+    </div>
+  </section>
+
+  <main class="svc-container">
+    <div class="svc-card">
+      <div class="svc-head">
+        <div class="svc-left">
+          <h2>Overview</h2>
+          <p>We build reconciled, investor-grade databooks and perform focused due diligence for founder-led and PE-backed transactions. Our deliverables reconcile trial balances to P&amp;L, BS and CF schedules and include explanations for material variances.</p>
+
+          <h3 style="margin-top:18px">Key Deliverables</h3>
+          <ul class="svc-list">
+            <li>Reconciled P&amp;L, Balance Sheet & Cash Flow schedules</li>
+            <li>Normalized adjustments and one-time items</li>
+            <li>Quality of Earnings summary and variance analysis</li>
+            <li>Supporting schedules and disclosure notes</li>
+          </ul>
+
+          <p style="margin-top:18px">Pricing and timeline depend on company size and data quality. <a class="btn-primary" href="/contact.html">Book a consult</a></p>
+        </div>
+
+        <aside class="svc-right">
+          <h4>Why Zion Advisor</h4>
+          <p class="muted">We combine M&amp;A discipline with automation to deliver fast, audit-ready outputs with fewer errors and less manual rework.</p>
+
+          <h4 style="margin-top:14px">Turnaround</h4>
+          <p>Typical delivery: 7–21 days depending on scope.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="small">© Zion Advisor</span>
+      <a class="small" href="/privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <script>const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');btn?.addEventListener('click',()=>nav.classList.toggle('show'));</script>
+</body>
+</html>

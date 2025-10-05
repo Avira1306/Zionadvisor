@@ -1,179 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services — Zion Advisor</title>
-  <meta name="description" content="M&A & Transaction Advisory, AI & Automation, and Skill Development Advisory services by Zion Advisor." />
+  <meta name="description" content="Services — Databooks, AI automation, and skilling advisory from Zion Advisor." />
 
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <!-- Site CSS -->
-  <link rel="stylesheet" href="/styles.css" />
-  <style>body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}</style>
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    /* Scoped helper tokens */
+    :root { --svc-accent:#0b66c2; --svc-muted:#5b6572; --card-bg:#fff; --card-border:#e6edf4; --card-shadow: 0 8px 20px rgba(17,24,39,0.06); }
+
+    /* ===== Scoped Services styles (safe, append to styles.css if you prefer) ===== */
+    .services-section { padding: 0; margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #0b0f14; }
+
+    .services-banner {
+      width:100%;
+      height:240px;
+      background-image: url('/assets/banner-insights.jpg');
+      background-size: cover;
+      background-position: center;
+      display:flex; align-items:center; border-bottom: 1px solid var(--card-border);
+    }
+    .services-banner .banner-inner { max-width:1100px; margin:0 auto; padding:24px; }
+    .services-banner .eyebrow { display:inline-block; font-weight:700; color:var(--svc-accent); font-size:13px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; }
+    .services-banner h1 { color:#fff; text-shadow:0 6px 18px rgba(0,0,0,0.32); margin:6px 0 0; font-size: clamp(30px, 4.5vw, 44px); }
+
+    .services-container { max-width:1100px; margin:36px auto; padding: 0 20px 60px; }
+    .services-intro { max-width:880px; margin:0 auto 28px; text-align:center; color: #566270; font-size:15px; }
+
+    .services-grid {
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:22px;
+      align-items: start;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius:12px;
+      padding:20px;
+      box-shadow: var(--card-shadow);
+      display:flex;
+      flex-direction:column;
+      min-height: 260px;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 14px 32px rgba(17,24,39,0.08); }
+
+    .service-icon {
+      width:56px; height:56px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center;
+      background: linear-gradient(180deg, rgba(11,102,194,0.12), rgba(11,102,194,0.06));
+      color: var(--svc-accent); font-size:22px; margin-bottom:12px;
+    }
+    .service-card h3 { margin:6px 0 10px; font-size:18px; color:#0b0f14; }
+    .service-card p.lead { margin:0 0 14px; color:var(--svc-muted); font-size:14px; line-height:1.5; flex:1 1 auto; }
+    .service-card .meta { font-size:13px; color:var(--svc-muted); margin-bottom:10px; }
+
+    .service-card .cta {
+      margin-top:12px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .service-card .btn-lean {
+      text-decoration:none;
+      background: var(--svc-accent);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:8px;
+      font-weight:700;
+    }
+    .service-card .link-muted {
+      color:var(--svc-accent);
+      font-weight:700;
+      text-decoration:none;
+      background:transparent;
+      border:none;
+      padding:0;
+    }
+
+    @media (max-width:1000px) { .services-grid { grid-template-columns: repeat(2, 1fr); } .services-banner { height:210px; } }
+    @media (max-width:640px) { .services-grid { grid-template-columns: 1fr; } .services-banner { height:160px; } .service-card { padding:16px; } }
+  </style>
 </head>
 <body>
 
-  <!-- EY-style dark header -->
+  <!-- Header -->
   <header class="nav-dark">
     <div class="header-inner">
-      <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor logo"><span>Zion Advisor</span></a>
-
+      <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
       <div class="nav-wrap">
         <nav>
           <ul class="nav-links" id="siteNav">
             <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
-            <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
+            <li><a href="/services.html" aria-current="page"><i class="fa-solid fa-briefcase"></i> Services</a></li>
             <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
             <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
             <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
           </ul>
         </nav>
-
-        <a class="icon-btn" href="/insights.html" title="Search insights"><i class="fa-solid fa-magnifying-glass"></i></a>
         <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-
-        <button class="burger" id="burgerBtn" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
+        <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <!-- Banner -->
-  <img src="/assets/banner-services.jpg" class="banner" alt="Consulting services banner">
-
-  <!-- Page content -->
-  <div class="container section">
-    <h1>Services</h1>
-    <p class="small" style="max-width:760px">
-      We combine transaction discipline, AI automation, and workforce strategy to deliver measurable outcomes.
-      Below are our core offerings and the exact deliverables you receive.
-    </p>
-
-    <div class="grid3" style="margin-top:16px">
-
-      <!-- M&A & Transaction Advisory -->
-      <div class="card service-card">
-        <div class="service-head">
-          <i class="fa-solid fa-briefcase"></i>
-          <h3>M&A & Transaction Advisory</h3>
-        </div>
-
-        <div class="pill-row">
-          <span class="pill">Databooks</span>
-          <span class="pill">Light QoE</span>
-          <span class="pill">Model clean-ups</span>
-          <span class="pill">KPI dashboards</span>
-        </div>
-
-        <h4>What we do</h4>
-        <ul class="list-check">
-          <li>Build investor-ready databooks with monthly P&L, BS, CF, NWC & Net Debt schedules.</li>
-          <li>Reconcile bank statements, invoices & ledgers; perform tie-outs and flux analysis.</li>
-          <li>Clean and standardize management accounts; sensitivity & scenario analysis in models.</li>
-          <li>Light QoE for smaller deals: revenue recognition, cost allocations, customer concentration.</li>
-        </ul>
-
-        <h4>Outputs you receive</h4>
-        <ul class="list-dash">
-          <li>Excel databook (linked schedules & formulas)</li>
-          <li>Source-to-summary reconciliation pack</li>
-          <li>2–3 page executive note with red flags & opportunities</li>
-        </ul>
-
-        <div class="meta">
-          <span><i class="fa-regular fa-clock"></i> 5–10 business days</span>
-          <span><i class="fa-solid fa-shield"></i> NDA-first confidentiality</span>
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn secondary" href="/service-mna.html">View details →</a>
-          <a class="btn" href="/contact.html">Discuss a deal</a>
-        </div>
-      </div>
-
-      <!-- AI & Automation -->
-      <div class="card service-card">
-        <div class="service-head">
-          <i class="fa-solid fa-robot"></i>
-          <h3>AI & Automation</h3>
-        </div>
-
-        <div class="pill-row">
-          <span class="pill">Lead-gen</span>
-          <span class="pill">Parsing & reco</span>
-          <span class="pill">Agents</span>
-          <span class="pill">Dashboards</span>
-        </div>
-
-        <h4>What we do</h4>
-        <ul class="list-check">
-          <li>Automate outreach: capture → CRM → WhatsApp/Email → calendar booking.</li>
-          <li>AI parsing of PDFs/Excels (TB/BS/P&L) with reconciliation to ERP/ledgers.</li>
-          <li>Research copilots & document Q&A (RAG) for faster diligence prep.</li>
-          <li>Data pipelines to Looker/Power BI with anomaly alerts and scheduled reports.</li>
-        </ul>
-
-        <h4>Outputs you receive</h4>
-        <ul class="list-dash">
-          <li>n8n/Make workflows or lightweight Python services + runbook</li>
-          <li>Document AI copilot + SOPs</li>
-          <li>Live dashboard with KPI alerts</li>
-        </ul>
-
-        <div class="meta">
-          <span><i class="fa-regular fa-clock"></i> 2–4 week pilot</span>
-          <span><i class="fa-solid fa-gauge"></i> 40–70% time saved</span>
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn secondary" href="/service-automation.html">View details →</a>
-          <a class="btn" href="/contact.html">Automate a workflow</a>
-        </div>
-      </div>
-
-      <!-- Skill Development Advisory -->
-      <div class="card service-card">
-        <div class="service-head">
-          <i class="fa-solid fa-graduation-cap"></i>
-          <h3>Skill Development Advisory</h3>
-        </div>
-
-        <div class="pill-row">
-          <span class="pill">NSDC/SSC</span>
-          <span class="pill">District plans</span>
-          <span class="pill">Budgets</span>
-          <span class="pill">Monitoring</span>
-        </div>
-
-        <h4>What we do</h4>
-        <ul class="list-check">
-          <li>Draft NSDC/SSC proposals & realistic per-trainee budgeting aligned to scheme norms.</li>
-          <li>Job-role mapping & ToT plans for EV, Drones, Healthcare, Apparel.</li>
-          <li>Design labs/equipment lists; optimize utilisation & cost structures.</li>
-          <li>Outcome-based monitoring: MIS, dashboards, and audit-ready documentation.</li>
-        </ul>
-
-        <h4>Outputs you receive</h4>
-        <ul class="list-dash">
-          <li>Proposal deck & budget model</li>
-          <li>Implementation roadmap with milestones</li>
-          <li>Monitoring templates & reporting cadence</li>
-        </ul>
-
-        <div class="meta">
-          <span><i class="fa-regular fa-clock"></i> 3–6 weeks</span>
-          <span><i class="fa-solid fa-handshake"></i> Govt & industry aligned</span>
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn secondary" href="/service-skills.html">View details →</a>
-          <a class="btn" href="/contact.html">Start a proposal</a>
-        </div>
-      </div>
-
+  <section class="services-banner" role="img" aria-label="Services banner">
+    <div class="banner-inner">
+      <p class="eyebrow">Services</p>
+      <h1>Advisory that combines M&amp;A discipline, automation, and execution.</h1>
     </div>
-  </div>
+  </section>
+
+  <!-- Main -->
+  <main class="services-section">
+    <div class="services-container">
+      <div class="services-intro">
+        <p>Our services help you build clarity, cut manual work, and accelerate decision-making. Explore practical offerings that combine investor-grade data, AI automation and workforce solutions.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Card 1 -->
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-chart-pie"></i></div>
+          <h3>Databook & Due Diligence</h3>
+          <p class="lead">Build investor-grade P&amp;L, balance sheet and cash-flow schedules that reconcile to source documents—audit-ready and investor-friendly.</p>
+          <div class="meta">Reconciled schedules • QoE-ready • Deal support</div>
+          <div class="cta">
+            <a class="btn-lean" href="/service-databook.html">Learn More</a>
+            <a class="link-muted" href="/contact.html">Book a consult</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3>AI Workflow Automation</h3>
+          <p class="lead">Deploy parsing and reconciliation flows that reduce analyst time by 40–70%. From document ingestion to reconciled schedules, we automate repeatable tasks.</p>
+          <div class="meta">Parsing • Reconciliation • Integration</div>
+          <div class="cta">
+            <a class="btn-lean" href="/service-automation.html">Learn More</a>
+            <a class="link-muted" href="/contact.html">Book a consult</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-people-group"></i></div>
+          <h3>Skill & Workforce Advisory</h3>
+          <p class="lead">Design NSDC/SSC-aligned skilling programs, monitoring frameworks and placement support that link training to measurable outcomes.</p>
+          <div class="meta">Training design • Monitoring • Placement</div>
+          <div class="cta">
+            <a class="btn-lean" href="/service-skilling.html">Learn More</a>
+            <a class="link-muted" href="/contact.html">Book a consult</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -183,15 +178,10 @@
     </div>
   </footer>
 
-  <!-- Small JS: mobile menu + active nav -->
+  <!-- Minimal JS -->
   <script>
-    const btn = document.getElementById('burgerBtn');
-    const nav = document.getElementById('siteNav');
-    btn?.addEventListener('click', () => nav.classList.toggle('show'));
-    const path = location.pathname.replace(/\/index\.html$/,'/');
-    document.querySelectorAll('.nav-links a').forEach(a=>{
-      if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
-    });
+    const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
+    btn?.addEventListener('click',()=>nav.classList.toggle('show'));
   </script>
 </body>
 </html>
