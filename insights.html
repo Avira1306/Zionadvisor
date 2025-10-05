@@ -1,144 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Insights — Zion Advisor</title>
-  <meta name="description" content="Insights from Zion Advisor on databooks, AI automation, and skill development execution." />
+  <meta name="description" content="Insights from Zion Advisor — short briefs and professional takes on M&A, automation and workforce strategy." />
 
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <!-- Site CSS -->
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/styles.css">
+
   <style>
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    .insight-card .thumb{
-      width:100%; aspect-ratio:16/9; border-radius:10px; background:#0b66c2; 
-      background-image: linear-gradient(135deg,#0b66c2,#14233b);
+    /* Small helper to keep page-specific CSS fast to edit */
+    :root { --insight-card-bg: #ffffff; --insight-card-border: #e6edf4; --insight-shadow: 0 8px 20px rgba(17,24,39,0.06); --accent:#0b66c2; --muted:#5b6572; }
+
+    /* ===============================
+       Scoped Insights styles (safe)
+       =============================== */
+    .insights-section { padding: 0; margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #0b0f14; }
+
+    /* Banner - full width */
+    .insights-banner {
+      width: 100%;
+      height: 260px;
+      background-image: url('/assets/banner-insights.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--insight-card-border);
     }
-    .insight-card h3{ margin:10px 0 6px; }
-    .meta-line{ font-size:12.5px; color:#697788; display:flex; gap:12px; margin:6px 0 10px;}
-    .tag{ background:#eef4fb; border:1px solid #d9e5f4; color:#425066; border-radius:999px; padding:4px 8px; font-size:12px; }
-    .card .excerpt{ color:#2a3440; }
+    .insights-banner .banner-inner {
+      max-width: 1100px;
+      padding: 24px;
+      text-align: left;
+    }
+    .insights-banner .eyebrow {
+      display:inline-block;
+      font-weight:700;
+      text-transform:uppercase;
+      color: var(--accent);
+      font-size:13px;
+      letter-spacing:.06em;
+      margin-bottom:8px;
+    }
+    .insights-banner h1 {
+      margin: 6px 0 0;
+      font-size: clamp(28px, 3.5vw, 42px);
+      color: #fff;
+      text-shadow: 0 6px 18px rgba(0,0,0,0.35);
+      line-height:1.05;
+    }
+
+    /* Main container area */
+    .insights-container {
+      max-width:1100px;
+      margin: 36px auto;
+      padding: 0 20px 60px;
+    }
+
+    /* Grid: 3 columns on desktop, 2 on tablet, 1 on mobile */
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    /* Card */
+    .insight-card {
+      background: var(--insight-card-bg);
+      border: 1px solid var(--insight-card-border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: var(--insight-shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 260px;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .insight-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 32px rgba(17,24,39,0.08);
+    }
+    .insight-card .kicker {
+      display:inline-block;
+      font-size:12px;
+      font-weight:700;
+      color:var(--accent);
+      margin-bottom:8px;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
+    .insight-card h3 {
+      margin: 6px 0 10px;
+      font-size:18px;
+      color:#0b0f14;
+    }
+    .insight-card p.lead {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size:14px;
+      line-height:1.5;
+      flex: 1 1 auto;
+    }
+    .insight-card .meta {
+      display:flex;
+      gap:12px;
+      align-items:center;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .insight-card .meta time { color:var(--muted); font-weight:600; }
+
+    /* Read more button */
+    .insight-card .read-more {
+      margin-top:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      text-decoration:none;
+      font-weight:700;
+      color:var(--accent);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1000px) {
+      .insights-grid { grid-template-columns: repeat(2, 1fr); gap:18px; }
+      .insights-banner { height:220px; }
+    }
+    @media (max-width: 640px) {
+      .insights-grid { grid-template-columns: 1fr; gap:14px; }
+      .insights-banner { height:180px; }
+      .insight-card { padding:16px; min-height:unset; }
+      .insights-container { margin: 20px auto; padding: 0 14px 40px; }
+    }
+
+    /* Small utility */
+    .muted { color: var(--muted); font-size:13px; }
   </style>
 </head>
 <body>
 
-<!-- Header -->
-<header class="nav-dark">
-  <div class="header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
-    <div class="nav-wrap">
-      <nav>
-        <ul class="nav-links" id="siteNav">
-          <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
-          <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
-          <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
-          <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
-          <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
-        </ul>
-      </nav>
-      <a class="icon-btn" href="/insights.html" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
-      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <!-- Header include (if you use partials, keep same header) -->
+  <header class="nav-dark">
+    <div class="header-inner">
+      <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
+      <div class="nav-wrap">
+        <nav>
+          <ul class="nav-links" id="siteNav">
+            <li><a href="/insights.html" aria-current="page"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+            <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
+            <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
+            <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
+            <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
+          </ul>
+        </nav>
+        <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+        <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- Banner -->
-<img src="/assets/banner-insights.jpg" class="banner" alt="Insights banner">
-
-<div class="container section">
-  <h1>Insights</h1>
-  <p class="small" style="max-width:780px">
-    Practical notes from live work: how we build investment-grade databooks, where AI automation really
-    saves time, and what it takes to make skilling programs audit-ready. No fluff—just the playbooks.
-  </p>
-
-  <div class="grid3" style="margin-top:16px">
-
-    <!-- Insight 1 -->
-    <article class="card insight-card">
-      <div class="thumb" style="background-image:linear-gradient(135deg,#0b66c2,#14233b),url('/assets/insight1.jpg'); background-blend-mode:overlay; background-size:cover;"></div>
-      <h3>From Trial Balance to Investment-Grade Databook in 7 Steps</h3>
-      <div class="meta-line">
-        <span><i class="fa-regular fa-calendar"></i> 2025</span>
-        <span><i class="fa-regular fa-clock"></i> 6 min read</span>
-        <span class="tag">M&A</span>
-      </div>
-      <p class="excerpt">
-        A field guide to building a clean databook: mapping GL to reporting, flux checks, NWC logic,
-        net-debt proof, and the executive note investors actually read.
-      </p>
-      <a class="btn secondary" href="/insight-databook-7-steps.html">Read full insight →</a>
-    </article>
-
-    <!-- Insight 2 -->
-    <article class="card insight-card">
-      <div class="thumb" style="background-image:linear-gradient(135deg,#18a06a,#143b2a),url('/assets/insight2.jpg'); background-blend-mode:overlay; background-size:cover;"></div>
-      <h3>Where AI Automation Delivers 40–70% Time Savings</h3>
-      <div class="meta-line">
-        <span><i class="fa-regular fa-calendar"></i> 2025</span>
-        <span><i class="fa-regular fa-clock"></i> 5 min read</span>
-        <span class="tag">Automation</span>
-      </div>
-      <p class="excerpt">
-        Real workflows that work: lead capture → CRM → WhatsApp/email, document parsing & reconciliation,
-        and RAG copilots for faster diligence prep.
-      </p>
-      <a class="btn secondary" href="/insight-ai-saves-time.html">Read full insight →</a>
-    </article>
-
-    <!-- Insight 3 -->
-    <article class="card insight-card">
-      <div class="thumb" style="background-image:linear-gradient(135deg,#6a5acd,#1a1535),url('/assets/insight3.jpg'); background-blend-mode:overlay; background-size:cover;"></div>
-      <h3>Making Skilling Programs Audit-Ready (Without Slowing Delivery)</h3>
-      <div class="meta-line">
-        <span><i class="fa-regular fa-calendar"></i> 2025</span>
-        <span><i class="fa-regular fa-clock"></i> 6 min read</span>
-        <span class="tag">Skill Dev</span>
-      </div>
-      <p class="excerpt">
-        Templates that pass scrutiny: evidence packs, geo-tag rules, vendor documentation, and a simple
-        MIS cadence that keeps centres compliant.
-      </p>
-      <a class="btn secondary" href="/insight-audit-ready-skills.html">Read full insight →</a>
-    </article>
-
-  </div>
-
-  <!-- Email capture CTA (optional) -->
-  <div class="card" style="margin-top:20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
-    <div>
-      <h3 style="margin:0 0 6px">Get new insights in your inbox</h3>
-      <p class="small" style="margin:0; color:#44505e">1–2 emails per month. No spam, unsubscribe anytime.</p>
+  <!-- Banner -->
+  <section class="insights-banner" role="img" aria-label="Insights banner">
+    <div class="banner-inner">
+      <p class="eyebrow">Insights</p>
+      <h1>Short briefs, polished takeaways — research for decision-makers</h1>
     </div>
-    <form action="/thank-you.html" method="POST" data-netlify="true" name="insights-signup" style="display:flex; gap:10px; flex-wrap:wrap;">
-      <input type="hidden" name="form-name" value="insights-signup">
-      <input type="email" name="email" required placeholder="you@company.com" class="input">
-      <button class="btn">Subscribe</button>
-    </form>
-  </div>
-</div>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-    <span class="small">© Zion Advisor</span>
-    <a class="small" href="/privacy.html">Privacy</a>
-  </div>
-</footer>
+  <!-- Main content -->
+  <main class="insights-section">
+    <div class="insights-container">
 
-<!-- JS -->
-<script>
-  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
-  btn?.addEventListener('click',()=>nav.classList.toggle('show'));
-  const path=location.pathname.replace(/\/index\.html$/,'/');
-  document.querySelectorAll('.nav-links a').forEach(a=>{
-    if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
-  });
-</script>
+      <!-- Intro -->
+      <div style="max-width:860px;margin:18px auto 28px;text-align:center">
+        <p style="margin:0;color:#566270;font-size:15px">
+          Our insights distil data, deal experience and automation into short, actionable briefs.
+          Download select databooks and templates, or contact us for tailored analysis.
+        </p>
+      </div>
+
+      <!-- Grid -->
+      <div class="insights-grid" id="insightsGrid">
+
+        <!-- Card 1 -->
+        <article class="insight-card">
+          <span class="kicker">Databook</span>
+          <h3>Investor-grade Databooks for Founder-led Deals</h3>
+          <p class="lead">How we build reconciled profit & loss, balance sheet and cash flow schedules from trial balances — audit-ready and investor-friendly.</p>
+          <div class="meta">
+            <time datetime="2025-08-01">Aug 2025</time>
+            <span class="muted"> • 6 min read</span>
+          </div>
+          <a class="read-more" href="/insight-databook.html">Read brief <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="insight-card">
+          <span class="kicker">Automation</span>
+          <h3>AI Flows That Save 40–70% Analyst Time</h3>
+          <p class="lead">A practical guide to parsing source documents, auto-reconciling schedules, and building repeatable pipelines for small deal teams.</p>
+          <div class="meta">
+            <time datetime="2025-07-15">Jul 2025</time>
+            <span class="muted"> • 7 min read</span>
+          </div>
+          <a class="read-more" href="/insight-automation.html">Read brief <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="insight-card">
+          <span class="kicker">Workforce</span>
+          <h3>Skilling & Operative Readiness for Rapid Scale</h3>
+          <p class="lead">Designing a training roadmap that aligns NSQF job roles with on-the-ground hiring and placement outcomes for sustainable scale.</p>
+          <div class="meta">
+            <time datetime="2025-06-20">Jun 2025</time>
+            <span class="muted"> • 5 min read</span>
+          </div>
+          <a class="read-more" href="/insight-skilling.html">Read brief <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+
+      </div> <!-- /grid -->
+
+    </div> <!-- /container -->
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+      <span class="small">© Zion Advisor</span>
+      <a class="small" href="/privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <!-- Minimal JS to keep header/menu behavior -->
+  <script>
+    const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
+    btn?.addEventListener('click',()=>nav.classList.toggle('show'));
+  </script>
 </body>
 </html>
