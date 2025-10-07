@@ -10,10 +10,45 @@
   <meta property="og:title" content="Zion Advisor — Insights" />
   <meta property="og:description" content="Concise, evidence-first briefs and reusable frameworks for advisory teams and partners." />
   <meta property="og:image" content="assets/og-image.png" />
+  <style>
+    /* small hero tuning so the huge headline doesn't overflow */
+    .hero-insights .hero-title {
+      font-size: clamp(28px, 4.5vw, 44px);
+      line-height: 1.05;
+      max-width: 1200px;
+      margin-bottom: 0.6rem;
+    }
+    .hero-insights .hero-sub {
+      max-width: 900px;
+      margin-top: 0.25rem;
+      color: #2a2a2a;
+      opacity: 0.92;
+    }
+
+    /* card-grid tweak to align with Services look */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .card .card-head { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+    .card .card-icon { width:48px; height:48px; display:flex; align-items:center; justify-content:center; background:#f3f7fb; border-radius:10px; }
+    .card .card-title { margin: 0.25rem 0 0.6rem; font-size: 1.05rem; }
+    .featured-card { padding: 0; border-radius: 8px; overflow:hidden; display:flex; gap:0; flex-wrap:wrap; }
+    .featured-media img { width:100%; height:auto; display:block; }
+    .featured-inner { display:flex; gap:0; flex-wrap:wrap; }
+    .featured-content { padding: 22px; max-width:760px; }
+    .card-cta-row { margin-top: 14px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+    .theme-row { display:flex; gap:18px; flex-wrap:wrap; margin-top: 1.75rem; }
+    .theme-card { background:#fff; border-radius:8px; padding:18px; flex:1; min-width:240px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  </style>
 </head>
 <body>
 
-  <!-- ===== header (remove if you use partials) ===== -->
+  <!-- header -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html"><img src="assets/logo.png" alt="Zion Advisor logo" /></a>
@@ -30,40 +65,41 @@
     </div>
   </header>
 
-  <!-- ===== hero banner ===== -->
+  <!-- hero (keeps existing banner) -->
   <section class="hero hero-insights" style="background-image: url('assets/banner-insights.jpg');">
     <div class="container hero-content">
       <div class="kicker">INSIGHTS</div>
       <h1 class="hero-title">Short briefs, original frameworks — research for consulting peers and partners</h1>
       <p class="hero-sub">
-        We transform field data, project experience and automation into concise, evidence-first briefs and reusable frameworks.
-        Read featured research, download practical databooks, or invite us to co-design solutions with your team.
+        We turn field data, delivery experience and automation into concise, evidence-first briefs and reusable frameworks. Read featured research, download practical databooks, or invite us to co-design solutions with your team.
       </p>
     </div>
   </section>
 
-  <!-- ===== intro text ===== -->
+  <!-- intro -->
   <section class="container intro">
     <p class="intro-text">
-      Zion Advisor Insights combine rigorous data work, reproducible frameworks and project-tested tools — made for advisory teams and client partners who need faster decisions and reliable execution.
+      Zion Advisor Insights combine rigorous data work, reproducible frameworks and project-tested tools — designed for advisory teams and client partners who need faster decisions and reliable execution.
     </p>
   </section>
 
   <main class="container content-wrap">
 
-    <!-- ===== Featured Insight (no icon, full-width card styled like Services) ===== -->
-    <section class="card featured-card">
+    <!-- Featured insight (large card) -->
+    <section class="card featured-card" aria-labelledby="featured-title">
       <div class="featured-inner">
-        <div class="featured-media">
-          <img src="assets/banner-home.jpg" alt="Decision flow and dashboard for rapid project execution" />
+        <div class="featured-media" style="flex:1 1 420px;">
+          <img src="assets/banner-home.jpg" alt="Rapid execution dashboards and decision flows"/>
         </div>
-        <div class="featured-content">
+
+        <div class="featured-content" style="flex:1 1 360px;">
           <div class="card-badge">FEATURED RESEARCH · FRAMEWORK</div>
-          <h2 class="card-title">Rapid Execution Frameworks: Turning Advisory Strategy into Operative Programs</h2>
+          <h2 id="featured-title" class="card-title">Rapid Execution Frameworks: Turning Advisory Strategy into Operative Programs</h2>
           <p class="card-excerpt">
-            A compact, reproducible playbook that reduces project ramp time by producing clear decision flows, measurable milestones and a single source of truth for operations. Includes an example databook and an implementation checklist.
+            A compact, reproducible playbook that shortens ramp time by producing clear decision flows, measurable milestones and a single source of truth for operations — includes an example databook and implementation checklist.
           </p>
           <div class="card-meta">Oct 2025 · 12 min read</div>
+
           <div class="card-cta-row">
             <a class="btn btn-primary" href="insight-databook-7-steps.html">Read full brief →</a>
             <a class="link-ghost" href="templates/ZionAdvisor_InsightBrief_2025.pdf" target="_blank" rel="noopener">Download brief (PDF)</a>
@@ -72,25 +108,33 @@
       </div>
     </section>
 
-    <!-- ===== Latest Briefs grid (cards with same look & spacing as Services) ===== -->
-    <section class="cards-grid">
+    <!-- Latest briefs (3 cards) -->
+    <section class="cards-grid" aria-label="Latest briefs">
       <!-- card 1 -->
-      <article class="card">
+      <article class="card" role="article">
         <div class="card-head">
+          <div class="card-icon" aria-hidden="true">
+            <!-- inline chart icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="11" width="3" height="10" rx="1" fill="#0b62b8"/><rect x="9" y="6" width="3" height="15" rx="1" fill="#0b62b8"/><rect x="15" y="3" width="3" height="18" rx="1" fill="#0b62b8"/></svg>
+          </div>
           <div class="card-badge">DATA BRIEF · EVIDENCE</div>
         </div>
 
         <h3 class="card-title">Data-to-Decision Pipelines for Small Advisory Teams</h3>
         <p class="card-excerpt">
-          How lightweight ETL, a standardized databook and a weekly signal dashboard reduced time-to-insight by 40% in two pilot projects. Includes schema and sample pivot templates.
+          How lightweight ETL, a standardized databook and a weekly signal dashboard reduced time-to-insight by 40% in two pilot projects. Includes schema and pivot templates.
         </p>
         <div class="card-meta">Sep 2025 · 5 min read</div>
         <a class="card-link" href="insight1.html">Read brief →</a>
       </article>
 
       <!-- card 2 -->
-      <article class="card">
+      <article class="card" role="article">
         <div class="card-head">
+          <div class="card-icon" aria-hidden="true">
+            <!-- inline book / knowledge icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5C4 18.7 4.7 18 5.5 18H19" stroke="#0b62b8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 3H19.5V19C19.5 19 18.5 20 16.5 20C14.5 20 11 18.5 8 18.5C6.7 18.5 5.5 17.8 5.5 16.5V3Z" stroke="#0b62b8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
           <div class="card-badge">CONSULTING NOTE · PRACTICE</div>
         </div>
 
@@ -103,8 +147,12 @@
       </article>
 
       <!-- card 3 -->
-      <article class="card">
+      <article class="card" role="article">
         <div class="card-head">
+          <div class="card-icon" aria-hidden="true">
+            <!-- inline robot / automation icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="7" width="10" height="10" rx="2" stroke="#0b62b8" stroke-width="1.6"/><circle cx="9.5" cy="11.2" r="0.9" fill="#0b62b8"/><circle cx="14.5" cy="11.2" r="0.9" fill="#0b62b8"/><path d="M9 17.5C9.6 16.9 10.6 16.5 12 16.5C13.4 16.5 14.4 16.9 15 17.5" stroke="#0b62b8" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
           <div class="card-badge">TECHNICAL NOTE · APPLIED AI</div>
         </div>
 
@@ -117,8 +165,8 @@
       </article>
     </section>
 
-    <!-- ===== Research themes row (clean tiles) ===== -->
-    <section class="theme-row">
+    <!-- Research themes (small tiles) -->
+    <section class="theme-row" aria-label="Research themes">
       <div class="theme-card">
         <h4 class="theme-title">Operational Design</h4>
         <p class="theme-text">Frameworks, checklists and project templates that shorten delivery cycles and lock in measurable KPIs.</p>
@@ -133,23 +181,23 @@
 
       <div class="theme-card">
         <h4 class="theme-title">Knowledge Systems</h4>
-        <p class="theme-text">Systems for capturing institutional knowledge — from scoped playbooks to reusable evidence libraries.</p>
+        <p class="theme-text">Systems for capturing institutional knowledge — scoped playbooks and reusable evidence libraries.</p>
         <a class="theme-link" href="templates.html">Explore Knowledge Systems →</a>
       </div>
     </section>
 
-    <!-- ===== Partnership CTA ===== -->
+    <!-- Partnership CTA -->
     <section class="card partner-cta">
       <div class="cta-inner">
-        <h3>Want a tailored brief or joint pilot?</h3>
-        <p class="small">Invite Zion to co-design a research sprint, workshop, or pilot for your team — focused on measurable execution and rapid learning.</p>
+        <h3>Partner with us on a research sprint or pilot</h3>
+        <p class="small">Invite Zion to co-design a brief, workshop or pilot that applies these frameworks directly in your project — measurable outcomes, fast learning cycles.</p>
         <a class="btn btn-primary" href="contact.html">Let's partner →</a>
       </div>
     </section>
 
   </main>
 
-  <!-- ===== footer (remove if you use partials) ===== -->
+  <!-- footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-left">
