@@ -31,31 +31,40 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="nav-dark">
-    <div class="header-inner">
-      <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
-      <div class="nav-wrap">
-        <nav><ul class="nav-links" id="siteNav">
-          <li><a href="/services.html"><i class="fa-solid fa-lightbulb"></i> services</a></li>
+  <!-- START: cleaned header (replace existing <header> block) -->
+<header class="nav-dark">
+  <div class="header-inner">
+    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
+    <div class="nav-wrap">
+      <nav>
+        <ul class="nav-links" id="siteNav">
+          <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
           <li><a href="/services.html" aria-current="page"><i class="fa-solid fa-briefcase"></i> Services</a></li>
           <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
           <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
           <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
-        </ul></nav>
-        <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-        <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-      </div>
+        </ul>
+      </nav>
+      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
-  </header>
+  </div>
+</header>
+<!-- END: cleaned header -->
 
-  <!-- Banner -->
-  <section class="services-banner" role="img" aria-label="Services banner">
-    <div class="banner-inner">
-      <p class="eyebrow">Services</p>
-      <h1>Advisory that combines M&A discipline, automation, and execution.</h1>
-    </div>
-  </section>
+
+  <!-- START: Services banner (definitive) -->
+<section class="services-banner" role="img" aria-label="Services banner" style="background-image: url('/assets/banner-services.jpg');">
+  <div class="banner-inner">
+    <p class="eyebrow">SERVICES</p>
+    <h1>Advisory that combines M&A discipline, automation, and execution.</h1>
+    <p style="color:#fff;opacity:0.95;max-width:880px;margin-top:8px;">
+      We move messy source data into investor-ready outputs and executable strategy — faster, cleaner, and with less manual work.
+    </p>
+  </div>
+</section>
+<!-- END: Services banner -->
+
 
   <!-- Main -->
   <main class="services-section">
