@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Templates — Zion Advisor</title>
-  <meta name="description" content="Download professional templates from Zion Advisor — M&A Databook, Financial Model, and Skill Development proposal formats." />
+  <meta name="description" content="Download professional templates from Zion Advisor — M&A Databook, Financial Model, and Infrastructure Advisory formats." />
 
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -13,7 +13,6 @@
   <!-- Site CSS -->
   <link rel="stylesheet" href="/styles.css" />
 
-  <!-- Page styles (minimal + responsive) -->
   <style>
     body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     .banner{display:block;width:100%;max-height:320px;object-fit:cover}
@@ -47,7 +46,7 @@
     Download free resources and start working smarter.
   </p>
 
-  <!-- Template cards (info only; actual files shown after unlock) -->
+  <!-- Template cards -->
   <div class="template-grid" aria-label="Template previews">
     <article class="template-card">
       <h2>M&amp;A Databook Template</h2>
@@ -61,10 +60,11 @@
       <span class="small">File: Excel (.xlsx) — unlocked after form</span>
     </article>
 
+    <!-- Infrastructure & Transaction Advisory -->
     <article class="template-card">
-      <h2>Skill Development Proposal</h2>
-      <p>Editable NSDC/SSC-aligned proposal with budgeting tables, job-role mapping, and monitoring framework.</p>
-      <span class="small">File: Word (.docx) — unlocked after form</span>
+      <h2>Infrastructure &amp; Transaction Advisory Template</h2>
+      <p>A practical package to support feasibility, valuation, and transaction readiness: investor-ready financial schedules, PPP readiness checklist, risk allocation table, and milestone tracker.</p>
+      <span class="small">File: ZIP (.xlsx + .docx) — unlocked after form</span>
     </article>
   </div>
 </div>
@@ -81,7 +81,6 @@
     <div class="row">
       <label>Name<br><input type="text" name="name" required></label>
       <label>Email<br><input type="email" name="email" required></label>
-      <!-- honeypot (anti-bot) -->
       <input type="text" name="hp" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;opacity:0">
     </div>
     <button type="submit" class="btn" style="margin-top:14px">
@@ -100,8 +99,8 @@
       <a data-dl href="/templates/financial-model.xlsx" class="btn-download" download>
         <i class="fa-solid fa-file-excel"></i> Financial Model
       </a>
-      <a data-dl href="/templates/skilling-proposal.docx" class="btn-download" download>
-        <i class="fa-solid fa-file-word"></i> Skilling Proposal
+      <a data-dl href="/templates/infrastructure-advisory-template.zip" class="btn-download" download>
+        <i class="fa-solid fa-file-zipper"></i> Infrastructure Advisory Pack
       </a>
     </div>
   </div>
@@ -110,15 +109,15 @@
 <!-- Footer -->
 <div id="footer-placeholder"></div>
 
-<!-- Partials + Gate Logic -->
+<!-- Scripts -->
 <script>
-  // --------- Load header/footer partials ----------
   async function includeHTML(id, file) {
     const el = document.getElementById(id);
     if (!el) return;
     const resp = await fetch(file);
     el.innerHTML = await resp.text();
   }
+
   includeHTML("header-placeholder", "/partials/header.html").then(()=>{
     const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
     btn?.addEventListener('click',()=>nav.classList.toggle('show'));
@@ -138,50 +137,31 @@
     });
   });
 
-  // --------- Gated downloads + Google Sheets logging ----------
-  // Your existing Apps Script web app URL:
-  const GAS_URL = "https://script.google.com/macros/s/AKfycbylq21b_339gnhLUeGVe8eMDW36otKYxMHwYE01rbTr3F_IhszNdKniQO1TMaxPD1V/exec";
+  const GAS_URL="https://script.google.com/macros/s/AKfycbylq21b_339gnhLUeGVe8eMDW36otKYxMHwYE01rbTr3F_IhszNdKniQO1TMaxPD1V/exec";
+  const form=document.getElementById('unlockForm');
+  const msg=document.getElementById('unlockMsg');
+  const gate=document.getElementById('downloads');
 
-  const form = document.getElementById('unlockForm');
-  const msg  = document.getElementById('unlockMsg');
-  const gate = document.getElementById('downloads');
+  function unlocked(){return localStorage.getItem('zion_templates_unlocked')==='1';}
+  function setUnlocked(){localStorage.setItem('zion_templates_unlocked','1');}
 
-  function unlocked(){ return localStorage.getItem('zion_templates_unlocked') === '1'; }
-  function setUnlocked(){ localStorage.setItem('zion_templates_unlocked','1'); }
+  if(unlocked()){form.style.display='none';gate.style.display='block';}
 
-  // If already unlocked in this browser, skip the form
-  if (unlocked()){
-    form.style.display = 'none';
-    gate.style.display = 'block';
-  }
-
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    msg.style.display = 'inline';
-
-    const fd = new FormData(form);
-    // Make it compatible with your sheet columns: Name, Email, Message
-    fd.set('message', 'Templates unlock');
-
-    try {
-      // Fire-and-forget logging to Google Sheets
-      await fetch(GAS_URL, { method: 'POST', body: fd, mode: 'no-cors' });
-
-      setUnlocked();
-      form.style.display = 'none';
-      gate.style.display = 'block';
-    } catch (err) {
-      msg.textContent = "Something went wrong. Please try again.";
-      console.error(err);
+  form?.addEventListener('submit',async(e)=>{
+    e.preventDefault();msg.style.display='inline';
+    const fd=new FormData(form);
+    fd.set('message','Templates unlock');
+    try{
+      await fetch(GAS_URL,{method:'POST',body:fd,mode:'no-cors'});
+      setUnlocked();form.style.display='none';gate.style.display='block';
+    }catch(err){
+      msg.textContent="Something went wrong. Please try again.";console.error(err);
     }
   });
 
-  // Soft guard: block clicks if user somehow reaches downloads before unlock
   document.querySelectorAll('a[data-dl]').forEach(a=>{
-    a.addEventListener('click', (ev)=>{
-      if (!unlocked()){
-        ev.preventDefault();
-      }
+    a.addEventListener('click',(ev)=>{
+      if(!unlocked()){ev.preventDefault();}
     });
   });
 </script>
