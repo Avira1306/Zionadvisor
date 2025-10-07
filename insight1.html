@@ -1,41 +1,119 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>5 Mistakes Startups Make in M&A Diligence — Zion Advisor</title>
-<meta name="description" content="Zion Advisor — M&A, AI automations, and skill development advisory.">
-<meta property="og:title" content="5 Mistakes Startups Make in M&A Diligence — Zion Advisor"><meta property="og:image" content="/assets/og-image.png">
-<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/styles.css">
-</head><body>
-<header>
-  <div class="container header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor logo"><span>Zion Advisor</span></a>
-    <nav class="nav">
-      <a href="/services.html">Services</a>
-      <a href="/insights.html">Insights</a>
-      <a href="/case-studies.html">Case Studies</a>
-      <a href="/templates.html">Templates</a>
-      <a href="/about.html">About</a>
-      <a class="btn secondary" href="/contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data-to-Decision Pipelines — Zion Advisor</title>
+  <meta name="description" content="Practical note on lightweight ETL, databooks and signal dashboards for small advisory teams. Includes schema and pivot templates." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
-<img src="/assets/banner-insights.jpg" class="banner" alt="">
-<div class="container section"><h1>5 Mistakes Startups Make in M&A Diligence</h1><article class="card">
-<h2>Executive Summary</h2>
-<p>M&A can unlock growth, but poor diligence readiness kills value. This piece outlines five avoidable mistakes and how to fix them.</p>
-<h3>1. Financial Hygiene</h3><p>Monthly closes, bank reconciliation, audit-ready records.</p>
-<h3>2. Data-Backed Valuation</h3><p>Anchor price to KPIs—retention, LTV:CAC, contribution margins.</p>
-<h3>3. Cohort Visibility</h3><p>Segment/channel breakdowns; build a cohort databook.</p>
-<h3>4. Compliance & Governance</h3><p>Register IP; formalize HR; run pre-diligence legal audit.</p>
-<h3>5. Cash & Working Capital</h3><p>Forecast burn; show AR/AP cycles and runway.</p>
-<h2>Consulting Takeaways</h2><ul><li>Start readiness 6–12 months before outreach.</li><li>Integrate financial + operating KPIs.</li><li>Use external advisors to de-risk execution.</li></ul>
-</article>
-<p class="small" style="margin-top:14px">Published by Zion Advisor Insights</p></div>
+  <!-- header (remove if using partials) -->
+  <header class="nav-dark">
+    <div class="header-inner container">
+      <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/insights.html">Insights</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/case-studies.html">Case Studies</a></li>
+          <li><a href="/templates.html">Templates</a></li>
+        </ul>
+      </nav>
+      <a class="btn-cta" href="/contact.html">Contact</a>
+    </div>
+  </header>
 
-<footer>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-    <span class="small">© Zion Advisor</span>
-    <a class="small" href="/privacy.html">Privacy</a>
-  </div>
-</footer>
-</body></html>
+  <!-- Banner -->
+  <section class="services-banner" style="background-image:url('/assets/banner-insights.jpg');">
+    <div class="banner-inner">
+      <p class="eyebrow">DATA BRIEF</p>
+      <h1>Data-to-Decision Pipelines for Small Advisory Teams</h1>
+      <p style="color:#fff;opacity:0.95;max-width:900px;margin-top:8px">How lightweight ETL, a standardized databook and a weekly signal dashboard reduced time-to-insight by 40% in two pilot projects.</p>
+    </div>
+  </section>
+
+  <main class="services-section">
+    <div class="services-container">
+      <div style="display:flex;gap:28px;flex-wrap:wrap">
+        <article style="flex:1 1 720px;">
+          <div style="background:#fff;border:1px solid #e6edf4;border-radius:10px;padding:22px;box-shadow:0 8px 20px rgba(17,24,39,0.06)">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+              <div class="meta" style="color:#566270">Sep 2025 · 5 min read</div>
+              <a href="/templates/Financial-Model.xlsx" class="link-muted" target="_blank" rel="noopener">Download sample template</a>
+            </div>
+
+            <h2 style="margin-top:0">Executive summary</h2>
+            <p class="lead">Small advisory teams rarely have the bandwidth for heavy engineering. This note shows a minimal pipeline — ingest → standardize → signal — that uses reproducible databooks and a weekly signal dashboard to cut time-to-insight by ~40% in pilot projects. The approach balances rigor with low build-cost and uses tools the team already has (spreadsheets, lightweight ETL scripts, and simple dashboards).</p>
+
+            <hr style="margin:18px 0;border-color:#eef4fa" />
+
+            <h3>Key findings</h3>
+            <ul>
+              <li><strong>Standard schema matters:</strong> A shared row / column schema across projects reduced onboarding friction for new datasets.</li>
+              <li><strong>Databook as source of truth:</strong> A single, versioned workbook simplified reconciliations and reduced duplicate work.</li>
+              <li><strong>Weekly signal cadence:</strong> A short dashboard with 6–8 signals (coverage, anomalies, KPI deltas) gave teams a consistent agenda for decisions.</li>
+            </ul>
+
+            <h3>Practical pipeline (4 steps)</h3>
+            <ol>
+              <li><strong>Ingest:</strong> Use a simple ETL script (Python/R/Apps Script) to pull source spreadsheets or CSVs into a staging sheet with a known schema.</li>
+              <li><strong>Normalize:</strong> Transform date formats, canonicalize IDs, and apply business rules in a reproducible script or macro.</li>
+              <li><strong>Databook:</strong> Write cleaned tables into a single databook (tabbed workbook) with a manifest sheet describing sources and version.</li>
+              <li><strong>Signal dashboard:</strong> Produce a one-page dashboard (Excel / Google Sheets / simple BI tool) that shows the 6–8 signals relevant to weekly decisions.</li>
+            </ol>
+
+            <h3>Implementation checklist</h3>
+            <ul>
+              <li>Create a schema manifest for each project (fields, format, example values).</li>
+              <li>Deploy a staging script to validate new uploads (format checks + basic sanity tests).</li>
+              <li>Publish a weekly signal dashboard template and automate refresh where possible.</li>
+              <li>Assign a ‘databook owner’ for each project responsible for version control and documentation.</li>
+            </ul>
+
+            <h3>When this approach is not right</h3>
+            <p class="lead">If you need real-time analytics, high-frequency transactions, or heavy data science experimentation, this lightweight approach will be insufficient — escalate to a proper data engineering build.</p>
+
+            <hr style="margin:18px 0;border-color:#eef4fa" />
+
+            <h3>Resources</h3>
+            <p>Included in the download: <strong>databook schema (xlsx)</strong>, <strong>sample pivot examples</strong>, and a short <strong>implementation checklist</strong>.</p>
+
+            <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+              <a class="btn-lean" href="/templates/databook-template.xlsx" target="_blank" rel="noopener">Download Databook template</a>
+              <a class="btn-lean" href="/insights.html" style="background:#f3f7fb;color:#0b62b8;border-radius:8px;padding:10px 14px;text-decoration:none">Back to Insights</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Right column: contact and related -->
+        <aside style="flex:0 0 320px;">
+          <div style="background:#fff;border:1px solid #e6edf4;padding:18px;border-radius:10px;box-shadow:0 8px 20px rgba(17,24,39,0.04)">
+            <h4 style="margin-top:0">Want a quick pilot?</h4>
+            <p class="lead">We run a 1-week pilot to set up the databook and signal dashboard for a single project. Expect measurable reductions in time-to-insight by week 3.</p>
+            <a class="btn-lean" href="/contact.html">Book a pilot →</a>
+          </div>
+
+          <div style="height:18px"></div>
+
+          <div style="background:#fff;border:1px solid #e6edf4;padding:18px;border-radius:10px;box-shadow:0 6px 16px rgba(17,24,39,0.04)">
+            <h5 style="margin:0 0 8px">Related briefs</h5>
+            <ul style="padding-left:18px;margin:0">
+              <li><a href="/insight2.html" class="link-muted">Institutional Memory Systems</a></li>
+              <li><a href="/insight-ai-saves-time.html" class="link-muted">Human-in-the-Loop Automation</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- footer -->
+  <footer style="border-top:1px solid #eef4fa;padding:18px 20px;text-align:center">
+    <div class="container"><small>© Zion Advisor</small></div>
+  </footer>
+
+</body>
+</html>

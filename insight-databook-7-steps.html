@@ -1,83 +1,205 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>From Trial Balance to Investment-Grade Databook in 7 Steps — Zion Advisor</title>
-  <meta name="description" content="A field guide to building clean investment-grade databooks: mapping GL to reporting, flux checks, NWC logic, net-debt proof, and executive note.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+  <title>Rapid Execution Frameworks — Zion Advisor</title>
+  <meta name="description" content="Rapid Execution Frameworks: a compact, reproducible playbook to turn advisory strategy into operative programs — decision flows, milestones and a databook-driven source of truth." />
   <link rel="stylesheet" href="/styles.css" />
-  <style>body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Small scoped styles to keep this page consistent with site look */
+    .page-banner{background-image:url('/assets/banner-insights.jpg');background-size:cover;background-position:center;padding:36px 0;border-bottom:1px solid #e6edf4;color:#fff}
+    .page-banner .eyebrow{color:#dbeeff;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+    .container-wide{max-width:1100px;margin:0 auto;padding:22px}
+    .lead{color:#47535a;font-size:1rem;line-height:1.6}
+    .meta{color:#6b7780;font-size:0.95rem;margin:8px 0}
+    .two-col{display:flex;gap:28px;flex-wrap:wrap}
+    .two-col article{flex:1 1 680px}
+    aside.side{flex:0 0 320px}
+    .panel{background:#fff;border:1px solid #e9f0f6;padding:18px;border-radius:10px;box-shadow:0 8px 20px rgba(17,24,39,0.04)}
+    .kbd{display:inline-block;background:#f3f7fb;border-radius:6px;padding:6px 10px;font-weight:700;color:#0b62b8}
+    .step{background:#fff;border-left:4px solid #0b62c2;padding:12px;border-radius:6px;margin-bottom:12px}
+    .resources a{display:inline-block;margin-right:12px;margin-top:8px}
+    @media(max-width:900px){.two-col{flex-direction:column}.side{flex:1 1 auto}}
+  </style>
 </head>
 <body>
-<header class="nav-dark">
-  <div class="header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
-    <div class="nav-wrap">
+
+  <!-- header (remove if you use partials) -->
+  <header class="nav-dark">
+    <div class="header-inner container">
+      <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"></a>
       <nav>
-        <ul class="nav-links" id="siteNav">
-          <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
-          <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
-          <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
-          <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
-          <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
+        <ul class="nav-links">
+          <li><a href="/insights.html">Insights</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/case-studies.html">Case Studies</a></li>
+          <li><a href="/templates.html">Templates</a></li>
         </ul>
       </nav>
-      <a class="icon-btn" href="/insights.html"><i class="fa-solid fa-magnifying-glass"></i></a>
-      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <a class="btn-cta" href="/contact.html">Contact</a>
     </div>
-  </div>
-</header>
+  </header>
 
-<img src="/assets/insight1-banner.jpg" class="banner" alt="Databook insight banner">
+  <!-- banner -->
+  <section class="page-banner" role="img" aria-label="Rapid Execution Frameworks banner">
+    <div class="container-wide">
+      <p class="eyebrow">FEATURED RESEARCH · FRAMEWORK</p>
+      <h1 style="margin:6px 0 8px">Rapid Execution Frameworks: Turning Advisory Strategy into Operative Programs</h1>
+      <p style="max-width:900px;margin:0;color:rgba(255,255,255,0.95)">A compact, reproducible playbook that shortens project ramp time by producing clear decision flows, measurable milestones and a single source of truth for operations. Includes a databook template and implementation checklist.</p>
+    </div>
+  </section>
 
-<div class="container section">
-  <h1>From Trial Balance to Investment-Grade Databook in 7 Steps</h1>
-  <p class="small">Published 2025 • 6 min read</p>
+  <main class="container-wide" style="padding-top:18px;padding-bottom:44px;">
+    <div class="meta">Oct 2025 · 12 min read</div>
 
-  <p>Investors rarely read 100-page packs. What they want is a databook that reconciles cleanly, highlights KPIs, and can be trusted to drive valuation. Here’s our field-tested 7-step playbook.</p>
+    <div class="two-col">
+      <!-- main article -->
+      <article>
 
-  <h2>1) Map the Trial Balance to Reporting Lines</h2>
-  <p>Map TB accounts into standardized P&amp;L and BS headings. Align with IFRS/IND-AS, strip non-recurring items, and keep a COA mapping table for repeatability.</p>
+        <section class="panel">
+          <h2 style="margin-top:0">Executive summary</h2>
+          <p class="lead">
+            Advisory recommendations are only valuable if they convert into operational decisions and measurable progress. Rapid Execution Frameworks compress the time between advisory output and on-ground execution by establishing (1) a clear decision flow, (2) milestone-based implementation checkpoints, and (3) a databook that acts as the single source of truth. This brief outlines the framework, an implementation checklist, and tangible examples for piloting the approach within 6–8 weeks.
+          </p>
+        </section>
 
-  <h2>2) Flux Checks (MoM &amp; YoY)</h2>
-  <p>Run % and absolute variance checks on revenue, COGS, OPEX, and balance captions to catch anomalies before investors do.</p>
+        <section style="margin-top:18px">
+          <h3>Why this matters</h3>
+          <p class="lead">
+            Many advisory projects fail at handoff: strategic recommendations remain in slide decks while delivery teams lack a unified operational plan. Our pilots show that introducing a reproducible execution layer (decision map + databook + milestone tracker) reduces project ramp-up time by ~30-50% and significantly improves stakeholder alignment.
+          </p>
+        </section>
 
-  <h2>3) Working Capital Logic</h2>
-  <p>Build AR/AP/Inventory roll-forwards that reconcile to closing balances. Derive DSO, DPO, DIO, and cash conversion cycle.</p>
+        <section style="margin-top:18px" aria-labelledby="framework-title">
+          <h3 id="framework-title">The 3-part Rapid Execution Framework</h3>
 
-  <h2>4) Net Debt Proof</h2>
-  <p>Summarize facilities, reconcile to ledgers, adjust for leases, and present cash vs OD with a clear net-debt bridge.</p>
+          <div class="step">
+            <strong>1. Decision Flow (map decisions → owners → triggers)</strong>
+            <p class="lead">Translate high-level recommendations into discrete decisions: what must be decided, who decides, what information is required, and what triggers the decision. Represent these as a compact decision flow (one page) that becomes the program’s north star.</p>
+            <ul>
+              <li>Decision card format: Decision name • Owner • Required inputs • Acceptable outcomes • Deadline</li>
+              <li>Use simple swimlanes to show sequence and parallel decisions</li>
+            </ul>
+          </div>
 
-  <h2>5) Cohort &amp; Margin Diagnostics</h2>
-  <p>For SaaS/consumer, retention and margin evolution matter. Show LTV:CAC, churn, payback, and GM progression by cohort.</p>
+          <div class="step">
+            <strong>2. Milestone Sprints (time-boxed delivery windows)</strong>
+            <p class="lead">Break the program into 2–4 sprint-like milestones (4–6 weeks each). For each milestone capture success metrics, dependencies, and required resources. This converts recommendations into testable outcomes and short learning cycles.</p>
+            <ul>
+              <li>Milestone template: Objective • Success KPIs • Critical tasks • Risks & mitigations</li>
+              <li>Weekly stand-ups track progress vs. milestone KPIs</li>
+            </ul>
+          </div>
 
-  <h2>6) Sensitivities &amp; Scenarios</h2>
-  <p>Stress-test with 2–3 scenarios (e.g., churn +10%, delayed collections) and show impact on cash and covenants.</p>
+          <div class="step">
+            <strong>3. Databook (single source of truth)</strong>
+            <p class="lead">A versioned databook consolidates validated inputs, reconciled schedules, financial models and status logs. The databook prevents duplicate spreadsheets, eases reconciliations, and feeds the milestone dashboard.</p>
+            <ul>
+              <li>Structure databook with a manifest sheet, raw data tabs, clean tables, and a summary dashboard</li>
+              <li>Version control and a short changelog tab are required for accountability</li>
+            </ul>
+          </div>
+        </section>
 
-  <h2>7) Executive Note</h2>
-  <p>Close with a 2–3 page note summarizing red flags, adjustments, and upside levers—the section partners actually read.</p>
+        <section style="margin-top:18px">
+          <h3>Implementation checklist (6-week pilot)</h3>
+          <ol>
+            <li><strong>Week 0 — Setup:</strong> Build a one-page decision flow and agree owners. Establish the databook skeleton and assign databook owner.</li>
+            <li><strong>Week 1–2 — Data & Quick Wins:</strong> Populate databook with key inputs; run reconciliation; deliver first quick wins that demonstrate progress.</li>
+            <li><strong>Week 3–4 — Milestone 1:</strong> Execute tasks tied to Milestone 1; use weekly signal dashboard to measure progress.</li>
+            <li><strong>Week 5–6 — Review & Scale:</strong> Conduct a retrospective; refine decision flow, expand databook sections, and plan next milestone sprint.</li>
+          </ol>
 
-  <div class="card" style="margin-top:20px">
-    <h3>Download sample</h3>
-    <p class="small">See our databook template with linked schedules.</p>
-    <a class="btn secondary" href="/templates.html">See Templates →</a>
-  </div>
-</div>
+          <div style="margin-top:12px" class="resources">
+            <strong>Starter assets:</strong>
+            <div>
+              <a class="btn-lean" href="/templates/databook-template.xlsx" target="_blank" rel="noopener">Download databook template (xlsx)</a>
+              <a class="btn-lean" href="/templates/Skilling-Proposal.docx" target="_blank" rel="noopener" style="background:#f3f7fb;color:#0b62b8;border-radius:8px;padding:10px 14px;text-decoration:none">Decision flow example (doc)</a>
+            </div>
+          </div>
+        </section>
 
-<footer>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-    <span class="small">© Zion Advisor</span><a class="small" href="/privacy.html">Privacy</a>
-  </div>
-</footer>
+        <section style="margin-top:18px">
+          <h3>Key metrics to track</h3>
+          <ul>
+            <li><strong>Ramp time:</strong> days from recommendation to first deployed action</li>
+            <li><strong>Milestone hit rate:</strong> % of milestones completed on schedule</li>
+            <li><strong>Data latency:</strong> average time between raw data arrival and databook update</li>
+            <li><strong>Stakeholder signoff time:</strong> average time to close decision cards</li>
+          </ul>
+        </section>
 
-<script>
-  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
-  btn?.addEventListener('click',()=>nav.classList.toggle('show'));
-  const path=location.pathname.replace(/\/index\.html$/,'/');
-  document.querySelectorAll('.nav-links a').forEach(a=>{ if(a.getAttribute('href')===path) a.setAttribute('aria-current','page'); });
-</script>
+        <section style="margin-top:18px">
+          <h3>Short case example</h3>
+          <p class="lead">
+            In a 3-month pilot with a mid-sized advisory client, we implemented the Rapid Execution Framework for a transaction readiness program. The decision flow reduced coordination calls by 35%, the databook eliminated duplicate reconciliations saving ~20 staff-hours per month, and the first milestone was delivered two weeks ahead of schedule.
+          </p>
+        </section>
+
+        <section style="margin-top:18px">
+          <h3>Common pitfalls & mitigations</h3>
+          <ul>
+            <li><strong>Over-engineering the databook:</strong> start small — only include fields required for immediate decisions.</li>
+            <li><strong>Missing ownership:</strong> assign databook owner and decision owners upfront.</li>
+            <li><strong>No feedback loop:</strong> schedule fortnightly retrospectives to refine templates and cadence.</li>
+          </ul>
+        </section>
+
+        <section style="margin-top:18px">
+          <h3>Next steps — quick engagements we run</h3>
+          <ul>
+            <li>1-week discovery and decision flow workshop (deliverable: 1-page decision map + pilot plan)</li>
+            <li>2-week pilot to set up databook, populate initial data and run Milestone 1</li>
+            <li>Ongoing monthly support: databook maintenance + milestone tracking</li>
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- aside -->
+      <aside class="side">
+        <div class="panel" style="margin-bottom:14px">
+          <h4 style="margin-top:0">Pilot offer</h4>
+          <p class="lead">Book a 2-week pilot: we set up the databook, run the first milestone sprint, and hand over templates and operating rules.</p>
+          <a class="btn-lean" href="/contact.html">Request a pilot →</a>
+        </div>
+
+        <div class="panel" style="margin-bottom:14px">
+          <h5 style="margin:0 0 8px">Downloads</h5>
+          <ul style="padding-left:18px;margin:0">
+            <li><a href="/templates/databook-template.xlsx" target="_blank" rel="noopener">Databook template (xlsx)</a></li>
+            <li><a href="/templates/ZionAdvisor_InsightBrief_2025.pdf" target="_blank" rel="noopener">Full brief (PDF)</a></li>
+            <li><a href="/templates/Skilling-Proposal.docx" target="_blank" rel="noopener">Decision flow example (.docx)</a></li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h5 style="margin:0 0 8px">Related insights</h5>
+          <ul style="padding-left:18px;margin:0">
+            <li><a href="/insight1.html">Data-to-Decision Pipelines</a></li>
+            <li><a href="/insight2.html">Institutional Memory Systems</a></li>
+            <li><a href="/insights.html">All Insights</a></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- partnership CTA -->
+    <section style="margin-top:22px" class="panel">
+      <h3 style="margin-top:0">Partner with Zion Advisor</h3>
+      <p class="lead">Want us to tailor this framework to your program? We run short pilots that produce a working databook and a milestone plan that your team can operate immediately.</p>
+      <a class="btn-lean" href="/contact.html">Let's design a pilot →</a>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer style="border-top:1px solid #eef4fa;padding:18px 20px;text-align:center">
+    <div class="container"><small>© Zion Advisor</small></div>
+  </footer>
+
 </body>
 </html>

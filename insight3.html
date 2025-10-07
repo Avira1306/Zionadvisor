@@ -1,39 +1,108 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>India’s Skill Gap: Where the Next Opportunities Lie — Zion Advisor</title>
-<meta name="description" content="Zion Advisor — M&A, AI automations, and skill development advisory.">
-<meta property="og:title" content="India’s Skill Gap: Where the Next Opportunities Lie — Zion Advisor"><meta property="og:image" content="/assets/og-image.png">
-<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/styles.css">
-</head><body>
-<header>
-  <div class="container header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor logo"><span>Zion Advisor</span></a>
-    <nav class="nav">
-      <a href="/services.html">Services</a>
-      <a href="/insights.html">Insights</a>
-      <a href="/case-studies.html">Case Studies</a>
-      <a href="/templates.html">Templates</a>
-      <a href="/about.html">About</a>
-      <a class="btn secondary" href="/contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Human-in-the-Loop Automation — Zion Advisor</title>
+  <meta name="description" content="Decision matrix and pilot results for human-in-the-loop automation applied to proposal drafting and reconciliation tasks." />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
-<img src="/assets/banner-insights.jpg" class="banner" alt="">
-<div class="container section"><h1>India’s Skill Gap: Where the Next Opportunities Lie</h1><article class="card">
-<h2>Executive Summary</h2>
-<p>India adds ~100M workers by 2030, but only ~18% have formal training. The gap is a risk—and an opportunity—in EVs, drones, healthcare, and apparel.</p>
-<h3>Opportunity Sectors</h3>
-<p>EVs: assembly & charging. Drones: assembly, GIS, piloting. Healthcare: nurses, lab tech, telemedicine. Apparel: design, sustainable manufacturing, compliance.</p>
-<h3>Barriers</h3><p>Fragmented ecosystem; weak industry linkage; low tech adoption in Tier-2/3.</p>
-<h2>Consulting Takeaways</h2><ul><li>Demand-driven skilling via PPPs.</li><li>Align SSC curricula with emerging roles.</li><li>Focus near-term on EV, drones, healthcare, apparel.</li></ul>
-</article>
-<p class="small" style="margin-top:14px">Published by Zion Advisor Insights</p></div>
+  <!-- header -->
+  <header class="nav-dark">
+    <div class="header-inner container">
+      <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/insights.html">Insights</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/case-studies.html">Case Studies</a></li>
+          <li><a href="/templates.html">Templates</a></li>
+        </ul>
+      </nav>
+      <a class="btn-cta" href="/contact.html">Contact</a>
+    </div>
+  </header>
 
-<footer>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-    <span class="small">© Zion Advisor</span>
-    <a class="small" href="/privacy.html">Privacy</a>
-  </div>
-</footer>
-</body></html>
+  <!-- Banner -->
+  <section class="services-banner" style="background-image:url('/assets/banner-insights.jpg');">
+    <div class="banner-inner">
+      <p class="eyebrow">TECHNICAL NOTE</p>
+      <h1>Human-in-the-Loop Automation for Client Delivery</h1>
+      <p style="color:#fff;opacity:0.95;max-width:900px;margin-top:8px">Where to automate — and where to retain human judgment. Pilot evidence from a proposal drafting and reconciliation workflow.</p>
+    </div>
+  </section>
+
+  <main class="services-section">
+    <div class="services-container">
+      <div style="display:flex;gap:28px;flex-wrap:wrap">
+        <article style="flex:1 1 720px;">
+          <div style="background:#fff;border:1px solid #e6edf4;border-radius:10px;padding:22px;box-shadow:0 8px 20px rgba(17,24,39,0.06)">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+              <div class="meta" style="color:#566270">May 2025 · 7 min read</div>
+              <a href="/templates/Skilling-Proposal.docx" class="link-muted" target="_blank" rel="noopener">Download example</a>
+            </div>
+
+            <h2 style="margin-top:0">Overview</h2>
+            <p class="lead">We piloted human-in-the-loop automation for two workflows: (1) proposal drafting (template population + quality checks) and (2) reconciliation (data -> reconciled schedule). The hybrid model reduced manual hours by ~45% while preserving decision quality.</p>
+
+            <hr style="margin:18px 0;border-color:#eef4fa" />
+
+            <h3>Decision matrix: automate vs human</h3>
+            <p class="lead"><strong>Automate when:</strong> tasks are repetitive, rules-based, and low-ambiguity (e.g., field mapping, formatting). <strong>Human when:</strong> tasks demand contextual judgment, stakeholder negotiation, or interpretation of messy inputs.</p>
+
+            <h3>Pilot results</h3>
+            <ul>
+              <li><strong>Proposal drafting:</strong> template autopopulation + 1-pass human edit reduced time from 8h → 3.5h (56% reduction).</li>
+              <li><strong>Reconciliation:</strong> automated matching rules flagged exceptions that were resolved manually — 40% fewer man-hours for the reconciler and faster cycle time.</li>
+              <li><strong>User acceptance:</strong> staff reported that the hybrid flow preserved control while saving time on repetitive steps.</li>
+            </ul>
+
+            <h3>Implementation pattern</h3>
+            <ol>
+              <li>Map the end-to-end workflow and mark tasks as A (automate), H (human), or H/A (hybrid).</li>
+              <li>Build small automations for A tasks using scripts or RPA connectors; expose results in a review dashboard for human operators.</li>
+              <li>Measure cycle time and error rates before/after and iterate.</li>
+            </ol>
+
+            <hr style="margin:18px 0;border-color:#eef4fa" />
+
+            <h3>Starter assets</h3>
+            <p>Included: a decision matrix template, a proposal autopopulation script example, and a reconciler checklist.</p>
+
+            <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+              <a class="btn-lean" href="/templates/Skilling-Proposal.docx" target="_blank" rel="noopener">Download starter assets</a>
+              <a class="btn-lean" href="/insights.html" style="background:#f3f7fb;color:#0b62b8">Back to Insights</a>
+            </div>
+          </div>
+        </article>
+
+        <aside style="flex:0 0 320px;">
+          <div style="background:#fff;border:1px solid #e6edf4;padding:18px;border-radius:10px;box-shadow:0 8px 20px rgba(17,24,39,0.04)">
+            <h4 style="margin-top:0">Pilot workshop</h4>
+            <p class="lead">We run a 2-3 day workshop to map workflows, build a small automation prototype, and hand it over with operating rules.</p>
+            <a class="btn-lean" href="/contact.html">Book workshop →</a>
+          </div>
+
+          <div style="height:18px"></div>
+
+          <div style="background:#fff;border:1px solid #e6edf4;padding:18px;border-radius:10px;box-shadow:0 6px 16px rgba(17,24,39,0.04)">
+            <h5 style="margin:0 0 8px">Related briefs</h5>
+            <ul style="padding-left:18px;margin:0">
+              <li><a href="/insight1.html" class="link-muted">Data-to-Decision Pipelines</a></li>
+              <li><a href="/insight2.html" class="link-muted">Institutional Memory Systems</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer style="border-top:1px solid #eef4fa;padding:18px 20px;text-align:center">
+    <div class="container"><small>© Zion Advisor</small></div>
+  </footer>
+
+</body>
+</html>
