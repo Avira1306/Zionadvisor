@@ -7,14 +7,13 @@
   <meta name="description" content="Zion Advisor Insights — concise, evidence-driven briefs and proprietary frameworks for consulting teams and clients. Featured research, latest briefs and research themes for partners driving execution at scale." />
   <link rel="shortcut icon" href="assets/favicon.png" />
   <link rel="stylesheet" href="styles.css" />
-  <!-- Open Graph -->
   <meta property="og:title" content="Zion Advisor — Insights" />
   <meta property="og:description" content="Concise, evidence-first briefs and reusable frameworks for advisory teams and partners." />
   <meta property="og:image" content="assets/og-image.png" />
 </head>
 <body>
 
-  <!-- ======= Header (standalone copy) ======= -->
+  <!-- ===== header (remove if you use partials) ===== -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html"><img src="assets/logo.png" alt="Zion Advisor logo" /></a>
@@ -31,7 +30,7 @@
     </div>
   </header>
 
-  <!-- ======= Hero banner ======= -->
+  <!-- ===== hero banner ===== -->
   <section class="hero hero-insights" style="background-image: url('assets/banner-insights.jpg');">
     <div class="container hero-content">
       <div class="kicker">INSIGHTS</div>
@@ -43,41 +42,44 @@
     </div>
   </section>
 
-  <!-- ======= Intro microcopy ======= -->
+  <!-- ===== intro text ===== -->
   <section class="container intro">
     <p class="intro-text">
       Zion Advisor Insights combine rigorous data work, reproducible frameworks and project-tested tools — made for advisory teams and client partners who need faster decisions and reliable execution.
     </p>
   </section>
 
-  <!-- ======= Featured Insight (hero spotlight) ======= -->
-  <main class="container main-grid">
-    <section class="featured-insight card featured">
-      <div class="featured-row">
+  <main class="container content-wrap">
+
+    <!-- ===== Featured Insight (no icon, full-width card styled like Services) ===== -->
+    <section class="card featured-card">
+      <div class="featured-inner">
         <div class="featured-media">
           <img src="assets/banner-home.jpg" alt="Decision flow and dashboard for rapid project execution" />
         </div>
-        <div class="featured-body">
-          <div class="badge">FEATURED RESEARCH · FRAMEWORK</div>
-          <h2 class="featured-title">Rapid Execution Frameworks: Turning Advisory Strategy into Operative Programs</h2>
-          <p class="featured-excerpt">
+        <div class="featured-content">
+          <div class="card-badge">FEATURED RESEARCH · FRAMEWORK</div>
+          <h2 class="card-title">Rapid Execution Frameworks: Turning Advisory Strategy into Operative Programs</h2>
+          <p class="card-excerpt">
             A compact, reproducible playbook that reduces project ramp time by producing clear decision flows, measurable milestones and a single source of truth for operations. Includes an example databook and an implementation checklist.
           </p>
-          <div class="meta">
-            <span>Oct 2025</span> · <span>12 min read</span>
-          </div>
-          <div class="cta-row">
-            <a class="link-cta" href="insight-databook-7-steps.html">Read full brief →</a>
+          <div class="card-meta">Oct 2025 · 12 min read</div>
+          <div class="card-cta-row">
+            <a class="btn btn-primary" href="insight-databook-7-steps.html">Read full brief →</a>
             <a class="link-ghost" href="templates/ZionAdvisor_InsightBrief_2025.pdf" target="_blank" rel="noopener">Download brief (PDF)</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ======= Latest Briefs (3-card grid) ======= -->
+    <!-- ===== Latest Briefs grid (cards with same look & spacing as Services) ===== -->
     <section class="cards-grid">
+      <!-- card 1 -->
       <article class="card">
-        <div class="card-badge">DATA BRIEF · EVIDENCE</div>
+        <div class="card-head">
+          <div class="card-badge">DATA BRIEF · EVIDENCE</div>
+        </div>
+
         <h3 class="card-title">Data-to-Decision Pipelines for Small Advisory Teams</h3>
         <p class="card-excerpt">
           How lightweight ETL, a standardized databook and a weekly signal dashboard reduced time-to-insight by 40% in two pilot projects. Includes schema and sample pivot templates.
@@ -86,8 +88,12 @@
         <a class="card-link" href="insight1.html">Read brief →</a>
       </article>
 
+      <!-- card 2 -->
       <article class="card">
-        <div class="card-badge">CONSULTING NOTE · PRACTICE</div>
+        <div class="card-head">
+          <div class="card-badge">CONSULTING NOTE · PRACTICE</div>
+        </div>
+
         <h3 class="card-title">Institutional Memory Systems: Capture, Curate, Reuse</h3>
         <p class="card-excerpt">
           Practical rules for turning deliverables and field notes into searchable assets — saving senior time and preventing knowledge decay across projects.
@@ -96,40 +102,44 @@
         <a class="card-link" href="insight2.html">Read brief →</a>
       </article>
 
+      <!-- card 3 -->
       <article class="card">
-        <div class="card-badge">TECHNICAL NOTE · APPLIED AI</div>
+        <div class="card-head">
+          <div class="card-badge">TECHNICAL NOTE · APPLIED AI</div>
+        </div>
+
         <h3 class="card-title">Human-in-the-Loop Automation for Client Delivery</h3>
         <p class="card-excerpt">
-          A decision matrix for where to automate and where to keep human judgment — with pilot results from an automation rollout for proposal drafting and reconciliation.
+          A decision matrix for where to automate and where to retain human judgment — with pilot results from an automation rollout for proposal drafting and reconciliation.
         </p>
         <div class="card-meta">May 2025 · 7 min read</div>
         <a class="card-link" href="insight-ai-saves-time.html">Read brief →</a>
       </article>
     </section>
 
-    <!-- ======= Research themes (3 tiles) ======= -->
-    <aside class="theme-tiles">
-      <div class="theme-tile">
+    <!-- ===== Research themes row (clean tiles) ===== -->
+    <section class="theme-row">
+      <div class="theme-card">
         <h4 class="theme-title">Operational Design</h4>
         <p class="theme-text">Frameworks, checklists and project templates that shorten delivery cycles and lock in measurable KPIs.</p>
         <a class="theme-link" href="service-infra.html">Explore Operational Design →</a>
       </div>
 
-      <div class="theme-tile">
+      <div class="theme-card">
         <h4 class="theme-title">Digital Consulting Tools</h4>
         <p class="theme-text">Databooks, reproducible spreadsheets and automation playbooks tailored for small-to-mid consulting teams.</p>
         <a class="theme-link" href="service-automation.html">Explore Digital Tools →</a>
       </div>
 
-      <div class="theme-tile">
+      <div class="theme-card">
         <h4 class="theme-title">Knowledge Systems</h4>
         <p class="theme-text">Systems for capturing institutional knowledge — from scoped playbooks to reusable evidence libraries.</p>
         <a class="theme-link" href="templates.html">Explore Knowledge Systems →</a>
       </div>
-    </aside>
+    </section>
 
-    <!-- ======= Partnership CTA ======= -->
-    <section class="partner-cta card cta">
+    <!-- ===== Partnership CTA ===== -->
+    <section class="card partner-cta">
       <div class="cta-inner">
         <h3>Want a tailored brief or joint pilot?</h3>
         <p class="small">Invite Zion to co-design a research sprint, workshop, or pilot for your team — focused on measurable execution and rapid learning.</p>
@@ -137,17 +147,9 @@
       </div>
     </section>
 
-    <!-- ======= Downloadables quick note ======= -->
-    <section class="downloads muted">
-      <div class="container">
-        <strong>Downloadable resources:</strong>
-        <span>Selected briefs include downloadable databooks, example spreadsheets and implementation checklists. Look for the "Download" link inside full briefs.</span>
-      </div>
-    </section>
-
   </main>
 
-  <!-- ======= Footer (standalone copy) ======= -->
+  <!-- ===== footer (remove if you use partials) ===== -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-left">
@@ -168,7 +170,6 @@
   </footer>
 
   <script>
-    // small footer year injection
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
