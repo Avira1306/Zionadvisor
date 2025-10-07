@@ -1,68 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — Zion Advisor</title>
-  <meta name="description" content="About Zion Advisor — leadership, approach and credentials." />
-  <link rel="stylesheet" href="/styles.css">
+  <meta name="description" content="About Zion Advisor and Abhishek Bhandari — boutique consulting combining M&A discipline, AI automation, and workforce strategy." />
+
+  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="/styles.css" />
   <style>
-    .about-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start;max-width:1100px;margin:0 auto;padding:40px 20px}
-    .card{background:#fff;border:1px solid #e6edf4;border-radius:12px;padding:18px}
-    .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
-    .team-member{background:#fff;border:1px solid #e6edf4;border-radius:10px;padding:14px;display:flex;gap:12px;align-items:center}
-    .team-member img{width:72px;height:72px;border-radius:8px;object-fit:cover}
-    .team-member h3{margin:0;font-size:18px}
-    @media(max-width:900px){.about-wrap{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr}}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .about-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+    .about-card{padding:20px}
+    .badge{display:inline-block;background:#0b66c2;color:#fff;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700}
+    .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+    .facts .fact{background:#f6f9fc;border:1px solid #e6edf4;border-radius:10px;padding:12px;text-align:center}
+    .fact h3{margin:0;font-size:20px}
+    .fact p{margin:4px 0 0;font-size:12.5px;color:#516072}
+    .bio-list{list-style:none;padding-left:0;display:grid;gap:8px;color:#2a3440}
+    .bio-list li::before{content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;color:#18a06a;margin-right:8px}
+    .id-block{display:flex;gap:14px;align-items:center;margin:10px 0 0}
+    .id-block img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid #e6edf4}
+    .social a{display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+    .social .fa-linkedin{color:#0a66c2}
+    @media (max-width: 960px){.about-wrap{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <header class="nav-dark"><div class="header-inner"><a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a><div class="nav-wrap"><nav><ul class="nav-links" id="siteNav"><li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li><li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li><li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li><li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li></ul></nav><a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a><button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></div></header>
 
-  <div class="about-wrap">
-    <div class="card">
-      <h1>About Zion Advisor</h1>
-      <p>Zion Advisor is a boutique consulting practice combining M&amp;A discipline, AI automation and transaction advisory. We build investor-grade databooks, deploy automation to reduce manual effort, and support infrastructure and market-entry mandates.</p>
+<!-- Header placeholder -->
+<div id="header-placeholder"></div>
 
-      <h2 style="margin-top:18px">Leadership</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="/assets/photo.png" alt="Abhishek Bhandari">
-          <div>
-            <h3>Abhishek Bhandari</h3>
-            <p class="small muted">Founder — M&amp;A, AI Automation</p>
-            <p class="small">Abhishek brings 15+ years of experience delivering transaction-ready databooks, automation pipelines and advisory to founder-led firms and private capital.</p>
-          </div>
-        </div>
+<!-- Banner -->
+<img src="/assets/banner-about.jpg" class="banner" alt="About Zion Advisor banner">
 
-        <div class="team-member">
-          <!-- No portrait required for Leji on Services; About shows a text-only block if photo not provided -->
-          <div style="width:72px;height:72px;border-radius:8px;background:#f2f6fa;display:flex;align-items:center;justify-content:center;color:#0b66c2;font-weight:700">LJ</div>
-          <div>
-            <h3>Leji Joseph</h3>
-            <p class="small muted">Associate Partner — Infrastructure & Transaction Advisory</p>
-            <p class="small">Leji has 14+ years of transaction and advisory experience across infrastructure, valuation, and feasibility studies (EY, World Bank CoE and more). He leads our infrastructure and PPP capabilities.</p>
-          </div>
-        </div>
+<div class="container section">
+  <h1>About</h1>
+  <p class="small" style="max-width:820px">
+    Zion Advisor is a boutique consulting practice led by <strong>Abhishek Bhandari</strong>, combining M&amp;A discipline,
+    AI automation, and workforce strategy to deliver measurable outcomes for founders, funds, and institutions.
+  </p>
+
+  <div class="about-wrap" style="margin-top:16px">
+    <!-- Left: Story & Approach -->
+    <div class="card about-card">
+      <span class="badge">Clarity • Trust • Transformation</span>
+      <h2 style="margin:10px 0 8px">Our approach</h2>
+      <ul class="bio-list">
+        <li><strong>Deal-first:</strong> We build investor-grade databooks with schedules that reconcile, not just pretty charts.</li>
+        <li><strong>Automation-native:</strong> We use AI and workflow tools to cut repetitive work and shorten time-to-decision.</li>
+        <li><strong>Operator mindset:</strong> Recommendations are grounded in execution realities—budgets, people, and timelines.</li>
+      </ul>
+
+      <h3 style="margin-top:14px">What clients choose us for</h3>
+      <ul class="bio-list">
+        <li>Clean M&amp;A databooks and focused QoE for smaller deals</li>
+        <li>AI flows that save 40–70% analyst time (parsing, reconciliation, outreach)</li>
+        <li>Audit-ready skilling programs aligned with NSDC/SSC requirements</li>
+      </ul>
+
+      <div class="facts">
+        <div class="fact"><h3>15+ yrs</h3><p>advisory & ops</p></div>
+        <div class="fact"><h3>100+</h3><p>databook & model builds</p></div>
+        <div class="fact"><h3>40–70%</h3><p>time saved via automation</p></div>
       </div>
 
+      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="/services.html">See Services</a>
+        <a class="btn secondary" href="/contact.html">Book a consult</a>
+      </div>
     </div>
 
-    <div class="card">
-      <h2>Our approach</h2>
-      <p>We combine investor-grade rigor and automation-first execution. Our recommendations include executable timelines, clear data packs and handover runbooks so clients can move from insight to implementation quickly.</p>
-      <h3 style="margin-top:14px">What clients value</h3>
-      <ul style="padding-left:16px">
-        <li>Reconciled, auditable financial schedules</li>
-        <li>AI and workflow automation to reduce analyst time</li>
-        <li>Transaction advisory for infrastructure and PPPs</li>
+    <!-- Right: Profile -->
+    <div class="card about-card">
+      <img src="/assets/photo.png" alt="Abhishek Bhandari" style="width:100%;border-radius:12px;object-fit:cover;max-height:420px">
+      <div class="id-block">
+        <img src="/assets/photo.png" alt="Abhishek thumbnail">
+        <div>
+          <strong>Abhishek Bhandari</strong>
+          <p class="small" style="margin:2px 0 0;color:#5b6572">Founder, Zion Advisor</p>
+          <p class="small" style="margin:2px 0 0;color:#5b6572">M&amp;A, AI Automation, Skill Development</p>
+        </div>
+      </div>
+      <div class="social" style="margin-top:10px">
+        <a href="https://www.linkedin.com/in/abhishek-bhandari-6b048979/" target="_blank" rel="noopener">
+          <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+        </a>
+      </div>
+
+      <h3 style="margin-top:14px">Credentials & focus</h3>
+      <ul class="bio-list">
+        <li>Built investment-grade databooks for founder-led and PE-backed companies</li>
+        <li>Designed AI-led workflows for parsing, reconciliation & reporting</li>
+        <li>Drafted NSDC/SSC proposals and monitoring frameworks</li>
       </ul>
     </div>
   </div>
+</div>
 
-  <footer><div class="container" style="display:flex;justify-content:space-between;align-items:center;"><span class="small">© Zion Advisor</span><a class="small" href="/privacy.html">Privacy</a></div></footer>
-  <script>const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');btn?.addEventListener('click',()=>nav.classList.toggle('show'));</script>
+<!-- Footer placeholder -->
+<div id="footer-placeholder"></div>
+
+<!-- JS to load partials -->
+<script>
+  async function includeHTML(id, file) {
+    const el = document.getElementById(id);
+    if (el) {
+      const resp = await fetch(file);
+      el.innerHTML = await resp.text();
+    }
+  }
+
+  // Load header
+  includeHTML("header-placeholder", "/partials/header.html").then(()=>{
+    const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
+    btn?.addEventListener('click',()=>nav.classList.toggle('show'));
+    const path=location.pathname.replace(/\/index\.html$/,'/');
+    document.querySelectorAll('.nav-links a').forEach(a=>{
+      if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
+    });
+  });
+
+  // Load footer
+  includeHTML("footer-placeholder", "/partials/footer.html").then(()=>{
+    const path=location.pathname.replace(/\/index\.html$/,'/');
+    document.querySelectorAll('.footer-links a').forEach(a=>{
+      if(a.getAttribute('href')===path){
+        a.setAttribute('aria-current','page');
+        a.style.fontWeight = '600';
+        a.style.textDecoration = 'underline';
+      }
+    });
+  });
+</script>
 </body>
 </html>
