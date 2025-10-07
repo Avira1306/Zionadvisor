@@ -1,247 +1,176 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Insights — Zion Advisor</title>
-  <meta name="description" content="Insights from Zion Advisor — short briefs and professional takes on M&A, automation and workforce strategy." />
-
-  <!-- Fonts & Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Site CSS -->
-  <link rel="stylesheet" href="/styles.css">
-
-  <style>
-    /* Small helper to keep page-specific CSS fast to edit */
-    :root { --insight-card-bg: #ffffff; --insight-card-border: #e6edf4; --insight-shadow: 0 8px 20px rgba(17,24,39,0.06); --accent:#0b66c2; --muted:#5b6572; }
-
-    /* ===============================
-       Scoped Insights styles (safe)
-       =============================== */
-    .insights-section { padding: 0; margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #0b0f14; }
-
-    /* Banner - full width */
-    .insights-banner {
-      width: 100%;
-      height: 260px;
-      background-image: url('/assets/banner-insights.jpg');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-bottom: 1px solid var(--insight-card-border);
-    }
-    .insights-banner .banner-inner {
-      max-width: 1100px;
-      padding: 24px;
-      text-align: left;
-    }
-    .insights-banner .eyebrow {
-      display:inline-block;
-      font-weight:700;
-      text-transform:uppercase;
-      color: var(--accent);
-      font-size:13px;
-      letter-spacing:.06em;
-      margin-bottom:8px;
-    }
-    .insights-banner h1 {
-      margin: 6px 0 0;
-      font-size: clamp(28px, 3.5vw, 42px);
-      color: #fff;
-      text-shadow: 0 6px 18px rgba(0,0,0,0.35);
-      line-height:1.05;
-    }
-
-    /* Main container area */
-    .insights-container {
-      max-width:1100px;
-      margin: 36px auto;
-      padding: 0 20px 60px;
-    }
-
-    /* Grid: 3 columns on desktop, 2 on tablet, 1 on mobile */
-    .insights-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      align-items: start;
-    }
-
-    /* Card */
-    .insight-card {
-      background: var(--insight-card-bg);
-      border: 1px solid var(--insight-card-border);
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: var(--insight-shadow);
-      display: flex;
-      flex-direction: column;
-      min-height: 260px;
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .insight-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 14px 32px rgba(17,24,39,0.08);
-    }
-    .insight-card .kicker {
-      display:inline-block;
-      font-size:12px;
-      font-weight:700;
-      color:var(--accent);
-      margin-bottom:8px;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-    }
-    .insight-card h3 {
-      margin: 6px 0 10px;
-      font-size:18px;
-      color:#0b0f14;
-    }
-    .insight-card p.lead {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size:14px;
-      line-height:1.5;
-      flex: 1 1 auto;
-    }
-    .insight-card .meta {
-      display:flex;
-      gap:12px;
-      align-items:center;
-      font-size:13px;
-      color:var(--muted);
-    }
-    .insight-card .meta time { color:var(--muted); font-weight:600; }
-
-    /* Read more button */
-    .insight-card .read-more {
-      margin-top:14px;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      text-decoration:none;
-      font-weight:700;
-      color:var(--accent);
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 1000px) {
-      .insights-grid { grid-template-columns: repeat(2, 1fr); gap:18px; }
-      .insights-banner { height:220px; }
-    }
-    @media (max-width: 640px) {
-      .insights-grid { grid-template-columns: 1fr; gap:14px; }
-      .insights-banner { height:180px; }
-      .insight-card { padding:16px; min-height:unset; }
-      .insights-container { margin: 20px auto; padding: 0 14px 40px; }
-    }
-
-    /* Small utility */
-    .muted { color: var(--muted); font-size:13px; }
-  </style>
+  <title>Zion Advisor — Insights</title>
+  <meta name="description" content="Zion Advisor Insights — concise, evidence-driven briefs and proprietary frameworks for consulting teams and clients. Featured research, latest briefs and research themes for partners driving execution at scale." />
+  <link rel="shortcut icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Zion Advisor — Insights" />
+  <meta property="og:description" content="Concise, evidence-first briefs and reusable frameworks for advisory teams and partners." />
+  <meta property="og:image" content="assets/og-image.png" />
 </head>
 <body>
 
-  <!-- Header include (if you use partials, keep same header) -->
-  <header class="nav-dark">
-    <div class="header-inner">
-      <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
-      <div class="nav-wrap">
-        <nav>
-          <ul class="nav-links" id="siteNav">
-            <li><a href="/insights.html" aria-current="page"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
-            <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
-            <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
-            <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
-            <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
-          </ul>
-        </nav>
-        <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-        <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-      </div>
+  <!-- ======= Header (standalone copy) ======= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html"><img src="assets/logo.png" alt="Zion Advisor logo" /></a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="insights.html" aria-current="page">Insights</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="templates.html">Templates</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary" href="contact.html">Contact</a>
     </div>
   </header>
 
-  <!-- Banner -->
-  <section class="insights-banner" role="img" aria-label="Insights banner">
-    <div class="banner-inner">
-      <p class="eyebrow">Insights</p>
-      <h1>Short briefs, polished takeaways — research for decision-makers</h1>
+  <!-- ======= Hero banner ======= -->
+  <section class="hero hero-insights" style="background-image: url('assets/banner-insights.jpg');">
+    <div class="container hero-content">
+      <div class="kicker">INSIGHTS</div>
+      <h1 class="hero-title">Short briefs, original frameworks — research for consulting peers and partners</h1>
+      <p class="hero-sub">
+        We transform field data, project experience and automation into concise, evidence-first briefs and reusable frameworks.
+        Read featured research, download practical databooks, or invite us to co-design solutions with your team.
+      </p>
     </div>
   </section>
 
-  <!-- Main content -->
-  <main class="insights-section">
-    <div class="insights-container">
+  <!-- ======= Intro microcopy ======= -->
+  <section class="container intro">
+    <p class="intro-text">
+      Zion Advisor Insights combine rigorous data work, reproducible frameworks and project-tested tools — made for advisory teams and client partners who need faster decisions and reliable execution.
+    </p>
+  </section>
 
-      <!-- Intro -->
-      <div style="max-width:860px;margin:18px auto 28px;text-align:center">
-        <p style="margin:0;color:#566270;font-size:15px">
-          Our insights distil data, deal experience and automation into short, actionable briefs.
-          Download select databooks and templates, or contact us for tailored analysis.
+  <!-- ======= Featured Insight (hero spotlight) ======= -->
+  <main class="container main-grid">
+    <section class="featured-insight card featured">
+      <div class="featured-row">
+        <div class="featured-media">
+          <img src="assets/banner-home.jpg" alt="Decision flow and dashboard for rapid project execution" />
+        </div>
+        <div class="featured-body">
+          <div class="badge">FEATURED RESEARCH · FRAMEWORK</div>
+          <h2 class="featured-title">Rapid Execution Frameworks: Turning Advisory Strategy into Operative Programs</h2>
+          <p class="featured-excerpt">
+            A compact, reproducible playbook that reduces project ramp time by producing clear decision flows, measurable milestones and a single source of truth for operations. Includes an example databook and an implementation checklist.
+          </p>
+          <div class="meta">
+            <span>Oct 2025</span> · <span>12 min read</span>
+          </div>
+          <div class="cta-row">
+            <a class="link-cta" href="insight-databook-7-steps.html">Read full brief →</a>
+            <a class="link-ghost" href="templates/ZionAdvisor_InsightBrief_2025.pdf" target="_blank" rel="noopener">Download brief (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Latest Briefs (3-card grid) ======= -->
+    <section class="cards-grid">
+      <article class="card">
+        <div class="card-badge">DATA BRIEF · EVIDENCE</div>
+        <h3 class="card-title">Data-to-Decision Pipelines for Small Advisory Teams</h3>
+        <p class="card-excerpt">
+          How lightweight ETL, a standardized databook and a weekly signal dashboard reduced time-to-insight by 40% in two pilot projects. Includes schema and sample pivot templates.
         </p>
+        <div class="card-meta">Sep 2025 · 5 min read</div>
+        <a class="card-link" href="insight1.html">Read brief →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-badge">CONSULTING NOTE · PRACTICE</div>
+        <h3 class="card-title">Institutional Memory Systems: Capture, Curate, Reuse</h3>
+        <p class="card-excerpt">
+          Practical rules for turning deliverables and field notes into searchable assets — saving senior time and preventing knowledge decay across projects.
+        </p>
+        <div class="card-meta">Jul 2025 · 6 min read</div>
+        <a class="card-link" href="insight2.html">Read brief →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-badge">TECHNICAL NOTE · APPLIED AI</div>
+        <h3 class="card-title">Human-in-the-Loop Automation for Client Delivery</h3>
+        <p class="card-excerpt">
+          A decision matrix for where to automate and where to keep human judgment — with pilot results from an automation rollout for proposal drafting and reconciliation.
+        </p>
+        <div class="card-meta">May 2025 · 7 min read</div>
+        <a class="card-link" href="insight-ai-saves-time.html">Read brief →</a>
+      </article>
+    </section>
+
+    <!-- ======= Research themes (3 tiles) ======= -->
+    <aside class="theme-tiles">
+      <div class="theme-tile">
+        <h4 class="theme-title">Operational Design</h4>
+        <p class="theme-text">Frameworks, checklists and project templates that shorten delivery cycles and lock in measurable KPIs.</p>
+        <a class="theme-link" href="service-infra.html">Explore Operational Design →</a>
       </div>
 
-      <!-- Grid -->
-      <div class="insights-grid" id="insightsGrid">
+      <div class="theme-tile">
+        <h4 class="theme-title">Digital Consulting Tools</h4>
+        <p class="theme-text">Databooks, reproducible spreadsheets and automation playbooks tailored for small-to-mid consulting teams.</p>
+        <a class="theme-link" href="service-automation.html">Explore Digital Tools →</a>
+      </div>
 
-        <!-- Card 1 -->
-        <article class="insight-card">
-          <span class="kicker">Databook</span>
-          <h3>Investor-grade Databooks for Founder-led Deals</h3>
-          <p class="lead">How we build reconciled profit & loss, balance sheet and cash flow schedules from trial balances — audit-ready and investor-friendly.</p>
-          <div class="meta">
-            <time datetime="2025-08-01">Aug 2025</time>
-            <span class="muted"> • 6 min read</span>
-          </div>
-          <a class="read-more" href="/insight-databook.html">Read brief <i class="fa-solid fa-arrow-right"></i></a>
-        </article>
+      <div class="theme-tile">
+        <h4 class="theme-title">Knowledge Systems</h4>
+        <p class="theme-text">Systems for capturing institutional knowledge — from scoped playbooks to reusable evidence libraries.</p>
+        <a class="theme-link" href="templates.html">Explore Knowledge Systems →</a>
+      </div>
+    </aside>
 
-        <!-- Card 2 -->
-        <article class="insight-card">
-          <span class="kicker">Automation</span>
-          <h3>AI Flows That Save 40–70% Analyst Time</h3>
-          <p class="lead">A practical guide to parsing source documents, auto-reconciling schedules, and building repeatable pipelines for small deal teams.</p>
-          <div class="meta">
-            <time datetime="2025-07-15">Jul 2025</time>
-            <span class="muted"> • 7 min read</span>
-          </div>
-          <a class="read-more" href="/insight-automation.html">Read brief <i class="fa-solid fa-arrow-right"></i></a>
-        </article>
+    <!-- ======= Partnership CTA ======= -->
+    <section class="partner-cta card cta">
+      <div class="cta-inner">
+        <h3>Want a tailored brief or joint pilot?</h3>
+        <p class="small">Invite Zion to co-design a research sprint, workshop, or pilot for your team — focused on measurable execution and rapid learning.</p>
+        <a class="btn btn-primary" href="contact.html">Let's partner →</a>
+      </div>
+    </section>
 
-        <!-- Card 3 -->
-        <article class="insight-card">
-          <span class="kicker">Workforce</span>
-          <h3>Skilling & Operative Readiness for Rapid Scale</h3>
-          <p class="lead">Designing a training roadmap that aligns NSQF job roles with on-the-ground hiring and placement outcomes for sustainable scale.</p>
-          <div class="meta">
-            <time datetime="2025-06-20">Jun 2025</time>
-            <span class="muted"> • 5 min read</span>
-          </div>
-          <a class="read-more" href="/insight-skilling.html">Read brief <i class="fa-solid fa-arrow-right"></i></a>
-        </article>
+    <!-- ======= Downloadables quick note ======= -->
+    <section class="downloads muted">
+      <div class="container">
+        <strong>Downloadable resources:</strong>
+        <span>Selected briefs include downloadable databooks, example spreadsheets and implementation checklists. Look for the "Download" link inside full briefs.</span>
+      </div>
+    </section>
 
-      </div> <!-- /grid -->
-
-    </div> <!-- /container -->
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-      <span class="small">© Zion Advisor</span>
-      <a class="small" href="/privacy.html">Privacy</a>
+  <!-- ======= Footer (standalone copy) ======= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="index.html"><img src="assets/logo.png" alt="Zion Advisor logo" /></a>
+        <p class="small">Zion Advisor — frameworks, data and delivery systems for advisory teams.</p>
+      </div>
+      <div class="footer-links">
+        <a href="insights.html">Insights</a>
+        <a href="services.html">Services</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="templates.html">Templates</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-right small">
+        <p>© <span id="year"></span> Zion Advisor</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Minimal JS to keep header/menu behavior -->
   <script>
-    const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
-    btn?.addEventListener('click',()=>nav.classList.toggle('show'));
+    // small footer year injection
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
