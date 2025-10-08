@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    /* Page-specific micro-styles (kept minimal) */
     .svc-banner{background:url('/assets/banner-insights.jpg') center/cover no-repeat;height:200px;display:flex;align-items:center;border-bottom:1px solid #e6edf4}
     .svc-banner .inner{max-width:1100px;margin:0 auto;padding:20px;color:#fff;text-shadow:0 6px 18px rgba(0,0,0,0.3)}
     .svc-container{max-width:1100px;margin:32px auto;padding:0 20px 60px}
@@ -22,26 +23,54 @@
   </style>
 </head>
 <body>
-  <header class="nav-dark"><div class="header-inner"><a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a><div class="nav-wrap"><nav><ul class="nav-links" id="siteNav"><li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li><li><a href="/services.html" aria-current="page"><i class="fa-solid fa-briefcase"></i> Services</a></li></ul></nav><a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a><button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></div></header>
 
-  <section class="svc-banner" role="img" aria-label="Automation banner"><div class="inner"><h1>AI Workflow Automation</h1></div></section>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;">Skip to main content</a>
 
-  <main class="svc-container">
+  <!-- Header (consistent header partial) -->
+  <header class="nav-dark">
+    <div class="header-inner">
+      <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
+      <div class="nav-wrap">
+        <nav>
+          <ul class="nav-links" id="siteNav">
+            <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+            <li><a href="/services.html" aria-current="page"><i class="fa-solid fa-briefcase"></i> Services</a></li>
+            <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
+            <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
+            <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
+          </ul>
+        </nav>
+        <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+        <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="svc-banner" role="img" aria-label="Automation banner">
+    <div class="inner">
+      <h1>AI Workflow Automation</h1>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <main id="main" class="svc-container">
     <div class="svc-card">
       <div class="svc-head">
         <div class="svc-left">
           <h2>Overview</h2>
           <p>We design and deploy automation pipelines that ingest source documents, extract data, reconcile schedules and produce investor-ready outputs with minimal manual work.</p>
 
-          <h3 style="margin-top:18px">What we deliver</h3>
+          <h3>What we deliver</h3>
           <ul class="svc-list">
-            <li>Document parsing & OCR flows</li>
+            <li>Document parsing &amp; OCR flows</li>
             <li>Auto-reconciliation rules and exceptions dashboard</li>
             <li>Integration with ERPs and data lakes</li>
             <li>Operational handover and runbooks</li>
           </ul>
 
-          <p style="margin-top:18px"><a class="btn-primary" href="/contact.html">Book a consult</a></p>
+          <p style="margin-top:14px"><a class="btn-primary" href="/contact.html">Book a consult</a></p>
         </div>
 
         <aside class="svc-right">
@@ -55,7 +84,26 @@
     </div>
   </main>
 
-  <footer><div class="container" style="display:flex;justify-content:space-between;align-items:center;"><span class="small">© Zion Advisor</span><a class="small" href="/privacy.html">Privacy</a></div></footer>
-  <script>const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');btn?.addEventListener('click',()=>nav.classList.toggle('show'));</script>
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px;">
+      <span class="small">© Zion Advisor</span>
+      <a class="small" href="/privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle + active link highlight
+    const btn = document.getElementById('burgerBtn'), nav = document.getElementById('siteNav');
+    btn?.addEventListener('click', ()=> nav.classList.toggle('show'));
+
+    // Set aria-current on the active nav link
+    (function setActiveNav() {
+      const path = location.pathname.replace(/\/index\.html$/,'/');
+      document.querySelectorAll('.nav-links a').forEach(a=>{
+        if (a.getAttribute('href') === path) a.setAttribute('aria-current','page');
+        else a.removeAttribute('aria-current');
+      });
+    })();
+  </script>
 </body>
 </html>
