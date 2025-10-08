@@ -1,6 +1,6 @@
 /* ===============================
    Header / Navigation (Zion Advisor)
-   - Unified logo size across all pages
+   - Larger, clear logo across all pages
    - Dark consulting-style nav
    - Responsive burger menu
    =============================== */
@@ -11,8 +11,8 @@
   --nav-dark-2:#131a21;
   --nav-text:#eaeff5;
   --nav-dim:#9fb0c2;
-  --nav-accent:#ffd24d;   /* highlight line under active/hover */
-  --nav-cta:#62FFA4;      /* contact button */
+  --nav-accent:#ffd24d;
+  --nav-cta:#62FFA4;
   --nav-border:#1d2530;
 }
 
@@ -25,7 +25,7 @@ header.nav-dark{
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
 
-/* Constrain header width to site container */
+/* Constrain header width */
 .header-inner{
   max-width: 1100px;
   margin: 0 auto;
@@ -36,37 +36,30 @@ header.nav-dark{
   gap: 20px;
 }
 
-/* -------- Unified Logo -------- */
+/* -------- Logo -------- */
 .logo{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-  font-weight: 800;
-  letter-spacing: .2px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#fff;
+  font-weight:800;
+  letter-spacing:.2px;
+  line-height:1;
 }
 
-/* ✅ FIXED: Standard logo size (matches Insights & Services) */
-.logo img {
+/* ✅ UPDATED: Clear, visible logo across all pages */
+.logo img{
   height: 48px;
+  max-height: 72px;
   width: auto;
   object-fit: contain;
+  filter: brightness(1.05);
   vertical-align: middle;
   display: inline-block;
-
-  /* Subtle glow for visibility on dark background */
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6))
-          drop-shadow(0 0 6px rgba(255,255,255,0.15));
-  transition: filter 0.3s ease;
-}
-
-.logo img:hover {
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.7))
-          drop-shadow(0 0 8px rgba(255,255,255,0.2));
 }
 
 .logo span{
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 800;
   color: #fff;
   letter-spacing: .2px;
@@ -132,24 +125,8 @@ header.nav-dark{
 
 /* -------- Responsive rules -------- */
 @media (max-width: 960px){
-  .logo img {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
-  vertical-align: middle;
-  display: inline-block;
-
-  /* Subtle glow for visibility on dark background */
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6))
-          drop-shadow(0 0 6px rgba(255,255,255,0.15));
-  transition: filter 0.3s ease;
-}
-
-.logo img:hover {
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.7))
-          drop-shadow(0 0 8px rgba(255,255,255,0.2));
-} /* scale down slightly */
-  .logo span{ font-size:19px; }
+  .logo img{ height:36px; }
+  .logo span{ font-size:16px; }
 
   .nav-wrap{ gap:10px; }
 
@@ -170,29 +147,11 @@ header.nav-dark{
 }
 
 @media (max-width: 560px){
-  .logo img {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
-  vertical-align: middle;
-  display: inline-block;
-
-  /* Subtle glow for visibility on dark background */
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6))
-          drop-shadow(0 0 6px rgba(255,255,255,0.15));
-  transition: filter 0.3s ease;
-}
-
-.logo img:hover {
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.7))
-          drop-shadow(0 0 8px rgba(255,255,255,0.2));
-}
-  .logo span{ font-size:18px; }
+  .logo img{ height:28px; }
+  .logo span{ font-size:15px; }
 }
 
 /* =======================================
    (rest of your CSS continues unchanged)
    Hero, Services, Insights, About, etc.
    ======================================= */
-
-/* keep all existing sections exactly as in your uploaded file */
