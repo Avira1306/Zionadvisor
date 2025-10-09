@@ -10,13 +10,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
 
-  <!-- Site CSS -->
+  <!-- Site CSS (must exist at /styles.css on your host) -->
   <link rel="stylesheet" href="/styles.css" />
   <style>body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}</style>
 </head>
 <body>
 
-<!-- Header -->
+<!-- Skip link for keyboard users -->
+<a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;">Skip to main content</a>
+
+<!-- Header (consistent header partial; no inline height on logo) -->
 <header class="nav-dark">
   <div class="header-inner">
     <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
@@ -38,7 +41,7 @@
 </header>
 
 <!-- HERO (revamped version with depth and motion) -->
-<section class="hero hero--vibrant home-hero">
+<section class="hero hero--vibrant home-hero" role="region" aria-label="Main hero">
   <div class="hero__overlay"></div>
   <div class="hero__inner">
     <p class="eyebrow">Guiding Growth, Securing Tomorrow</p>
@@ -54,10 +57,11 @@
   </div>
 </section>
 
-<!-- Intro tagline -->
-<div class="container section" style="text-align:center;">
+<!-- Main content -->
+<main id="main" class="container section" style="text-align:center;">
   <h2>Deal-Ready. AI-Powered. Skill-Focused.</h2>
-</div>
+  <p class="muted">We move messy source data into investor-ready outputs and executable strategy — faster, cleaner, and with less manual work.</p>
+</main>
 
 <!-- Footer -->
 <footer>
@@ -67,14 +71,18 @@
   </div>
 </footer>
 
-<!-- JS -->
+<!-- JS: mobile nav toggle + set active nav link -->
 <script>
-  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
-  btn?.addEventListener('click',()=>nav.classList.toggle('show'));
-  const path=location.pathname.replace(/\/index\.html$/,'/');
-  document.querySelectorAll('.nav-links a').forEach(a=>{
-    if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
-  });
+  const btn = document.getElementById('burgerBtn'), nav = document.getElementById('siteNav');
+  btn?.addEventListener('click', ()=> nav.classList.toggle('show'));
+
+  (function setActiveNav() {
+    const path = location.pathname.replace(/\/index\.html$/,'/');
+    document.querySelectorAll('.nav-links a').forEach(a=>{
+      if (a.getAttribute('href') === path) a.setAttribute('aria-current','page');
+      else a.removeAttribute('aria-current');
+    });
+  })();
 </script>
 </body>
 </html>
