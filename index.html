@@ -4,85 +4,138 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Zion Advisor — Deal-Ready. Data-First. AI-Powered.</title>
-  <meta name="description" content="Zion Advisor helps founders, PE/VC funds, and institutions build M&A databooks, run due diligence, and deploy AI automations." />
+  <meta name="description" content="Zion Advisor helps founders, funds, and institutions transform insights into impact — from M&A databooks to automation workflows that redefine speed and precision." />
 
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
 
-  <!-- Site CSS (must exist at /styles.css on your host) -->
+  <!-- Main site CSS -->
   <link rel="stylesheet" href="/styles.css" />
-  <style>body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}</style>
+  <style>
+    /* Only affecting home page */
+    .hero--vibrant {
+      position: relative;
+      padding: 140px 20px;
+      background: linear-gradient(120deg, #0b1220 0%, #162439 40%, #1a2f50 100%);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero--vibrant::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(98, 255, 164, 0.12), transparent 60%),
+                  radial-gradient(circle at 80% 70%, rgba(11, 102, 194, 0.15), transparent 60%);
+      z-index: 0;
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero__inner h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero__inner .hero__sub {
+      max-width: 680px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #d3d8e3;
+    }
+
+    .hero__cta {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    @media(max-width:640px){
+      .hero--vibrant{padding:100px 20px;}
+      .hero__inner h1{font-size:36px;}
+    }
+  </style>
 </head>
 <body>
 
-<!-- Skip link for keyboard users -->
-<a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;">Skip to main content</a>
+  <!-- Skip link -->
+  <a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;">Skip to main content</a>
 
-<!-- Header (consistent header partial; no inline height on logo) -->
-<header class="nav-dark">
-  <div class="header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
-    <div class="nav-wrap">
-      <nav>
-        <ul class="nav-links" id="siteNav">
-          <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
-          <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
-          <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
-          <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
-          <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
-        </ul>
-      </nav>
-      <a class="icon-btn" href="/insights.html" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
-      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <!-- Header -->
+  <header class="nav-dark">
+    <div class="header-inner">
+      <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
+      <div class="nav-wrap">
+        <nav>
+          <ul class="nav-links" id="siteNav">
+            <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+            <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
+            <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
+            <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
+            <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
+          </ul>
+        </nav>
+        <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+        <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- HERO (revamped version with depth and motion) -->
-<section class="hero hero--vibrant home-hero" role="region" aria-label="Main hero">
-  <div class="hero__overlay"></div>
-  <div class="hero__inner">
-    <p class="eyebrow">Guiding Growth, Securing Tomorrow</p>
-    <h1>Deal-Ready. Data-First.<br>AI-Powered Advisory.</h1>
-    <p class="hero__sub">
-      Zion Advisor helps founders, funds, and institutions transform insights into impact —
-      from M&A databooks to automation workflows that redefine speed and precision.
+  <!-- HERO Section (restored original centered design) -->
+  <section class="hero--vibrant" role="region" aria-label="Main hero">
+    <div class="hero__inner">
+      <p class="eyebrow">Guiding Growth, Securing Tomorrow</p>
+      <h1>Deal-Ready. Data-First.<br>AI-Powered Advisory.</h1>
+      <p class="hero__sub">
+        Zion Advisor helps founders, funds, and institutions transform insights into impact — from M&A databooks to automation workflows that redefine speed and precision.
+      </p>
+      <div class="hero__cta">
+        <a class="btn" href="/contact.html">Book a Free Consult</a>
+        <a class="btn secondary" href="/services.html">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <main id="main" class="container" style="text-align:center;padding:80px 20px;">
+    <h2>Deal-Ready. AI-Powered. Skill-Focused.</h2>
+    <p class="muted" style="max-width:720px;margin:12px auto 0;">
+      We move messy source data into investor-ready outputs and executable strategy — faster, cleaner, and with less manual work.
     </p>
-    <div class="hero__cta">
-      <a class="btn" href="/contact.html">Book a Free Consult</a>
-      <a class="btn secondary" href="/services.html">Explore Services</a>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px;">
+      <span class="small">© Zion Advisor</span>
+      <a class="small" href="/privacy.html">Privacy</a>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- Main content -->
-<main id="main" class="container section" style="text-align:center;">
-  <h2>Deal-Ready. AI-Powered. Skill-Focused.</h2>
-  <p class="muted">We move messy source data into investor-ready outputs and executable strategy — faster, cleaner, and with less manual work.</p>
-</main>
+  <!-- JS -->
+  <script>
+    const btn = document.getElementById('burgerBtn'), nav = document.getElementById('siteNav');
+    btn?.addEventListener('click', ()=> nav.classList.toggle('show'));
 
-<!-- Footer -->
-<footer>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-    <span class="small">© Zion Advisor</span>
-    <a class="small" href="/privacy.html">Privacy</a>
-  </div>
-</footer>
+    (function setActiveNav() {
+      const path = location.pathname.replace(/\/index\.html$/,'/');
+      document.querySelectorAll('.nav-links a').forEach(a=>{
+        if (a.getAttribute('href') === path) a.setAttribute('aria-current','page');
+        else a.removeAttribute('aria-current');
+      });
+    })();
+  </script>
 
-<!-- JS: mobile nav toggle + set active nav link -->
-<script>
-  const btn = document.getElementById('burgerBtn'), nav = document.getElementById('siteNav');
-  btn?.addEventListener('click', ()=> nav.classList.toggle('show'));
-
-  (function setActiveNav() {
-    const path = location.pathname.replace(/\/index\.html$/,'/');
-    document.querySelectorAll('.nav-links a').forEach(a=>{
-      if (a.getAttribute('href') === path) a.setAttribute('aria-current','page');
-      else a.removeAttribute('aria-current');
-    });
-  })();
-</script>
 </body>
 </html>
