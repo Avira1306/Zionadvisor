@@ -190,32 +190,40 @@
       // optional footer link highlight
     });
 
-    // form + unlocking logic (same as your original)
+    // form + unlocking logic (updated to sessionStorage)
     const GAS_URL="https://script.google.com/macros/s/AKfycbylq21b_339gnhLUeGVe8eMDW36otKYxMHwYE01rbTr3F_IhszNdKniQO1TMaxPD1V/exec";
     const form=document.getElementById('unlockForm');
     const msg=document.getElementById('unlockMsg');
     const gate=document.getElementById('downloads');
 
-    function unlocked(){return localStorage.getItem('zion_templates_unlocked')==='1';}
-    function setUnlocked(){localStorage.setItem('zion_templates_unlocked','1');}
+    function unlocked(){ return sessionStorage.getItem('zion_templates_unlocked')==='1'; }
+    function setUnlocked(){ sessionStorage.setItem('zion_templates_unlocked','1'); }
 
-    if(unlocked()){form.style.display='none';gate.style.display='block';}
+    // initialize visibility based on session (resets when tab/browser closed)
+    if(unlocked()){ form.style.display='none'; gate.style.display='block'; }
 
     form?.addEventListener('submit',async(e)=>{
-      e.preventDefault();msg.style.display='inline';
+      e.preventDefault();
+      msg.style.display='inline';
       const fd=new FormData(form);
       fd.set('message','Templates unlock');
       try{
+        // send data to GAS (no-cors used previously)
         await fetch(GAS_URL,{method:'POST',body:fd,mode:'no-cors'});
-        setUnlocked();form.style.display='none';gate.style.display='block';
+        // mark unlocked for this browser session
+        setUnlocked();
+        form.style.display='none';
+        gate.style.display='block';
       }catch(err){
-        msg.textContent="Something went wrong. Please try again.";console.error(err);
+        msg.textContent="Something went wrong. Please try again.";
+        console.error(err);
       }
     });
 
+    // Protect direct downloads — block unless unlocked
     document.querySelectorAll('a[data-dl]').forEach(a=>{
       a.addEventListener('click',(ev)=>{
-        if(!unlocked()){ev.preventDefault();}
+        if(!unlocked()){ ev.preventDefault(); }
       });
     });
   </script>
