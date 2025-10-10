@@ -13,7 +13,7 @@
   <!-- Main site CSS -->
   <link rel="stylesheet" href="/styles.css" />
   <style>
-    /* Only affecting home page */
+    /* Home page hero styling */
     .hero--vibrant {
       position: relative;
       padding: 140px 20px;
@@ -59,11 +59,42 @@
       justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    /* HERO BUTTON FIXES - visible & consistent */
+    .hero__cta .btn {
+      background: #62ffa4;
+      color: #0a1420;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      display: inline-block;
+    }
+
+    .hero__cta .btn:hover {
+      background: #48e092;
+      transform: translateY(-2px);
+    }
+
+    .hero__cta .btn.secondary {
+      background: transparent;
+      border: 2px solid #62ffa4;
+      color: #ffffff;
+    }
+
+    .hero__cta .btn.secondary:hover {
+      background: rgba(98, 255, 164, 0.15);
+      border-color: #62ffa4;
     }
 
     @media(max-width:640px){
       .hero--vibrant{padding:100px 20px;}
       .hero__inner h1{font-size:36px;}
+      .hero__cta .btn {width: 100%; text-align: center;}
     }
   </style>
 </head>
@@ -92,13 +123,14 @@
     </div>
   </header>
 
-  <!-- HERO Section (restored original centered design) -->
+  <!-- HERO Section -->
   <section class="hero--vibrant" role="region" aria-label="Main hero">
     <div class="hero__inner">
       <p class="eyebrow">Guiding Growth, Securing Tomorrow</p>
       <h1>Deal-Ready. Data-First.<br>AI-Powered Advisory.</h1>
       <p class="hero__sub">
-        Zion Advisor helps founders, funds, and institutions transform insights into impact — from M&A databooks to automation workflows that redefine speed and precision.
+        Zion Advisor helps founders, funds, and institutions transform insights into impact —
+        from M&A databooks to automation workflows that redefine speed and precision.
       </p>
       <div class="hero__cta">
         <a class="btn" href="/contact.html">Book a Free Consult</a>
@@ -111,7 +143,8 @@
   <main id="main" class="container" style="text-align:center;padding:80px 20px;">
     <h2>Deal-Ready. AI-Powered. Skill-Focused.</h2>
     <p class="muted" style="max-width:720px;margin:12px auto 0;">
-      We move messy source data into investor-ready outputs and executable strategy — faster, cleaner, and with less manual work.
+      We move messy source data into investor-ready outputs and executable strategy —
+      faster, cleaner, and with less manual work.
     </p>
   </main>
 
