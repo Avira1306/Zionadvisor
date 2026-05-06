@@ -301,6 +301,33 @@ header.nav-dark {
 /* small helpers */
 .small { font-size:14px; color:var(--muted) }
 
+/* Global Layout Enhancements */
+body {
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: #fff;
+}
+
+section {
+  padding: 80px 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 /* responsive */
 @media (max-width: 960px){ .about-wrap{grid-template-columns:1fr} }
 @media (max-width:560px){ .profile-hero{max-height:320px} }
