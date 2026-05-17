@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zion Advisor | Boutique M&A Advisory & Financial Consulting</title>
-  <meta name="description" content="Zion Advisor provides bespoke M&A advisory, strategic financial consulting, and capital solutions for discerning clients. Unlock unparalleled expertise and achieve your strategic goals." />
-  
-  <!-- Organization Schema Markup -->
+  <title>Zion Advisor | Deal-Ready Databooks, FDD & AI Finance Automation</title>
+  <meta name="description" content="Zion Advisor helps founders, funds, and finance teams build investor-ready databooks, diligence packs, financial models, and AI-enabled finance workflows." />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -14,115 +13,69 @@
     "name": "Zion Advisor",
     "url": "https://www.zionadvisor.com",
     "logo": "https://www.zionadvisor.com/assets/logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-555-123-4567",
-      "contactType": "customer service"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/zion-advisor"
-    ]
+    "email": "contact@zionadvisor.com",
+    "areaServed": "Global",
+    "sameAs": ["https://www.linkedin.com/company/zion-advisor"]
   }
   </script>
 
-  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
-
-  <!-- Main site CSS -->
   <link rel="stylesheet" href="/styles.css" />
   <style>
-    /* Home page hero styling */
     .hero--vibrant {
       position: relative;
-      padding: 140px 20px;
-      background: linear-gradient(120deg, #0b1220 0%, #162439 40%, #1a2f50 100%);
+      padding: 128px 20px 96px;
+      background: linear-gradient(120deg, #0b1220 0%, #162439 45%, #183256 100%);
       color: #fff;
       text-align: center;
       overflow: hidden;
     }
-
     .hero--vibrant::before {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(circle at 20% 30%, rgba(98, 255, 164, 0.12), transparent 60%),
-                  radial-gradient(circle at 80% 70%, rgba(11, 102, 194, 0.15), transparent 60%);
+      inset: 0;
+      background: radial-gradient(circle at 18% 26%, rgba(98, 255, 164, 0.12), transparent 55%),
+                  radial-gradient(circle at 82% 72%, rgba(11, 102, 194, 0.18), transparent 58%);
       z-index: 0;
     }
-
-    .hero__inner {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero__inner h1 {
-      font-size: clamp(36px, 5vw, 64px);
-      line-height: 1.1;
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
-
-    .hero__inner .hero__sub {
-      max-width: 680px;
-      margin: 0 auto 30px;
-      font-size: 18px;
-      line-height: 1.6;
-      color: #d3d8e3;
-    }
-
-    .hero__cta {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-    }
-
-    /* HERO BUTTON FIXES - visible & consistent */
-    .hero__cta .btn {
-      background: #62ffa4;
-      color: #0a1420;
-      font-weight: 700;
-      border: none;
-      border-radius: 8px;
-      padding: 12px 20px;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      display: inline-block;
-    }
-
-    .hero__cta .btn:hover {
-      background: #48e092;
-      transform: translateY(-2px);
-    }
-
-    .hero__cta .btn.secondary {
-      background: transparent;
-      border: 2px solid #62ffa4;
-      color: #ffffff;
-    }
-
-    .hero__cta .btn.secondary:hover {
-      background: rgba(98, 255, 164, 0.15);
-      border-color: #62ffa4;
-    }
-
-    @media(max-width:640px){
-      .hero--vibrant{padding:100px 20px;}
-      .hero__inner h1{font-size:36px;}
-      .hero__cta .btn {width: 100%; text-align: center;}
-    }
+    .hero__inner { position: relative; z-index: 1; max-width: 940px; margin: 0 auto; }
+    .hero__inner h1 { font-size: clamp(36px, 5vw, 64px); line-height: 1.08; font-weight: 800; margin: 0 0 18px; }
+    .hero__sub { max-width: 760px; margin: 0 auto 30px; font-size: 18px; line-height: 1.65; color: #d3d8e3; }
+    .hero__cta { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+    .hero__cta .btn { background: #62ffa4; color: #0a1420; font-weight: 800; border: none; border-radius: 8px; padding: 12px 20px; text-decoration: none; display: inline-block; }
+    .hero__cta .btn.secondary { background: transparent; border: 2px solid #62ffa4; color: #ffffff; }
+    .hero-proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 780px; margin: 40px auto 0; }
+    .proof-pill { border: 1px solid rgba(255,255,255,.16); border-radius: 10px; padding: 16px; background: rgba(255,255,255,.05); }
+    .proof-pill strong { display: block; font-size: 24px; color: #62ffa4; }
+    .proof-pill span { color: #cbd5e1; font-size: 13px; }
+    .home-section { padding: 72px 20px; }
+    .home-section.alt { background: #f6f9fc; }
+    .section-head { max-width: 760px; margin: 0 auto 28px; text-align: center; }
+    .section-head h2 { margin-bottom: 10px; }
+    .section-head p { color: #5b6572; margin: 0; }
+    .service-strip, .process-grid, .case-grid { display: grid; gap: 18px; max-width: 1100px; margin: 0 auto; }
+    .service-strip { grid-template-columns: repeat(3, 1fr); }
+    .process-grid { grid-template-columns: repeat(4, 1fr); }
+    .case-grid { grid-template-columns: 1.1fr .9fr; align-items: stretch; }
+    .home-card { background: #fff; border: 1px solid #e6edf4; border-radius: 10px; padding: 22px; box-shadow: 0 8px 24px rgba(11,19,32,.05); }
+    .home-card i { color: #0b66c2; font-size: 22px; margin-bottom: 12px; }
+    .home-card h3 { margin: 0 0 10px; font-size: 19px; }
+    .home-card p, .home-card li { color: #4a5568; font-size: 14px; line-height: 1.55; }
+    .home-card ul { margin: 12px 0 0; padding-left: 18px; }
+    .step-num { width: 34px; height: 34px; border-radius: 8px; background: #0b66c2; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 12px; }
+    .quote-panel { background: #0b1220; color: #fff; border-radius: 10px; padding: 28px; }
+    .quote-panel p { color: #d8e1ea; }
+    .cta-band { background: #10233a; color: #fff; text-align: center; padding: 64px 20px; }
+    .cta-band p { color: #d8e1ea; max-width: 680px; margin: 0 auto 24px; }
+    .cta-band .btn { background: #62ffa4; color: #0a1420; border-radius: 8px; padding: 12px 18px; text-decoration: none; font-weight: 800; display: inline-block; }
+    @media(max-width:900px){ .service-strip, .process-grid, .case-grid, .hero-proof { grid-template-columns: 1fr; } }
+    @media(max-width:640px){ .hero--vibrant{padding:96px 20px 72px;} .hero__cta .btn {width: 100%; text-align: center;} }
   </style>
 </head>
 <body>
-
-  <!-- Skip link -->
   <a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;">Skip to main content</a>
 
-  <!-- Header -->
   <header class="nav-dark">
     <div class="header-inner">
       <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
@@ -142,223 +95,92 @@
     </div>
   </header>
 
-  <!-- HERO Section -->
   <section class="hero--vibrant" role="region" aria-label="Main hero">
     <div class="hero__inner">
-      <p class="eyebrow">Guiding Growth, Securing Tomorrow</p>
-      <h1>Deal-Ready. Data-First.<br>AI-Powered Advisory.</h1>
-      <p class="hero__sub">
-        Zion Advisor helps founders, funds, and institutions transform insights into impact —
-        from M&A databooks to automation workflows that redefine speed and precision.
-      </p>
+      <p class="eyebrow">Deal-ready finance support for founders, funds, and operators</p>
+      <h1>Investor-ready databooks and diligence packs, built faster.</h1>
+      <p class="hero__sub">Zion Advisor turns messy financial source data into reconciled schedules, FDD-ready analysis, investor models, and AI-enabled workflows that stand up to serious review.</p>
       <div class="hero__cta">
         <a class="btn" href="/contact.html">Book a Free Consult</a>
-        <a class="btn secondary" href="/services.html">Explore Services</a>
+        <a class="btn secondary" href="/case-studies.html">See Case Studies</a>
+      </div>
+      <div class="hero-proof" aria-label="Proof points">
+        <div class="proof-pill"><strong>72h</strong><span>Databook MVP for urgent diligence</span></div>
+        <div class="proof-pill"><strong>100+</strong><span>Databook and model builds</span></div>
+        <div class="proof-pill"><strong>40-70%</strong><span>Average analyst time saved via automation</span></div>
       </div>
     </div>
   </section>
 
-  <!-- Main content -->
-  <main id="main" class="container" style="text-align:center;padding:80px 20px;">
-    <h2>Deal-Ready. AI-Powered. Skill-Focused.</h2>
-    <p class="muted" style="max-width:720px;margin:12px auto 0;">
-      We move messy source data into investor-ready outputs and executable strategy —
-      faster, cleaner, and with less manual work.
-    </p>
+  <main id="main">
+    <section class="home-section">
+      <div class="section-head">
+        <h2>What We Help You Ship</h2>
+        <p>Concrete outputs for transaction, fundraising, and finance operations teams that need cleaner data and sharper decisions.</p>
+      </div>
+      <div class="service-strip">
+        <article class="home-card">
+          <i class="fa-solid fa-chart-pie"></i>
+          <h3>Investor-Ready Databooks</h3>
+          <p>Reconciled P&L, balance sheet, cash flow, ARR, churn, NWC, and supporting schedules that map back to source files.</p>
+        </article>
+        <article class="home-card">
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+          <h3>FDD & Fundraising Support</h3>
+          <p>Quality-of-earnings packs, scenario models, investor materials, and diligence response support for buy-side and sell-side teams.</p>
+        </article>
+        <article class="home-card">
+          <i class="fa-solid fa-robot"></i>
+          <h3>AI Finance Automation</h3>
+          <p>Parsing, reconciliation, exception handling, and repeatable workflows that reduce manual analyst time without losing review control.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-section alt">
+      <div class="section-head">
+        <h2>How Engagements Run</h2>
+        <p>A tight operating rhythm designed for speed, defensibility, and senior review.</p>
+      </div>
+      <div class="process-grid">
+        <article class="home-card"><span class="step-num">1</span><h3>Intake</h3><p>Confirm scope, transaction context, data room status, timeline, and required outputs.</p></article>
+        <article class="home-card"><span class="step-num">2</span><h3>Normalize</h3><p>Map ledgers, trial balances, exports, statements, and assumptions into a clean working structure.</p></article>
+        <article class="home-card"><span class="step-num">3</span><h3>Reconcile</h3><p>Build schedules, flag exceptions, document assumptions, and tie outputs to source records.</p></article>
+        <article class="home-card"><span class="step-num">4</span><h3>Deliver</h3><p>Package databooks, models, workpapers, and management-ready findings with clear next steps.</p></article>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="case-grid">
+        <div class="quote-panel">
+          <p class="eyebrow">Featured outcome</p>
+          <h2>SaaS Founder Databook</h2>
+          <p>Fragmented ledgers and limited ARR visibility were converted into investor-grade schedules for a minority investment process.</p>
+        </div>
+        <article class="home-card">
+          <h3>Impact</h3>
+          <ul>
+            <li>Reduced diligence cycle from 4 weeks to 10 days.</li>
+            <li>Built ARR, churn, profitability, and reconciliation schedules.</li>
+            <li>Delivered an audit-ready databook accepted by investors.</li>
+          </ul>
+          <p style="margin-top:18px"><a class="btn" href="/case-studies.html">View case studies</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <h2>Need a fast, defensible finance pack?</h2>
+      <p>Share the situation, timeline, and data state. We will help you decide whether you need a 72-hour MVP, a full diligence pack, or an automation sprint.</p>
+      <a class="btn" href="/contact.html">Talk to Zion Advisor</a>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Brand Section -->
-        <div class="footer-brand">
-          <a href="/" class="logo">
-            <img src="/assets/logo.png" alt="Zion Advisor">
-            <span>Zion Advisor</span>
-          </a>
-          <p class="footer-tagline">Boutique M&A Advisory & Strategic Financial Consulting. Delivering bespoke solutions for discerning clients.</p>
-          <div class="footer-social">
-            <a href="https://www.linkedin.com/company/zion-advisor" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          </div>
-        </div>
+  <div id="footer-placeholder"></div>
 
-        <!-- Quick Links -->
-        <div class="footer-nav">
-          <h4>Expertise</h4>
-          <ul>
-            <li><a href="/services.html">M&A Advisory</a></li>
-            <li><a href="/services.html">Financial Consulting</a></li>
-            <li><a href="/services.html">Capital Solutions</a></li>
-            <li><a href="/case-studies.html">Case Studies</a></li>
-          </ul>
-        </div>
-
-        <!-- Resources -->
-        <div class="footer-nav">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="/insights.html">Insights & Briefs</a></li>
-            <li><a href="/templates.html">Tools & Templates</a></li>
-            <li><a href="/about.html">Our Team</a></li>
-            <li><a href="/contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="footer-contact">
-          <h4>Get in Touch</h4>
-          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@zionadvisor.com">contact@zionadvisor.com</a></p>
-          <p><i class="fa-solid fa-location-dot"></i> Global Advisory Services</p>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Zion Advisor. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="/privacy.html">Privacy Policy</a>
-          <a href="/terms.html">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <style>
-    .site-footer {
-      background: #0b1220;
-      color: #eaeff5;
-      padding: 80px 0 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      font-family: 'Inter', sans-serif;
-      text-align: left;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-      gap: 40px;
-      margin-bottom: 60px;
-    }
-
-    .footer-brand .logo {
-      margin-bottom: 20px;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .footer-tagline {
-      color: #9fb0c2;
-      font-size: 15px;
-      line-height: 1.6;
-      margin-bottom: 24px;
-      max-width: 300px;
-    }
-
-    .footer-social a {
-      color: #fff;
-      font-size: 20px;
-      transition: color 0.2s;
-    }
-
-    .footer-social a:hover {
-      color: #ffd24d;
-    }
-
-    .footer-nav h4, .footer-contact h4 {
-      color: #fff;
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 24px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .footer-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-nav ul li {
-      margin-bottom: 12px;
-    }
-
-    .footer-nav ul li a {
-      color: #9fb0c2;
-      text-decoration: none;
-      font-size: 15px;
-      transition: color 0.2s;
-    }
-
-    .footer-nav ul li a:hover {
-      color: #fff;
-    }
-
-    .footer-contact p {
-      color: #9fb0c2;
-      font-size: 15px;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .footer-contact a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .footer-bottom {
-      padding-top: 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 14px;
-      color: #5b6572;
-    }
-
-    .footer-legal {
-      display: flex;
-      gap: 24px;
-    }
-
-    .footer-legal a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-legal a:hover {
-      color: #fff;
-    }
-
-    @media (max-width: 960px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-bottom {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-      }
-    }
-  </style>
-
-  <!-- JS -->
   <script>
     const btn = document.getElementById('burgerBtn'), nav = document.getElementById('siteNav');
     btn?.addEventListener('click', ()=> nav.classList.toggle('show'));
-
     (function setActiveNav() {
       const path = location.pathname.replace(/\/index\.html$/,'/');
       document.querySelectorAll('.nav-links a').forEach(a=>{
@@ -366,7 +188,7 @@
         else a.removeAttribute('aria-current');
       });
     })();
+    fetch('/partials/footer.html').then(r=>r.text()).then(html=>{ document.getElementById('footer-placeholder').innerHTML = html; });
   </script>
-
 </body>
 </html>
