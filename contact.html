@@ -4,31 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact — Zion Advisor</title>
-  <meta name="description" content="Contact Zion Advisor for consulting, M&A databooks, AI automations, and skill development advisory.">
+  <meta name="description" content="Contact Zion Advisor for investor-ready databooks, FDD support, financial models, and AI finance automation workflows.">
 
-  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
-
-  <!-- Site CSS -->
   <link rel="stylesheet" href="/styles.css" />
   <style>
-    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-    .contact-section { max-width: 700px; margin: 80px auto; padding: 20px; }
-    h1 { font-size: 32px; margin-bottom: 10px; }
-    p { color: #555; margin-bottom: 30px; }
-    .input, textarea { width: 100%; padding: 12px; margin-bottom: 16px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; }
-    textarea { min-height: 140px; }
-    .btn { background: #0d6efd; color: #fff; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
-    .btn:hover { background: #0b5ed7; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#f6f9fc; }
+    .contact-hero { background:#0b1220; color:#fff; padding:72px 20px; }
+    .contact-hero .inner { max-width: 980px; margin:0 auto; }
+    .contact-hero h1 { font-size: clamp(34px, 5vw, 54px); margin: 8px 0 14px; color:#fff; }
+    .contact-hero p { color:#d8e1ea; max-width:720px; margin:0; font-size:17px; line-height:1.6; }
+    .contact-wrap { max-width: 1100px; margin: 48px auto 72px; padding: 0 20px; display:grid; grid-template-columns:.9fr 1.1fr; gap:28px; align-items:start; }
+    .trust-panel, .form-panel { background:#fff; border:1px solid #e6edf4; border-radius:10px; box-shadow:0 10px 28px rgba(11,19,32,.05); padding:24px; }
+    .trust-panel h2, .form-panel h2 { margin-top:0; }
+    .trust-list { list-style:none; padding:0; margin:18px 0 0; display:grid; gap:14px; }
+    .trust-list li { display:flex; gap:12px; color:#435063; line-height:1.55; }
+    .trust-list i { color:#0b66c2; margin-top:4px; }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    label { color:#253243; font-weight:700; font-size:14px; }
+    .input, select, textarea { width:100%; padding:12px; margin-top:7px; border:1px solid #cdd6e1; border-radius:8px; font-size:15px; background:#fff; }
+    textarea { min-height:150px; resize:vertical; }
+    .full { grid-column:1 / -1; }
+    .btn { background:#0b66c2; color:#fff; padding:12px 18px; border:none; border-radius:8px; cursor:pointer; font-weight:800; display:inline-flex; align-items:center; gap:8px; }
+    .btn:hover { background:#094d94; }
+    .small-note { color:#687586; font-size:13px; line-height:1.5; margin:10px 0 0; }
+    #formStatus { color:#435063; font-size:14px; margin-top:12px; display:none; }
+    @media(max-width:860px){ .contact-wrap { grid-template-columns:1fr; } .form-grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
-
-<!-- Header -->
 <header class="nav-dark">
   <div class="header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor" style="height:28px;vertical-align:middle;"> <span>Zion Advisor</span></a>
+    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
     <div class="nav-wrap">
       <nav>
         <ul class="nav-links" id="siteNav">
@@ -39,55 +47,104 @@
           <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
         </ul>
       </nav>
-      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a class="btn-cta" href="/contact.html" aria-current="page"><i class="fa-solid fa-envelope"></i> Contact</a>
       <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<!-- Contact Form -->
-<section class="contact-section">
-  <h1>Contact Us</h1>
-  <p>We’d love to hear from you. Fill out the form below and our team will get back to you within 1 business day.</p>
-
-  <form id="contactForm" class="contact-form">
-    <input type="text" name="name" class="input" placeholder="Your name" required>
-    <input type="email" name="email" class="input" placeholder="Your email" required>
-    <textarea name="message" class="input" placeholder="Your message..." required></textarea>
-
-    <!-- honeypot -->
-    <input type="text" name="hp" style="position:absolute;left:-9999px;opacity:0" tabindex="-1" autocomplete="off">
-
-    <button type="submit" class="btn">Send message</button>
-  </form>
+<section class="contact-hero">
+  <div class="inner">
+    <p class="eyebrow">CONTACT</p>
+    <h1>Tell us what needs to be deal-ready.</h1>
+    <p>Share the scope, timeline, and current data state. We will respond within 1 business day with the best next step for a databook, diligence pack, model, or automation workflow.</p>
+  </div>
 </section>
 
-<!-- Footer -->
-<footer>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-    <span class="small">© Zion Advisor</span>
-    <a class="small" href="/privacy.html">Privacy</a>
-  </div>
-</footer>
+<main class="contact-wrap">
+  <aside class="trust-panel">
+    <h2>What to Expect</h2>
+    <ul class="trust-list">
+      <li><i class="fa-solid fa-lock"></i><span>Confidential intake for finance files, transaction context, and operating data.</span></li>
+      <li><i class="fa-solid fa-clock"></i><span>Fast triage for urgent requests, including 72-hour databook MVPs when scope allows.</span></li>
+      <li><i class="fa-solid fa-list-check"></i><span>Clear recommendation on deliverables, required source files, timeline, and review gates.</span></li>
+      <li><i class="fa-solid fa-envelope"></i><span>You can also email <a href="mailto:contact@zionadvisor.com">contact@zionadvisor.com</a>.</span></li>
+    </ul>
+  </aside>
 
-<!-- JavaScript -->
+  <section class="form-panel">
+    <h2>Project Intake</h2>
+    <form id="contactForm" class="contact-form">
+      <div class="form-grid">
+        <label>Name
+          <input type="text" name="name" class="input" placeholder="Your name" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" class="input" placeholder="you@company.com" required>
+        </label>
+        <label>Company
+          <input type="text" name="company" class="input" placeholder="Company or fund name">
+        </label>
+        <label>Timeline
+          <select name="timeline" required>
+            <option value="">Select timeline</option>
+            <option>Urgent: 72 hours</option>
+            <option>This week</option>
+            <option>2-4 weeks</option>
+            <option>Exploring options</option>
+          </select>
+        </label>
+        <label class="full">Project type
+          <select name="projectType" required>
+            <option value="">Select project type</option>
+            <option>Investor-ready databook</option>
+            <option>Financial due diligence / QoE support</option>
+            <option>Fundraising model or investor pack</option>
+            <option>AI finance workflow automation</option>
+            <option>Infrastructure or transaction advisory</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label class="full">What should we know?
+          <textarea name="message" class="input" placeholder="Briefly describe the goal, available files, deadline, and any investor or board context." required></textarea>
+        </label>
+      </div>
+      <input type="text" name="hp" style="position:absolute;left:-9999px;opacity:0" tabindex="-1" autocomplete="off">
+      <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> Send message</button>
+      <p class="small-note">Please do not upload sensitive files through this form. We will arrange a secure intake path if files are needed.</p>
+      <p id="formStatus">Sending your message...</p>
+    </form>
+  </section>
+</main>
+
+<div id="footer-placeholder"></div>
+
 <script>
+  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
+  btn?.addEventListener('click',()=>nav.classList.toggle('show'));
+
+  fetch('/partials/footer.html').then(r=>r.text()).then(html=>{ document.getElementById('footer-placeholder').innerHTML = html; });
+
   const GAS_URL = "https://script.google.com/macros/s/AKfycbw8z9WNjJf_aYOVKgnyr55XNlx6FJk_8qd4ISN7k4N7TBoOg-nnLR2sNRhrQ5IV4RsA/exec";
   document.getElementById('contactForm').addEventListener('submit', async function (e) {
     e.preventDefault();
+    const status = document.getElementById('formStatus');
+    status.style.display = 'block';
+    status.textContent = 'Sending your message...';
 
     const data = new URLSearchParams();
-    data.set('name',    this.elements['name'].value.trim());
-    data.set('email',   this.elements['email'].value.trim());
-    data.set('message', this.elements['message'].value.trim());
-    data.set('hp', '');                               // keep honeypot empty
-    data.set('page', window.location.pathname);       // optional
+    ['name','email','company','timeline','projectType','message','hp'].forEach((field)=>{
+      data.set(field, this.elements[field]?.value.trim() || '');
+    });
+    data.set('page', window.location.pathname);
 
-    await fetch(GAS_URL, { method: 'POST', body: data, mode: 'no-cors' });
-    window.location.href = "/thank-you.html";
+    try {
+      await fetch(GAS_URL, { method: 'POST', body: data, mode: 'no-cors' });
+      window.location.href = "/thank-you.html";
+    } catch (err) {
+      status.textContent = 'Something went wrong. Please email contact@zionadvisor.com.';
+    }
   });
 </script>
-
-
 </body>
 </html>
