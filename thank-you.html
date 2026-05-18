@@ -18,57 +18,17 @@
     .thank-box h1{font-size:32px;margin-bottom:16px;color:#0b0f14}
     .thank-box p{color:#44505e;font-size:16px;margin-bottom:24px}
   </style>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Zion Advisor">
+    <meta property="og:url" content="https://zionadvisor.com/thank-you.html">
+    <meta property="og:title" content="Thank You — Zion Advisor">
+    <meta property="og:description" content="Thank you for contacting Zion Advisor. We will respond within 1 business day.">
+    <meta property="og:image" content="https://zionadvisor.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thank You — Zion Advisor">
+    <meta name="twitter:description" content="Thank you for contacting Zion Advisor. We will respond within 1 business day.">
+    <link rel="canonical" href="https://zionadvisor.com/thank-you.html">
+    <link rel="preconnect" href="https://zionadvisor.com">
+    <link rel="dns-prefetch" href="https://zionadvisor.com">
 </head>
-<body>
-
-<!-- Header -->
-<header class="nav-dark">
-  <div class="header-inner">
-    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
-    <div class="nav-wrap">
-      <nav>
-        <ul class="nav-links" id="siteNav">
-          <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
-          <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
-          <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
-          <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
-          <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
-        </ul>
-      </nav>
-      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</header>
-
-<!-- Content -->
-<div class="container section">
-  <div class="thank-box">
-    <h1>Thank You!</h1>
-    <p>We’ve received your message. Our team typically replies within 1 business day.</p>
-    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
-      <a class="btn" href="/">← Back to Home</a>
-      <a class="btn secondary" href="/services.html">See Our Services</a>
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
-    <span class="small">© Zion Advisor</span>
-    <a class="small" href="/privacy.html">Privacy</a>
-  </div>
-</footer>
-
-<!-- JS -->
-<script>
-  const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
-  btn?.addEventListener('click',()=>nav.classList.toggle('show'));
-  const path=location.pathname.replace(/\/index\.html$/,'/');
-  document.querySelectorAll('.nav-links a').forEach(a=>{
-    if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
-  });
-</script>
-</body>
-</html>
