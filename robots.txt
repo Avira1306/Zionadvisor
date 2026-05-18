@@ -1,3 +1,9 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://zionadvisor.com/sitemap.xml
+
+# Disallow server-side Includes and partials from indexing
+Disallow: /partials/
+Disallow: /styles.css
+Disallow: /_/
