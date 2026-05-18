@@ -7,31 +7,37 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://zionadvisor.com/about</loc>
+    <loc>https://zionadvisor.com/index.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zionadvisor.com/about.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zionadvisor.com/services</loc>
+    <loc>https://zionadvisor.com/services.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zionadvisor.com/contact</loc>
+    <loc>https://zionadvisor.com/contact.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://zionadvisor.com/terms</loc>
+    <loc>https://zionadvisor.com/terms.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://zionadvisor.com/privacy</loc>
+    <loc>https://zionadvisor.com/privacy.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
