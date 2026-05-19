@@ -38,8 +38,35 @@
 </head>
 <body>
 
-<!-- Header placeholder -->
-<div id="header-placeholder"></div>
+<header class="nav-dark">
+  <div class="header-inner">
+    <a class="logo" href="/"><img src="/assets/logo.png" alt="Zion Advisor"><span>Zion Advisor</span></a>
+    <div class="nav-wrap">
+      <nav>
+        <ul class="nav-links" id="siteNav">
+          <li><a href="/insights.html"><i class="fa-solid fa-lightbulb"></i> Insights</a></li>
+          <li><a href="/services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
+          <li><a href="/case-studies.html"><i class="fa-solid fa-chart-line"></i> Case Studies</a></li>
+          <li><a href="/templates.html"><i class="fa-solid fa-file-lines"></i> Templates</a></li>
+          <li><a href="/about.html"><i class="fa-solid fa-user-tie"></i> About</a></li>
+        </ul>
+      </nav>
+      <a class="btn-cta" href="/contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+  <!-- Nav + Burger JS -->
+  <script>
+    const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
+    btn?.addEventListener('click',()=>nav.classList.toggle('show'));
+    const path=location.pathname.replace(/\/index\.html$/,'/');
+    document.querySelectorAll('.nav-links a').forEach(a=>{
+      if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
+    });
+  </script>
+
 
 <!-- Banner -->
 <img src="/assets/banner-about.jpg" class="banner" alt="About Zion Advisor banner">
@@ -108,41 +135,72 @@
   </div>
 </div>
 
-<!-- Footer placeholder -->
-<div id="footer-placeholder"></div>
-
-<!-- JS to load partials -->
-<script>
-  async function includeHTML(id, file) {
-    const el = document.getElementById(id);
-    if (el) {
-      const resp = await fetch(file);
-      el.innerHTML = await resp.text();
-    }
-  }
-
-  // Load header
-  includeHTML("header-placeholder", "/partials/header.html").then(()=>{
-    const btn=document.getElementById('burgerBtn'),nav=document.getElementById('siteNav');
-    btn?.addEventListener('click',()=>nav.classList.toggle('show'));
-    const path=location.pathname.replace(/\/index\.html$/,'/');
-    document.querySelectorAll('.nav-links a').forEach(a=>{
-      if(a.getAttribute('href')===path) a.setAttribute('aria-current','page');
-    });
-  });
-
-  // Load footer
-  includeHTML("footer-placeholder", "/partials/footer.html").then(()=>{
-    const path=location.pathname.replace(/\/index\.html$/,'/');
-    document.querySelectorAll('.footer-links a').forEach(a=>{
-      if(a.getAttribute('href')===path){
-        a.setAttribute('aria-current','page');
-        a.style.fontWeight = '600';
-        a.style.textDecoration = 'underline';
-      }
-    });
-  });
-</script>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <img src="/assets/logo.png" alt="Zion Advisor">
+          <span>Zion Advisor</span>
+        </a>
+        <p class="footer-tagline">Deal-ready finance advisory for databooks, FDD support, investor models, and AI-enabled finance workflows.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/zion-advisor" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h4>Expertise</h4>
+        <ul>
+          <li><a href="/services.html">Investor-Ready Databooks</a></li>
+          <li><a href="/services.html">FDD &amp; Fundraising Support</a></li>
+          <li><a href="/services.html">AI Finance Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/insights.html">Insights &amp; Briefs</a></li>
+          <li><a href="/templates.html">Tools &amp; Templates</a></li>
+          <li><a href="/about.html">Our Team</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@zionadvisor.com">contact@zionadvisor.com</a></p>
+        <p><i class="fa-solid fa-location-dot"></i> Gurgaon and global remote delivery</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Zion Advisor. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<style>
+  .site-footer{background:#0b1220;color:#eaeff5;padding:80px 0 40px;border-top:1px solid rgba(255,255,255,.05);font-family:'Inter',sans-serif}
+  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:60px}
+  .footer-brand .logo{margin-bottom:20px;text-decoration:none}
+  .footer-tagline{color:#9fb0c2;font-size:15px;line-height:1.6;margin-bottom:24px;max-width:320px}
+  .footer-social a{color:#fff;font-size:20px;transition:color .2s}
+  .footer-social a:hover{color:#ffd24d}
+  .footer-nav h4,.footer-contact h4{color:#fff;font-size:16px;font-weight:700;margin-bottom:24px;text-transform:uppercase;letter-spacing:1px}
+  .footer-nav ul{list-style:none;padding:0;margin:0}
+  .footer-nav ul li{margin-bottom:12px}
+  .footer-nav ul li a{color:#9fb0c2;text-decoration:none;font-size:15px;transition:color .2s}
+  .footer-nav ul li a:hover{color:#fff}
+  .footer-contact p{color:#9fb0c2;font-size:15px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .footer-contact a{color:inherit;text-decoration:none}
+  .footer-bottom{padding-top:40px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;font-size:14px;color:#5b6572}
+  .footer-legal{display:flex;gap:24px}
+  .footer-legal a{color:inherit;text-decoration:none;transition:color .2s}
+  .footer-legal a:hover{color:#fff}
+  @media(max-width:960px){.footer-grid{grid-template-columns:1fr 1fr;gap:40px}}
+  @media(max-width:560px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:20px;text-align:center}}
+</style>
 
   <script type="application/ld+json">[
     {"@context": "https://schema.org", "@type": "Person", "name": "Abhishek Bhandari", "jobTitle": "Founder & CEO", "worksFor": {"@type": "Organization", "name": "Zion Advisor"}, "sameAs": ["https://www.linkedin.com/in/abhishek-bhandari"], "description": "Founder and CEO of Zion Advisor, leading financial due diligence, databook preparation, and infrastructure advisory services across India and global markets."}
