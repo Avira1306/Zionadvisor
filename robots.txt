@@ -1,9 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
 
-Sitemap: https://zionadvisor.com/sitemap.xml
-
-# Disallow server-side Includes and partials from indexing
-Disallow: /partials/
-Disallow: /styles.css
-Disallow: /_/
+Sitemap: https://zionskill.com/sitemap.xml
